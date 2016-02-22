@@ -40,11 +40,6 @@ $color-background-greenGradient: repeating-linear-gradient(90deg,#25acb0,#23bd65
 $color-dark-gray:#ddd;
 $color-light-gray:#eee;
 
-.page{
-  background: $color-background-gray;
-  border: 1px solid $color-border-gray;
-}
-
 .mB0{
   margin-bottom:0px;
 }
@@ -58,8 +53,7 @@ $color-light-gray:#eee;
 }
 
 .center-div{
-  margin-left:auto !important;
-  margin-right:auto !important;
+
 }
 
 ul{
@@ -89,6 +83,12 @@ main-app{
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
+}
+
+/* Page */
+page{
+  display:block;
+  padding:15px 0px;
 }
 
 /* Footer */

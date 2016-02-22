@@ -10,12 +10,12 @@ import {PageComponent} from '../page/page.component';
 import {FooterComponent} from '../footer/footer.component';
 
 @Component({
-    selector: 'about',
-    templateUrl: 'app/_about/about.html',
+    selector: 'articles',
+    templateUrl: 'app/_articles/articles.html',
     directives:[NavbarComponent, PageComponent, FooterComponent]
 })
 
-export class AboutComponent {
+export class ArticlesComponent {
   public appRoutes: RouteDefinition[];
   constructor() {
     this.appRoutes = APP_ROUTES;
