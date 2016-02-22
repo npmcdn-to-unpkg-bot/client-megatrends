@@ -1,0 +1,15 @@
+<div class="container center-div">
+  <a [routerLink]="['Home']">
+    <img class="navbar-logo" src="assets/images/Radial_4.jpg">
+  </a>
+  <a *ngFor="#route of routes" [routerLink]="[route.name]">
+    <p class="navbar-link" *ngIf="route.name !== 'Home'">
+      {{route.name}}
+    </p>
+  </a>
+  <a class="navbar-mobileMenu-button">
+    <p>
+      Menu <i class="fa fa-bars"></i>
+    </p>
+  </a>
+</div>

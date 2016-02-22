@@ -1,0 +1,18 @@
+# Windows and Mac Files
+.DS_Store
+.Thumbs_DB
+
+# Third Party Packages
+/node_modules
+/bower_components
+
+
+/build
+
+/report
+
+/app/**/*.js
+/app/**/*.map
+/test/**/*.js
+/test/**/*.map
+/assets/styles/*.css
