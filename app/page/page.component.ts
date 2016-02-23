@@ -3,17 +3,29 @@
 import {Component, Input} from 'angular2/core';
 import {BrowserDomAdapter} from 'angular2/platform/browser';
 
+import {RouteDefinition, RouterOutlet} from 'angular2/router';
+import {APP_ROUTES} from '../app.routes';
+
+import {NavbarComponent} from '../navbar/navbar.component';
+import {FooterComponent} from '../footer/footer.component';
+
+import {HomeComponent} from '../_home/home.component';
+
 @Component({
     selector: 'page',
-    templateUrl: 'app/page/page.html'
+    templateUrl: 'app/page/page.html',
+    directives:[RouterOutlet, NavbarComponent, FooterComponent, HomeComponent]
 })
+
 export class PageComponent {
 
-  broserDOM: BrowserDomAdapter;
-
+  public appRoutes: RouteDefinition[];
   constructor() {
+    this.appRoutes = APP_ROUTES;
     this.broserDOM = new BrowserDomAdapter();
   }
+
+  broserDOM: BrowserDomAdapter;
 
   ngAfterViewInit(){
     setTimeout(_=> this.expandHeight());
@@ -30,7 +42,7 @@ export class PageComponent {
     let heightString = 'height:' + fillingHeight + 'px';
 
     if(screenHeight > (navbarHeight + pageHeight + footerHeight)){
-        this.broserDOM.setAttribute(this.broserDOM.query('page'),'style',heightString);
+        this.broserDOM.setAttribute(this.broserDOM.query('.pageContent'),'style',heightString);
     }
 
   }

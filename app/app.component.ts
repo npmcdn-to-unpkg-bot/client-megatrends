@@ -1,16 +1,17 @@
 import {Component,Input} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 
-import {RouterOutlet, RouteConfig} from 'angular2/router';
+import {RouteConfig} from 'angular2/router';
 import {APP_ROUTES} from './app.routes';
 import {SpinnerComponent} from './spinner/spinner.component';
+import {PageComponent} from './page/page.component';
 
 import {LoggerService} from './blocks/logger.service';
 
 @Component({
     selector: 'main-app',
     templateUrl: 'app/app.html',
-    directives: [RouterOutlet, NgClass, SpinnerComponent]
+    directives: [NgClass, PageComponent, SpinnerComponent]
 })
 
 @RouteConfig(APP_ROUTES)
