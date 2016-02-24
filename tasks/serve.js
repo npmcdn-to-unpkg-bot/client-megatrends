@@ -9,6 +9,8 @@ gulp.task('serve-dev',
 });
 
 /* Start live server production mode (with Karma Tests) */
-gulp.task('serve-build', ['build'], function () {
+/*
+gulp.task('serve-prod', ['build'], function () {
   liveServer.start(config.liveServer.prod);
 });
+*/
