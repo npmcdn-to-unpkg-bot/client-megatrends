@@ -11,6 +11,7 @@ import {LoggerService} from './blocks/logger.service';
 @Component({
     selector: 'main-app',
     templateUrl: 'app/app.html',
+    inputs: ['fadingOut'],
     directives: [NgClass, PageComponent, SpinnerComponent]
 })
 

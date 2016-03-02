@@ -2,14 +2,45 @@
   <a [routerLink]="['Home']">
     <img class="navbar-logo" src="assets/images/Radial_4.jpg">
   </a>
-  <a *ngFor="#route of routes" [routerLink]="[route.name]">
-    <p class="navbar-link" *ngIf="route.name !== 'Home' && route.data == 'parent-root'">
-      {{route.name}}
-    </p>
+  <a [routerLink]="['Contact']">
+    <div class="navbar-link">
+      <h5 class="mB5">
+        Contact
+      </h5>
+    </div>
+  </a>
+  <a [routerLink]="['About']">
+    <div class="navbar-link">
+      <h5 class="mB5">
+        About
+      </h5>
+    </div>
+  </a>
+  <a [routerLink]="['Articles']">
+    <div class="navbar-link">
+      <h5 class="mB5">
+        Articles
+      </h5>
+    </div>
+  </a>
+  <a navbar-link-hover [routerLink]="['Drive Framework']">
+    <div class="navbar-link">
+      <h5 class="mB5">
+        <img class="drive-navbar-label" src="assets/images/DriveFrameworkLabel.svg">
+        Framework
+      </h5>
+      <div class="navbar-hoverContainer hidden" [ngClass]="{fadingOut:fadingOut,fadingIn:fadingIn}">
+        <a *ngFor="#route of routes;  #i = index" [routerLink]="[route.name]">
+          <p class="mB5" *ngIf="route.data == 'parent-driveFramework'">
+            {{route.name}}
+          </p>
+        </a>
+      </div>
+    </div>
   </a>
   <a class="navbar-mobileMenu-button">
-    <p>
+    <h5>
       Menu <i class="fa fa-bars"></i>
-    </p>
+    </h5>
   </a>
 </div>

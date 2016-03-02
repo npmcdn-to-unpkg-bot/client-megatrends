@@ -39,7 +39,7 @@ export var APP_ROUTES: RouteDefinition[] = [
       data:"parent-root", },
 
     { path: '/driveFramework/demographic-and-social-changes',
-      name: 'Demographic and Social Changes',
+      name: 'Demographic & Social Changes',
       component: DriveFramework_D_Component,
       data:"parent-driveFramework", },
 
@@ -54,7 +54,7 @@ export var APP_ROUTES: RouteDefinition[] = [
       data:"parent-driveFramework", },
 
     { path: '/driveFramework/volatility-scarcity-and-complexity',
-      name: 'Volatility, Scarcity and Complexity',
+      name: 'Volatility, Scarcity & Complexity',
       component: DriveFramework_V_Component,
       data:"parent-driveFramework", },
 

@@ -1,5 +1,6 @@
-<navbar [routes]="appRoutes"></navbar>
-  <div class="pageContent">
-      <router-outlet></router-outlet>
+<navbar [routes]="appRoutes" ></navbar>
+  <div [ngSwitch]="pathName">
+    <div *ngSwitchWhen="'driveFramework/demographic-and-social-changes'" class="pageContent bg-green"><router-outlet></router-outlet></div>
+    <div *ngSwitchDefault class="pageContent"><router-outlet></router-outlet></div>
   </div>
 <footer></footer>

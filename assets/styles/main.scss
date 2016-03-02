@@ -18,15 +18,15 @@
 
 /* Fonts */
 @import "modules/fontface";
-@include fontface('Raleway', '../fonts/Raleway/Raleway-Thin','100');
-@include fontface('Raleway', '../fonts/Raleway/Raleway-ExtraLight','200');
-@include fontface('Raleway', '../fonts/Raleway/Raleway-Light','300');
-@include fontface('Raleway', '../fonts/Raleway/Raleway-Regular','400');
-@include fontface('Raleway', '../fonts/Raleway/Raleway-Medium','500');
-// @include fontface('Raleway', '../fonts/Raleway/Raleway-SemiBold','600');
-// @include fontface('Raleway', '../fonts/Raleway/Raleway-Bold','700');
-// @include fontface('Raleway', '../fonts/Raleway/Raleway-ExtraBold','800');
-// @include fontface('Raleway', '../fonts/Raleway/Raleway-Heavy','900');
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Thin', 100, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Light', 300, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Regular', 400, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Medium', 500, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Bold', 700, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
 
 /* Icons */
 @import "font-awesome/font-awesome";
@@ -40,12 +40,32 @@ $color-background-greenGradient: repeating-linear-gradient(90deg,#25acb0,#23bd65
 $color-dark-gray:#ddd;
 $color-light-gray:#eee;
 
+
+::-webkit-scrollbar { display: none; }
+
+
 .mT15{
   margin-top:15px;
 }
 
+.mT2R{
+  margin-top:2rem;
+}
+
 .mB0{
   margin-bottom:0px;
+}
+
+.mB5{
+  margin-bottom:5px;
+}
+
+.mB1R{
+  margin-bottom:1rem;
+}
+
+.mB2R{
+  margin-bottom:2rem;
 }
 
 .mR5{
@@ -69,13 +89,13 @@ a{
   text-decoration: none;
 }
 
-p{
-  margin-bottom:5px;
-}
-
 hr{
   margin:1rem 0px;
   border-color:$color-light-gray;
+}
+
+.largeSeperator{
+  margin:2rem 0px;
 }
 
 main-app{
@@ -98,6 +118,10 @@ main-app{
   transition: visibility 0s 2s, opacity 2s linear;
 }
 
+.deleted{
+  display: none;
+}
+
 /* Page */
 page{
   display:block;
@@ -106,6 +130,24 @@ page{
 .pageContent{
   display:block;
   padding:15px 0px;
+}
+
+.placeHolder-image{
+  background:#e5e5e5;
+  width:100%;
+  border-radius: 5px;
+}
+
+.h100{
+  height:100px;
+}
+
+.h200{
+  height:200px;
+}
+
+.h300{
+  height:300px;
 }
 
 /* Footer */
@@ -124,11 +166,15 @@ footer{
 
 $navbar-logo-height:120px;
 $navbar-logo-margin:15px;
-$navbar-link-height:24px;
+$navbar-link-height:30px;
 
 navbar{
   display:block;
-  border-bottom: 1px solid $color-border-gray;
+
+}
+
+navbar .container{
+  border-bottom: 1px solid $color-light-gray;
 }
 
 .navbar-logo{
@@ -151,6 +197,15 @@ navbar{
   }
 }
 
+.navbar-hoverContainer{
+  position: absolute;
+  padding-top: 5px;
+  padding-right: 5px;
+  background: #eee;
+  border-radius: 4px;
+  z-index: 99;
+}
+
 .navbar-mobileMenu-button {
   float:right;
   height:$navbar-link-height;
@@ -162,4 +217,42 @@ navbar{
 
 .navbar-mobileMenu-button p{
   margin:0px;
+}
+
+/* Custom Elements */
+
+.drive-navbar-label{
+  float:left;
+  height:30px;
+  margin-right:5px;
+}
+
+.trend-sideBox{
+  background:#fffeee;
+  padding:2rem;
+  border:1px dashed #ddd;
+}
+
+.multi-column-text {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+}
+
+.trend-header{
+    font-weight:700;
+    margin-bottom:0px;
+}
+
+.tM1{margin-top:3.8rem;}
+.tM2{margin-top:2.5rem;}
+.tM3{margin-top:0.8rem;}
+
+.bg-green{
+  background:url('../images/Background_Green.svg') no-repeat;
+  background-position: left bottom;
+  //height:100%;
 }
