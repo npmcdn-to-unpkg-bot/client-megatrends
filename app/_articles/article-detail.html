@@ -1,1 +1,16 @@
-<p>Article Detail {{id}}</p>
+<div class="row">
+  <div class="eight columns">
+    <a [routerLink]="['Article List']">
+      <p class="mB0"><i class="fa fa-arrow-left mR5"></i> Articles</p>
+    </a>
+    <hr class="mT15"/>
+    <div *ngFor="#article of articles;  #i = index">
+      <h4 class="mB0">{{article.title}}</h4>
+      <p class="mB5">by <strong>{{article.author}}</strong>, {{article.date}}</p>
+      <p class="mB0">{{article.summary}}</p>
+      <hr class="mT2R mB2R"/>
+    </div>
+  </div>
+  <div class="four columns">
+  </div>
+</div>

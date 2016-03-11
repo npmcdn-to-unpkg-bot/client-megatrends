@@ -42,6 +42,12 @@ $color-light-gray:#eee;
 
 ::-webkit-scrollbar { display: none; }
 
+body{
+  background:url('../images/Background_Main.svg') no-repeat;
+  background-size:100%;
+  background-position: top left;
+}
+
 .mT15{
   margin-top:15px;
 }
