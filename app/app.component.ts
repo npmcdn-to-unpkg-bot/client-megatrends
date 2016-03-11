@@ -6,8 +6,6 @@ import {APP_ROUTES} from './app.routes';
 import {SpinnerComponent} from './spinner/spinner.component';
 import {PageComponent} from './page/page.component';
 
-import {LoggerService} from './blocks/logger.service';
-
 @Component({
     selector: 'main-app',
     templateUrl: 'app/app.html',
@@ -18,13 +16,10 @@ import {LoggerService} from './blocks/logger.service';
 @RouteConfig(APP_ROUTES)
 
 export class AppComponent {
-  private logger: LoggerService;
 
   @Input() fadingIn;
 
-  constructor(logger: LoggerService) {
-    this.logger = logger;
-    this.logger.log('Hello!');
+  constructor() {
   }
 
   ngAfterViewInit(){

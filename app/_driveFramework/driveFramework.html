@@ -1,31 +1,3 @@
-<div class="container">
-  <a [routerLink]="['Drive Framework']">
-    <div class="driveFrameworkDiagram-container">
-      <div class="row">
-        <div class="four columns">
-          <p>
-            We have identified 5 megatrends that are most likely to have significant and long-lasting impacts on businesses, economies and societies
-          </p>
-        </div>
-        <div class="four columns">
-          <a *ngFor="#route of routes; #i = index"  [routerLink]="[route.name]">
-            <div class="row mB2R" *ngIf="route.data !== 'parent-root'">
-              <div class="five columns">
-                <img class="u-max-full-width" src="assets/images/{{route.name}}_Icon.svg">
-              </div>
-              <div class="seven columns" [ngSwitch]="route.name">
-                  <h5 *ngSwitchWhen="'Inequalities'" class="trend-header tM1">{{route.name}}</h5>
-                  <h5 *ngSwitchWhen="'Volatility, Scarcity & Complexity'" class="trend-header tM3">{{route.name}}</h5>
-                  <h5 *ngSwitchDefault class="trend-header tM2">{{route.name}}</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="four columns">
-
-        </div>
-      </div>
-
-    </div>
-  </a>
+<div class="container contentContainer">
+  <router-outlet></router-outlet>
 </div>

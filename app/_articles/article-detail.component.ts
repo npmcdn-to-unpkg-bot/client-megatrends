@@ -3,9 +3,10 @@
 import {Component} from 'angular2/core';
 
 @Component({
-    selector: 'home',
-    templateUrl: 'app/_home/home.html',
+    selector: 'article',
+    templateUrl: 'app/_articles/article-detail.html'
 })
 
-export class HomeComponent {
+export class ArticleDetailComponent {
+
 }

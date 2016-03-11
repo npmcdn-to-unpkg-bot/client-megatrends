@@ -1,6 +1,7 @@
-<navbar [routes]="appRoutes" ></navbar>
-  <div [ngSwitch]="pathName">
-    <div *ngSwitchWhen="'driveFramework/demographic-and-social-changes'" class="pageContent bg-green"><router-outlet></router-outlet></div>
-    <div *ngSwitchDefault class="pageContent"><router-outlet></router-outlet></div>
-  </div>
+<navbar [routes]="appRoutes" (mobileMenuTrigger)="handleMobileMenuToggle()" (navbarLinkTrigger)="handleSuperLink()"></navbar>
+<navbar-mobileMenu [routes]="appRoutes" ></navbar-mobileMenu>
+<div class="pageContent">
+  <router-outlet (navbarLinkTrigger)="handleSuperLink()">
+  </router-outlet>
+</div>
 <footer></footer>

@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="six columns">
+    <img class="u-full-width" src="assets/images/DriveFrameworkLogo.svg">
+    <hr class="mT15 mB15"/>
+    <p>
+      The world is experiencing increasing
+      disruptions and changes with the
+      accelerating information sharing in this
+      new age of globalisation. Uncertainty has
+      become the new normal. In this article
+      the authors discuss how governments and
+      companies can understand and thrive in this
+      “new normal” using the DRIVE framework.
+    </p>
+  </div>
+  <div class="six columns">
+    <div class="driveFrameworkDiagram-container">
+      <div class="row bg-TopArrow">
+        <div class="twelve columns">
+          <h5 class="mB0">
+            We have identified 5 megatrends that are most likely
+            to have significant and long-lasting impacts on
+            businesses, economies and societies
+          </h5>
+        </div>
+      </div>
+      <div class="row bg-LeftArrow">
+        <a *ngFor="#route of driveFrameworkRoutes; #i = index" [routerLink]="[route.name]">
+          <div class="row bg-TrendArrow" *ngIf="route.data == 'trend'">
+            <div class="four columns">
+              <p class="hidden">
+                Trend
+              </p>
+            </div>
+            <div class="eight columns">
+              <div class="row mB2R">
+                <div class="five columns">
+                  <img class="u-max-full-width" src="assets/images/{{route.name}}_Icon.svg">
+                </div>
+                <div class="seven columns" [ngSwitch]="route.name">
+                    <h5 *ngSwitchWhen="'Inequalities'" class="trend-header tM1">{{route.name}}</h5>
+                    <h5 *ngSwitchWhen="'Volatility, Scarcity & Complexity'" class="trend-header tM3">{{route.name}}</h5>
+                    <h5 *ngSwitchDefault class="trend-header tM2">{{route.name}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="row bg-BottomArrow">
+        <h5>
+          Individually, the five aspects of DRIVE are
+          likely to be thought-provoking;
+          in combination, they greatly influence how businesses
+          can succeed in identifying new business opportunities
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>

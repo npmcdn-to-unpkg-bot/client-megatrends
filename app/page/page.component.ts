@@ -1,7 +1,7 @@
 ///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+///<reference path="../../typings/browser/ambient/jquery/jquery.d.ts"/>
 
 import {Component, Input} from 'angular2/core';
-import {BrowserDomAdapter} from 'angular2/platform/browser';
 
 import {RouteDefinition, RouterOutlet, Router} from 'angular2/router';
 import {APP_ROUTES} from '../app.routes';
@@ -9,77 +9,94 @@ import {APP_ROUTES} from '../app.routes';
 import {CORE_DIRECTIVES} from 'angular2/common';
 
 import {NavbarComponent} from '../navbar/navbar.component';
+import {NavbarMobileMenuComponent} from '../navbar/mobileMenu/mobileMenu.component';
 import {FooterComponent} from '../footer/footer.component';
-
-interface JQuery {
-    fadeIn(): JQuery;
-    fadeOut(): JQuery;
-    focus(): JQuery;
-    html(): string;
-    html(val: string): JQuery;
-    show(): JQuery;
-    addClass(className: string): JQuery;
-    removeClass(className: string): JQuery;
-    append(el: HTMLElement): JQuery;
-    val(): string;
-    val(value: string): JQuery;
-    attr(attrName: string): string;
-}
-
-declare var $: {
-    (el: HTMLElement): JQuery;
-    (selector: string): JQuery;
-    (readyCallback: () => void ): JQuery;
-};
 
 @Component({
   selector: 'page',
   templateUrl: 'app/page/page.html',
-  directives:[RouterOutlet, NavbarComponent, FooterComponent, CORE_DIRECTIVES]
+  directives:[
+    RouterOutlet,
+    NavbarComponent,
+    NavbarMobileMenuComponent,
+    FooterComponent,
+    CORE_DIRECTIVES]
 })
 export class PageComponent {
 
   public appRoutes: RouteDefinition[];
   public pathName : String;
+  public mobileMenuVisible : Boolean;
 
   constructor(private router: Router) {
-
-    console.log($(".pageContent"));
-
     this.appRoutes = APP_ROUTES;
-    this.broserDOM = new BrowserDomAdapter();
-    router.subscribe((path) => {
-        // this.pathName = path; To be fixed the page flickering
-        setTimeout(_=> this.expandHeight());
-      }
-    );
+    this.mobileMenuVisible = false;
+    router.subscribe((val) => {
+      console.log(val);
+      this.closeMobileMenu();
+      this.expandHeight();
+    });
   }
 
-  broserDOM: BrowserDomAdapter;
-
-  /*
   ngAfterViewInit(){
-
+    this.expandHeight();
+    this.setupNavbarMobileMenu();
   }
 
-  */
+  handleSuperLink(){
+    /*
+    console.log("Ilyas");
+    this.closeMobileMenu();
+    this.expandHeight();
+    */
+  }
+
+  setupNavbarMobileMenu(){
+    let screenHeight = $(window).outerHeight();
+    let navbarHeight = $("navbar").outerHeight();
+    let footerHeight = $("footer").outerHeight();
+
+    let fillingHeight = screenHeight - navbarHeight - footerHeight;
+
+    $(".navbar-mobileMenu-container").height(fillingHeight + 1);
+    $(".navbar-mobileMenu-container").css('top',(navbarHeight - 1));
+  }
+
+  closeMobileMenu(){
+    $('.navbar-mobileMenu-button-icon').removeClass("fa-times").addClass("fa-bars");
+    $('.navbar-mobileMenu-container').removeClass("fadingInFast").addClass("fadingOutFast");
+    $("footer").removeClass("footerAbsolute");
+    this.mobileMenuVisible = false;
+  }
+
+  handleMobileMenuToggle(){
+    if(this.mobileMenuVisible){
+      $('.navbar-mobileMenu-button-icon').removeClass("fa-times").addClass("fa-bars");
+      $('.navbar-mobileMenu-container').removeClass("fadingInFast").addClass("fadingOutFast");
+      $("footer").removeClass("footerAbsolute");
+      this.mobileMenuVisible = false;
+    } else {
+      $('.navbar-mobileMenu-button-icon').removeClass("fa-bars").addClass("fa-times");
+      $('.navbar-mobileMenu-container').removeClass("fadingOutFast").addClass("fadingInFast");
+      $("footer").addClass("footerAbsolute");
+      this.mobileMenuVisible = true;
+    }
+  }
 
   expandHeight(){
-
-    console.log($(".pageContent"));
-
-    let screenHeight = this.broserDOM.query('body').offsetHeight;
-    let navbarHeight = this.broserDOM.query('navbar').offsetHeight;
-    let footerHeight = this.broserDOM.query('footer').offsetHeight;
-    let pageHeight = this.broserDOM.query('.pageContent').offsetHeight;
+    let screenHeight = $(window).outerHeight();
+    let navbarHeight = $("navbar").outerHeight();
+    let footerHeight = $("footer").outerHeight();
+    let pageHeight = $(".pageContent").outerHeight();
     let paddingTotal = 30;
 
-    let fillingHeight = screenHeight - navbarHeight - footerHeight - paddingTotal;
-    let heightString = 'height:' + fillingHeight + 'px';
+    let fillingHeight = navbarHeight + footerHeight + paddingTotal;
 
-    if(screenHeight > (navbarHeight + pageHeight + footerHeight)){
-      this.broserDOM.setAttribute(this.broserDOM.query('.pageContent'),'style',heightString);
+    if(pageHeight <= (screenHeight - fillingHeight)){
+      $("footer").addClass("footerAbsolute");
+    } else {
+      $("footer").removeClass("footerAbsolute");
     }
-
   }
+
 }

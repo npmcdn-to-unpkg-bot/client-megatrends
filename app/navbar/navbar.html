@@ -1,46 +1,46 @@
 <div class="container center-div">
-  <a [routerLink]="['Home']">
+  <a [routerLink]="['Home']" superLink (superLinkTrigger)="handleSuperLink()">
     <img class="navbar-logo" src="assets/images/Radial_4.jpg">
   </a>
-  <a [routerLink]="['Contact']">
+  <a [routerLink]="['Contact']" superLink (superLinkTrigger)="handleSuperLink()">
     <div class="navbar-link">
       <h5 class="mB5">
         Contact
       </h5>
     </div>
   </a>
-  <a [routerLink]="['About']">
+  <a [routerLink]="['About']" superLink (superLinkTrigger)="handleSuperLink()">
     <div class="navbar-link">
       <h5 class="mB5">
         About
       </h5>
     </div>
   </a>
-  <a [routerLink]="['Articles']">
+  <a [routerLink]="['Articles']" superLink (superLinkTrigger)="handleSuperLink()">
     <div class="navbar-link">
       <h5 class="mB5">
         Articles
       </h5>
     </div>
   </a>
-  <a navbar-link-hover [routerLink]="['Drive Framework']">
-    <div class="navbar-link">
-      <h5 class="mB5">
+  <div navbar-link-hover class="navbar-link">
+    <a [routerLink]="['Drive Framework']" superLink (superLinkTrigger)="handleSuperLink()">
+      <h5 class="mB0 pB5">
         <img class="drive-navbar-label" src="assets/images/DriveFrameworkLabel.svg">
         Framework
       </h5>
-      <div class="navbar-hoverContainer hidden" [ngClass]="{fadingOut:fadingOut,fadingIn:fadingIn}">
-        <a *ngFor="#route of routes;  #i = index" [routerLink]="[route.name]">
-          <p class="mB5" *ngIf="route.data == 'parent-driveFramework'">
-            {{route.name}}
-          </p>
-        </a>
-      </div>
+    </a>
+    <div class="navbar-hoverContainer hidden">
+      <a *ngFor="#route of routes;  #i = index" [routerLink]="[route.name]" superLink (superLinkTrigger)="handleSuperLink()">
+        <p class="mB5" *ngIf="route.data == 'parent-driveFramework'">
+          {{route.name}}
+        </p>
+      </a>
     </div>
-  </a>
-  <a class="navbar-mobileMenu-button">
+  </div>
+  <a class="navbar-mobileMenu-button" (click)="toggleMobileMenu()">
     <h5>
-      Menu <i class="fa fa-bars"></i>
+      Menu <i class="fa fa-bars navbar-mobileMenu-button-icon"></i>
     </h5>
   </a>
 </div>
