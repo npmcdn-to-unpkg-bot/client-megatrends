@@ -56,12 +56,36 @@ body{
   margin-top:2rem;
 }
 
+.mT25D{
+  @media screen and ($bp-larger-than-phablet) {
+    margin-top:25px;
+  }
+}
+
 .mB0{
   margin-bottom:0px;
 }
 
 .mB5{
   margin-bottom:5px;
+}
+
+.mB10{
+  margin-bottom:10px;
+}
+
+.mB15{
+  margin-bottom:15px;
+}
+
+.mB25D{
+  @media screen and ($bp-larger-than-phablet) {
+    margin-bottom:25px;
+  }
+}
+
+.mB30{
+  margin-bottom:30px;
 }
 
 .mB1R{
@@ -80,6 +104,10 @@ body{
   margin-right:5px;
 }
 
+.mR15{
+  margin-right:15px;
+}
+
 .p15{
   padding:15px;
 }
@@ -91,8 +119,6 @@ body{
 .pB5{
   padding-bottom:5px;
 }
-
-
 
 ul{
   list-style: none;
@@ -119,6 +145,12 @@ main-app{
 .hidden{
   visibility: hidden;
   opacity: 0;
+}
+
+.visibleMobile{
+  @media screen and ($bp-larger-than-phablet) {
+    display:none;
+  }
 }
 
 .fadingIn {
@@ -167,6 +199,10 @@ page{
   border-radius: 5px;
 }
 
+.w120{
+  width:120px;
+}
+
 .h100{
   height:100px;
 }
@@ -177,6 +213,10 @@ page{
 
 .h300{
   height:300px;
+}
+
+.navyBorder{
+  border-color:#2c3e50;
 }
 
 /* Footer */
@@ -274,6 +314,12 @@ navbar .container{
   top:-1px;
 }
 
+/* Image Frames */
+.conainer-image-inner{
+  overflow:hidden;
+  position:absolute;
+}
+
 /* Custom Elements */
 
 .drive-navbar-label{
@@ -282,7 +328,7 @@ navbar .container{
   margin-right:5px;
 }
 
-.trend-sideBox{
+.trend-questionBox{
   background:#fffeee;
   padding:2rem;
   border:1px dashed #ddd;
@@ -305,6 +351,11 @@ navbar .container{
 .tM1{margin-top:3.8rem;}
 .tM2{margin-top:2.5rem;}
 .tM3{margin-top:0.8rem;}
+
+.driveFrameworkDiagram-container{
+  border:1px solid #eee;
+  padding:15px;
+}
 
 .bg-green{
   background:url('../images/Background_Green.svg') no-repeat;
@@ -334,4 +385,11 @@ navbar .container{
   background:url('../images/Arrow_Trend_Arrow.svg') no-repeat;
   background-position: left top;;
   background-size:100% auto;
+}
+
+.socialmediaLinksContainer{
+  margin-top:5px;
+  display:inline-block;
+  padding-top:10px;
+  border-top:1px solid #eee;
 }

@@ -3,8 +3,11 @@
 
 import {Component, Directive, Input, EventEmitter} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {RouterLink, RouteDefinition} from 'angular2/router';
+import {RouteConfig, RouterLink, RouteDefinition} from 'angular2/router';
 import {SuperLink} from '../blocks/superLink/superLink.directive';
+
+//import {APP_ROUTES} from '../app.routes';
+//@RouteConfig(APP_ROUTES)
 
 @Directive({
   selector: "[navbar-link-hover]",
@@ -25,7 +28,9 @@ class Hover {
   directives: [RouterLink, SuperLink, Hover, CORE_DIRECTIVES]
 })
 export class NavbarComponent {
-  @Input() routes: RouteDefinition[];
+  // @Input() routes: RouteDefinition[];
+  // @Input() driveFrameworkRoutes: RouteDefinition[];
+
   public mobileMenuTrigger: EventEmitter<any> = new EventEmitter();
   public navbarLinkTrigger: EventEmitter<any> = new EventEmitter();
   constructor(){

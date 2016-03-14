@@ -2,7 +2,7 @@
 ///<reference path="./article.d.ts"/>
 
 import {Component, Input} from 'angular2/core';
-import {RouterLink} from 'angular2/router';
+import {RouterLink, Location} from 'angular2/router';
 import {JSONReaderService} from '../services/jsonReader.service';
 
 @Component({
@@ -13,14 +13,16 @@ import {JSONReaderService} from '../services/jsonReader.service';
 
 export class ArticleDetailComponent {
 
+  @Input() currentPath : String
   @Input() articles: articleObject.RootObject[];
 
-  constructor(private _jsonReaderService: JSONReaderService){
-
+  constructor(private _jsonReaderService: JSONReaderService, private location: Location){
   }
 
   ngOnInit() {
     this.getArticles();
+    this.currentPath = this.location.path();
+    this.currentPath = this.currentPath.split("/").pop();
   }
 
   getArticles() {

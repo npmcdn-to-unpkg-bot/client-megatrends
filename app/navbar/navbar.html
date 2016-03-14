@@ -1,41 +1,36 @@
 <div class="container center-div">
-  <a [routerLink]="['Home']" superLink (superLinkTrigger)="handleSuperLink()">
+  <a [routerLink]="['Home']">
     <img class="navbar-logo" src="assets/images/Megatrends_Logo.png">
   </a>
-  <a [routerLink]="['Contact']" superLink (superLinkTrigger)="handleSuperLink()">
+  <a [routerLink]="['Contact']">
     <div class="navbar-link">
       <h5 class="mB5">
         Contact
       </h5>
     </div>
   </a>
-  <a [routerLink]="['About']" superLink (superLinkTrigger)="handleSuperLink()">
+  <a [routerLink]="['About']">
     <div class="navbar-link">
       <h5 class="mB5">
         About
       </h5>
     </div>
   </a>
-  <a [routerLink]="['Articles']" superLink (superLinkTrigger)="handleSuperLink()">
+  <a [routerLink]="['Articles']">
     <div class="navbar-link">
       <h5 class="mB5">
         Articles
       </h5>
     </div>
   </a>
-  <div navbar-link-hover class="navbar-link">
-    <a [routerLink]="['Drive Framework']" superLink (superLinkTrigger)="handleSuperLink()">
+  <div class="navbar-link">
+    <a [routerLink]="['Drive Framework']">
       <h5 class="mB0 pB5">
-        <img class="drive-navbar-label" src="assets/images/DriveFrameworkLabel.svg">
+        <img class="drive-navbar-label" src="assets/images/DriveFrameworkLabel_Colour.svg">
         Framework
       </h5>
     </a>
-    <div class="navbar-hoverContainer hidden">
-      <a *ngFor="#route of routes;  #i = index" [routerLink]="[route.name]" superLink (superLinkTrigger)="handleSuperLink()">
-        <p class="mB5" *ngIf="route.data == 'parent-driveFramework'">
-          {{route.name}}
-        </p>
-      </a>
+    <div class="navbar-hoverContainer deleted">
     </div>
   </div>
   <a class="navbar-mobileMenu-button" (click)="toggleMobileMenu()">

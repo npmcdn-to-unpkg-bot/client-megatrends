@@ -5,10 +5,12 @@
     </a>
     <hr class="mT15"/>
     <div *ngFor="#article of articles;  #i = index">
-      <h4 class="mB0">{{article.title}}</h4>
-      <p class="mB5">by <strong>{{article.author}}</strong>, {{article.date}}</p>
-      <p class="mB0">{{article.summary}}</p>
-      <hr class="mT2R mB2R"/>
+      <div *ngIf="currentPath == article.url">
+        <h4 class="mB0">{{article.title}}</h4>
+        <p class="mB5">by <strong>{{article.author}}</strong>, {{article.date}}</p>
+        <p class="mB0">{{article.summary}}</p>
+        <hr class="mT2R mB2R"/>
+      </div>
     </div>
   </div>
   <div class="four columns">

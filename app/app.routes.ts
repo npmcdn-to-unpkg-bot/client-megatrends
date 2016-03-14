@@ -10,26 +10,21 @@ export var APP_ROUTES: RouteDefinition[] = [
     { path: '/home',
       name: 'Home',
       component: HomeComponent,
-      data:"parent-root",
       useAsDefault: true},
 
     { path: '/contact',
       name: 'Contact',
-      component: ContactComponent,
-      data:"parent-root",},
+      component: ContactComponent},
 
     { path: '/about',
       name: 'About',
-      component: AboutComponent,
-      data:"parent-root", },
+      component: AboutComponent},
 
     { path: '/articles/...',
       name: 'Articles',
-      component: ArticlesComponent,
-      data:"parent-root", },
+      component: ArticlesComponent },
 
     { path: '/driveFramework/...',
       name: 'Drive Framework',
-      component: DriveFrameworkComponent,
-      data:"parent-root", }
+      component: DriveFrameworkComponent}
 ];

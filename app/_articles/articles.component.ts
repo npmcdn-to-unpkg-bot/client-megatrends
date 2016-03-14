@@ -14,5 +14,4 @@ import {ARTICLE_ROUTES} from '../_articles/article.routes';
 @RouteConfig(ARTICLE_ROUTES)
 
 export class ArticlesComponent {
-
 }

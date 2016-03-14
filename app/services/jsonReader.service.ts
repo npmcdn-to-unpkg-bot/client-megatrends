@@ -8,7 +8,6 @@ import {Observable} from 'rxjs/Rx';
   }
 
   getFile(path) {
-    console.log(path);
     return this.http.get(path).map((res:Response) => res.json());
   }
 

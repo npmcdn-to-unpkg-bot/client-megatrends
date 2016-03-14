@@ -1,25 +1,18 @@
 <div class="navbar-mobileMenu-container hidden">
   <div class="container">
     <a [routerLink]="['Home']"><h5 class="mB0 pT7-5">Home</h5></a>
-    <hr/>
+    <hr class="navyBorder"/>
     <a [routerLink]="['Drive Framework']">
       <h5 class="mB0">
-        <img class="drive-navbar-label" src="assets/images/DriveFrameworkLabel.svg">
+        <img class="drive-navbar-label" src="assets/images/DriveFrameworkLabel_Colour.svg">
         Framework
       </h5>
     </a>
-    <hr/>
-    <a *ngFor="#route of routes;  #i = index" [routerLink]="[route.name]">
-      <p class="mB5" *ngIf="route.data == 'parent-driveFramework'">
-        - {{route.name}}
-      </p>
-    </a>
-    <hr/>
+    <hr class="navyBorder"/>
     <a [routerLink]="['Articles']"><h5 class="mB0">Articles</h5></a>
-    <hr/>
+    <hr class="navyBorder"/>
     <a [routerLink]="['About']"><h5 class="mB0">About</h5></a>
-    <hr/>
+    <hr class="navyBorder"/>
     <a [routerLink]="['Contact']"><h5 class="mB0">Contact</h5></a>
   </div>
-
 </div>

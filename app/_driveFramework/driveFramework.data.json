@@ -1,5 +1,60 @@
 [
-  { "name": "Donuts" },
-  { "name": "Pizza" },
-  { "name": "Sushi" }
+  {
+    "url" : "demographic-and-social-changes",
+    "name" : "Demographic & Social Changes",
+    "bodyHTML": "<p>If there is one prediction of the future that is certain, it is the fact that the world’s population is ageing. Projections show that the majority of the population of developed countries will be 40 years old by 2030, 52 in Japan. This is also happening in most developing countries.<br/><br/>Even China’s ageing population is “catching up” with the developed world. At the same time, whilst populations are getting older, more and more of us are living in cities. Such urbanisation is seemingly creating significant economic benefits. However, instead of megacities, future economies will most likely be driven by the middle-sized cities. The result is that the powerful economic players could still be relatively unknown today.<br/><br/>European countries have <strong>high life expectancies and low fertilities</strong>, creating challenges for social security and pensions, leading to insufficient labour forces to support the old-age pensioners.  Continuous investments will therefore drive economic growth. <strong><br/><br/>Related is urbanisation</strong>, and countries with the highest urbanisation ratios and populations are showing the greatest GDPs per head.  Currently, the top-performing middleweight cities outperform most megacities in household growth and income potential, making them attractive business prospects, and 577 such fast-changing cities globally will make greater economic contributions. <strong><br/><br/>Higher populations create consumption</strong>, leading to more income. Also, clusters form around cities, with distinct economic characteristics, opening up opportunities to reach new customers; e.g., clusters around 14 Indian cities will access 40% of the 2030 market.</p>",
+    "questions": [
+      "How could the ageing of your customers – and their customers –affect your products and services in the near future?",
+      "Would your business need to change as there are more and more major cities and city dwellers?"
+    ],
+    "relatedArticles" : [
+      {
+        "url" : "a-nice-article",
+        "title" : "A Nice Article",
+        "type" : "internal"
+      },
+      {
+        "url" : "Article List",
+        "title" : "A Better Article",
+        "type" : "internal"
+      },
+      {
+        "url" : "Article List",
+        "title" : "An external article",
+        "type" : "external"
+      }
+    ]
+  },
+  {
+    "url" : "resources-scarcity",
+    "name" : "Resources Scarcity",
+    "questions": [
+      "How would your business be affected if food and water take up more of your customers’ disposable income?",
+      "Could your business gain from circular economy?"
+    ]
+  },
+  {
+    "url" : "inequalities",
+    "name" : "Inequalities",
+    "questions": [
+      "How would the fact that your young(er) customers cannot afford your products and services be affecting your business?",
+      "What would the increase in income and social inequalities mean to the products and services that you are selling?"
+    ]
+  },
+  {
+    "url" : "volatility-scarcity-and-complexity",
+    "name" : "Volatility, Scarcity & Complexity",
+    "questions": [
+      "How automation and robotics could be changing your business, sectors and industries in the next 5 to 10 years?",
+      "Have you considered using crowd wisdom and trial & error approaches to help find new business opportunities?"
+    ]
+  },
+  {
+    "url" : "enterprising-dynamics",
+    "name" : "Enterprising Dynamics",
+    "questions": [
+      "What can be the new ways of business tomorrow?",
+      "How can you deal with the challenges posed by newly arrived companies that seemingly come out of nowhere?"
+    ]
+  }
 ]

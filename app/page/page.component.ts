@@ -4,7 +4,6 @@
 import {Component, Input} from 'angular2/core';
 
 import {RouteDefinition, RouterOutlet, Router} from 'angular2/router';
-import {APP_ROUTES} from '../app.routes';
 
 import {CORE_DIRECTIVES} from 'angular2/common';
 
@@ -24,31 +23,22 @@ import {FooterComponent} from '../footer/footer.component';
 })
 export class PageComponent {
 
-  public appRoutes: RouteDefinition[];
   public pathName : String;
   public mobileMenuVisible : Boolean;
 
   constructor(private router: Router) {
-    this.appRoutes = APP_ROUTES;
     this.mobileMenuVisible = false;
-    router.subscribe((val) => {
-      console.log(val);
+    router.subscribe((path) => {
+      //$(".app").removeClass('fadingInFast');
       this.closeMobileMenu();
-      this.expandHeight();
+      //this.expandHeight();
+      //$(".app").addClass('fadingInFast');
     });
   }
 
   ngAfterViewInit(){
     this.expandHeight();
     this.setupNavbarMobileMenu();
-  }
-
-  handleSuperLink(){
-    /*
-    console.log("Ilyas");
-    this.closeMobileMenu();
-    this.expandHeight();
-    */
   }
 
   setupNavbarMobileMenu(){

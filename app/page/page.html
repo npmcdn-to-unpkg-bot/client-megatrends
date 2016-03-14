@@ -1,7 +1,6 @@
-<navbar [routes]="appRoutes" (mobileMenuTrigger)="handleMobileMenuToggle()" (navbarLinkTrigger)="handleSuperLink()"></navbar>
+<navbar (mobileMenuTrigger)="handleMobileMenuToggle()"></navbar>
 <navbar-mobileMenu [routes]="appRoutes" ></navbar-mobileMenu>
 <div class="pageContent">
-  <router-outlet (navbarLinkTrigger)="handleSuperLink()">
-  </router-outlet>
+  <router-outlet></router-outlet>
 </div>
-<footer></footer>
+<footer class="hidden"></footer>
