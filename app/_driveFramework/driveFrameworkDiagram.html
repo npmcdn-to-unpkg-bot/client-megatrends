@@ -1,5 +1,7 @@
 <div class="row">
   <div class="six columns">
+    <p class="mB0"><strong>Drive Framework</strong></p>
+    <hr class="mT15"/>
     <p class="mB15">
       The world is experiencing increasing
       disruptions and changes with the
@@ -8,18 +10,11 @@
       become the new normal. In this article
       the authors discuss how governments and
       companies can understand and thrive in this
-      “new normal” using the DRIVE framework.
+      “new normal” using <strong>the DRIVE framework</strong>.
     </p>
-    <h5 class="mB15">
-      We have identified 5 megatrends that are most likely
-      to have significant and long-lasting impacts on
-      businesses, economies and societies
-    </h5>
-    <p class="mB0">
-      If the questions below makes sense to you, you are in the right place:
-    </p>
-    <hr/>
     <div class="driveFrameworkQuestions-container">
+      <p class="mB0">If the questions below makes sense to you, you are in the right place:</p>
+      <hr/>
       <p class="mB10"><i class="fa fa-question-circle mR5"></i><em>How could the ageing of your customers – and their customers –affect your products and services in the near future?</em></p>
       <p class="mB10"><i class="fa fa-question-circle mR5"></i><em>Would your business need to change as there are more and more major cities and city dwellers?</em></p>
       <p class="mB10"><i class="fa fa-question-circle mR5"></i><em>How would your business be affected if food and water take up more of your customers’ disposable income? </em></p>
@@ -29,48 +24,50 @@
       <p class="mB10"><i class="fa fa-question-circle mR5"></i><em>How automation and robotics could be changing your business, sectors and industries in the next 5 to 10 years?</em></p>
       <p class="mB10"><i class="fa fa-question-circle mR5"></i><em>Have you considered using crowd wisdom and trial & error approaches to help find new business opportunities?</em></p>
       <p class="mB10"><i class="fa fa-question-circle mR5"></i><em>What can be the new ways of business tomorrow?</em></p>
-      <p><i class="fa fa-question-circle mR5"></i><em>How can you deal with the challenges posed by newly arrived companies that seemingly come out of nowhere?</em></p>
+      <p class="mB0"><i class="fa fa-question-circle mR5"></i><em>How can you deal with the challenges posed by newly arrived companies that seemingly come out of nowhere?</em></p>
     </div>
   </div>
   <div class="six columns">
     <div class="driveFrameworkDiagram-container">
+      <div class="row bg-TopArrow">
+        <h5 class="mB1R">
+          We have identified 5 megatrends that are most likely
+          to have significant and long-lasting impacts on
+          businesses, economies and societies
+        </h5>
+      </div>
+      <hr class="mT0 mB15"/>
       <img class="u-full-width" src="assets/images/DriveFrameworkLogo_Colour.svg">
       <hr class="mT15 mB15"/>
-      <div class="row bg-TopArrow">
-        <div class="twelve columns">
-
-        </div>
-      </div>
-      <div class="row bg-LeftArrow">
+      <div class="row">
         <a *ngFor="#trend of trends; #i = index" [routerLink]="['Drive Framework Trend',{id:trend.url}]">
-          <div class="row bg-TrendArrow">
-            <div class="four columns">
-              <p class="hidden">
-                Trend
-              </p>
-            </div>
-            <div class="eight columns">
-              <div class="row mB2R">
-                <div class="five columns">
-                  <img class="u-max-full-width" src="assets/images/{{trend.name}}_Icon.svg">
+          <div class="bg-LeftArrow mT2R driveFrameworkDiagram-trendConainer">
+            <div class="driveFrameworkDiagram-icon-container">
+              <div class="trendCard-container">
+                <div class="front">
+                  <img class="driveFrameworkDiagram-icon" src="assets/images/{{trend.name}}_Icon.svg">
                 </div>
-                <div class="seven columns" [ngSwitch]="trend.name">
-                    <h5 *ngSwitchWhen="'Inequalities'" class="trend-header tM1">{{trend.name}}</h5>
-                    <h5 *ngSwitchWhen="'Volatility, Scarcity & Complexity'" class="trend-header tM3">{{trend.name}}</h5>
-                    <h5 *ngSwitchDefault class="trend-header tM2">{{trend.name}}</h5>
+                <div class="back">
+                  <img class="driveFrameworkDiagram-icon" src="assets/images/{{trend.letter}}_Letter_Color.svg">
                 </div>
               </div>
             </div>
+            <h5 class="trend-header color-navy-important mB0 mT1R color-{{trend.color}}">{{trend.name}}</h5>
+            <hr class="mB0"/>
           </div>
         </a>
       </div>
       <div class="row bg-BottomArrow">
-        <h5 class="mB0">
+        <h5 class="mB0 mT2R">
           Individually, the five aspects of DRIVE are
           likely to be thought-provoking;
           in combination, they greatly influence how businesses
           can succeed in identifying new business opportunities
         </h5>
+        <hr/>
+        <p class="mB0">
+          Click on the icons to read what they mean
+        </p>
       </div>
     </div>
   </div>

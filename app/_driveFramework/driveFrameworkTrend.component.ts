@@ -1,4 +1,5 @@
 ///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+
 ///<reference path="./driveFrameworkTrend.d.ts"/>
 
 import {Component, Input} from 'angular2/core';
@@ -26,7 +27,7 @@ export class DriveFrameworkTrendComponent {
   }
 
   getTrends() {
-    this._jsonReaderService.getFile("/app/_driveFramework/driveFramework.data.json").subscribe(
+    this._jsonReaderService.getFile("/app/data/driveFramework.data.json").subscribe(
       data => this.trends = data,
       err => console.log(err)
     );

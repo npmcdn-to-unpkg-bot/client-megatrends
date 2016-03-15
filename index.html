@@ -13,14 +13,12 @@
     <!-- endbuild -->
   </head>
   <body>
-
-    <img class="deleted" src="assets/images/partners_temp.jpg">
-
     <main-app></main-app>
     <!-- build:js assets/bundle.js -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="assets/scripts/jquery.flip.min.js"></script>
     <!-- endbuild -->
     <!-- build:remove -->
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
@@ -43,6 +41,14 @@
         }
       });
       System.import('app/boot').then(null, console.error.bind(console));
+    </script>
+
+    <script>
+      $(".card").flip({
+        axis: 'x',
+        trigger: 'hover',
+        reverse: true
+      });
     </script>
 
   </body>

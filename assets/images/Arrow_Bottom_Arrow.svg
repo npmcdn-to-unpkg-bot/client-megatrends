@@ -3,12 +3,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100px" height="50px" viewBox="0 0 100 50" enable-background="new 0 0 100 50" xml:space="preserve">
+<line fill="none" stroke="#DDDDDD" stroke-width="10" stroke-miterlimit="10" stroke-opacity="0.5" x1="15" y1="0" x2="15" y2="35"/>
+<line fill="none" stroke="#EFEFEF" stroke-width="10" stroke-miterlimit="10" stroke-opacity="0.5" x1="25" y1="0" x2="25" y2="35"/>
 <g>
-	<g opacity="0.5">
-		<line fill="none" stroke="#DDDDDD" stroke-width="10" stroke-miterlimit="10" x1="15" y1="0" x2="15" y2="20"/>
-		<g>
-			<polygon fill="#DDDDDD" points="5.028,17 14.999,34.27 24.972,17 			"/>
-		</g>
-	</g>
+	<polygon fill="#DCDCDC" fill-opacity="0.5" points="26,39 20,45 20,35 30,35 	"/>
+	<polygon fill="#CACACA" fill-opacity="0.5" points="14,39 20,45 20,35 10,35 	"/>
+</g>
+<g>
+	<polygon fill="#DCDCDC" fill-opacity="0.5" points="26,39 20,45 20,35 30,35 	"/>
+	<polygon fill="#CACACA" fill-opacity="0.5" points="14,39 20,45 20,35 10,35 	"/>
 </g>
 </svg>

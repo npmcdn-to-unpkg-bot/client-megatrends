@@ -23,7 +23,9 @@
         "title" : "An external article",
         "type" : "external"
       }
-    ]
+    ],
+    "letter" : "D",
+    "color" : "green"
   },
   {
     "url" : "resources-scarcity",
@@ -31,7 +33,9 @@
     "questions": [
       "How would your business be affected if food and water take up more of your customers’ disposable income?",
       "Could your business gain from circular economy?"
-    ]
+    ],
+    "letter" : "R",
+    "color" : "red"
   },
   {
     "url" : "inequalities",
@@ -39,7 +43,9 @@
     "questions": [
       "How would the fact that your young(er) customers cannot afford your products and services be affecting your business?",
       "What would the increase in income and social inequalities mean to the products and services that you are selling?"
-    ]
+    ],
+    "letter" : "I",
+    "color" : "yellow"
   },
   {
     "url" : "volatility-scarcity-and-complexity",
@@ -47,7 +53,9 @@
     "questions": [
       "How automation and robotics could be changing your business, sectors and industries in the next 5 to 10 years?",
       "Have you considered using crowd wisdom and trial & error approaches to help find new business opportunities?"
-    ]
+    ],
+    "letter" : "V",
+    "color" : "blue"
   },
   {
     "url" : "enterprising-dynamics",
@@ -55,6 +63,8 @@
     "questions": [
       "What can be the new ways of business tomorrow?",
       "How can you deal with the challenges posed by newly arrived companies that seemingly come out of nowhere?"
-    ]
+    ],
+    "letter" : "E",
+    "color" : "purple"
   }
 ]

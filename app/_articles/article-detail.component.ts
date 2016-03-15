@@ -26,7 +26,7 @@ export class ArticleDetailComponent {
   }
 
   getArticles() {
-    this._jsonReaderService.getFile("/app/_articles/articles.data.json").subscribe(
+    this._jsonReaderService.getFile("/app/data/articles.data.json").subscribe(
       data => this.articles = data,
       err => console.log(err)
     );

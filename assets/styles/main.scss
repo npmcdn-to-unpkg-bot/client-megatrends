@@ -18,15 +18,15 @@
 
 /* Fonts */
 @import "modules/fontface";
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Thin', 100, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Light', 300, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Regular', 400, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Medium', 500, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Bold', 700, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Thin', 100, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Light', 300, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Regular', 400, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Medium', 500, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Bold', 700, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
 
 /* Icons */
 @import "font-awesome/font-awesome";
@@ -36,20 +36,40 @@
 
 $color-background-gray:#f5f5f5;
 $color-border-gray:#e7e7e7;
-$color-background-greenGradient: repeating-linear-gradient(90deg,#25acb0,#23bd65);
 $color-dark-gray:#ddd;
 $color-light-gray:#eee;
+
+$color-navy:#2c3e50;
+$color-red:#c0392b;
+$color-green:#22ad5f;
+$color-blue:#2880b9;
+$color-yellow:#f19b1f;
+$color-purple:#884a9c;
+
+.color-red{color:$color-red;}
+.color-green{color:$color-green;}
+.color-blue{color:$color-blue;}
+.color-yellow{color:$color-yellow;}
+.color-purple{color:$color-purple;}
+
+.color-navy-important{
+  color: $color-navy !important;
+}
 
 ::-webkit-scrollbar { display: none; }
 
 body{
-  background:url('../images/Background_Main.svg') no-repeat;
+  background:url('images/Background_Main.svg') no-repeat;
   background-size:100%;
   background-position: top left;
 }
 
 .mT15{
   margin-top:15px;
+}
+
+.mT1R{
+  margin-top:1rem;
 }
 
 .mT2R{
@@ -203,6 +223,10 @@ page{
   width:120px;
 }
 
+.w160{
+  width:160px;
+}
+
 .h100{
   height:100px;
 }
@@ -221,15 +245,17 @@ page{
 
 /* Footer */
 footer{
-    display: block;
-    border-top: 1px solid $color-light-gray;
-    background: #fff;
+  display: block;
+  position: relative;
+  width: 100%;
+  background: #f7f7f7;
+  border-top:1px solid #eee;
 }
 
 .footer-label{
-    font-size:10px;
-    margin:3px 0px;
-    color:#222;
+  font-size:10px;
+  margin:3px 0px;
+  color:#222;
 }
 
 .footerAbsolute{
@@ -246,7 +272,7 @@ $navbar-link-height:30px;
 
 navbar{
   display:block;
-  background:url('../images/Background_Gray.svg') no-repeat;
+  background:url('images/Background_Gray.svg') no-repeat;
   background-position: top right;
 }
 
@@ -257,19 +283,29 @@ navbar .container{
 .navbar-logo{
   margin:$navbar-logo-margin 0px;
   height:$navbar-logo-height * 0.5;
-  @media screen and ($bp-larger-than-phablet) {
+  @media screen and ($bp-larger-than-tablet) {
     height:$navbar-logo-height;
   }
 }
 
 .navbar-link {
   display: none;
+  margin-bottom: 0px;
+  height:$navbar-link-height;
+  float:right;
   @media screen and ($bp-larger-than-phablet) {
     display:inline;
-    float:right;
-    height:$navbar-link-height;
+    margin-top:(($navbar-logo-height * 0.5 + $navbar-logo-margin * 2) - $navbar-link-height) * 0.5;
+    margin-left:15px;
+  }
+  @media screen and ($bp-larger-than-tablet) {
+    display:inline;
     margin-top:(($navbar-logo-height + $navbar-logo-margin * 2) - $navbar-link-height) * 0.5;
-    margin-bottom: 0px;
+    margin-left:15px;
+  }
+  @media screen and ($bp-larger-than-desktop) {
+    display:inline;
+    margin-top:(($navbar-logo-height + $navbar-logo-margin * 2) - $navbar-link-height) * 0.5;
     margin-left:5%;
   }
 }
@@ -279,7 +315,6 @@ navbar .container{
   padding: 5px 5px 0px 5px;
   border-top:1px solid #eee;
   z-index: 99;
-  background:$color-background-greenGradient;
   border-radius:4px;
 }
 
@@ -345,46 +380,62 @@ navbar .container{
 
 .trend-header{
     font-weight:700;
-    margin-bottom:0px;
+    text-align:center;
 }
-
-.tM1{margin-top:3.8rem;}
-.tM2{margin-top:2.5rem;}
-.tM3{margin-top:0.8rem;}
 
 .driveFrameworkDiagram-container{
   border:1px solid #eee;
   padding:15px;
 }
 
+.driveFrameworkDiagram-icon-container{
+  display:block;
+  width: 100%;
+}
+
+.driveFrameworkDiagram-icon{
+  display:block;
+  width:40%;
+  margin:0px auto;
+  @media screen and ($bp-larger-than-phablet) {
+    width:30%;
+  }
+}
+
+.driveFrameworkQuestions-container{
+  display:none;
+  @media screen and ($bp-larger-than-phablet) {
+    display:block;
+    background:#fffeee;
+    border:1px solid #eee;
+    padding:15px;
+  }
+}
+
+/*
 .bg-green{
-  background:url('../images/Background_Green.svg') no-repeat;
+  background:url('images/Background_Green.svg') no-repeat;
   background-position: left bottom;
   //height:100%;
 }
+*/
 
 .bg-TopArrow{
-  background:url('../images/Arrow_Top_Curve.svg') no-repeat;
+  background:url('images/Arrow_Top_Arrow.svg') no-repeat;
   background-position: left bottom;
   background-size: 100% auto;
 }
 
 .bg-LeftArrow{
-  background:url('../images/Arrow_Left_Bar.svg');
-  background-position: left;
+  background:url('images/Arrow_Left_Bar_Long.svg');
+  background-position: top left;
   background-size: 100%;
 }
 
 .bg-BottomArrow{
-  background:url('../images/Arrow_Bottom_Arrow.svg') no-repeat;
+  background:url('images/Arrow_Bottom_Arrow.svg') no-repeat;
   background-position: left top;
   background-size: 100%;
-}
-
-.bg-TrendArrow{
-  background:url('../images/Arrow_Trend_Arrow.svg') no-repeat;
-  background-position: left top;;
-  background-size:100% auto;
 }
 
 .socialmediaLinksContainer{

@@ -21,6 +21,10 @@ export class FramedImageComponent {
   }
 
   ngAfterViewInit(){
+    setTimeout(_=> this.fadeIn());
+  }
+
+  fadeIn(){
     let imageToFrameRatio = 0.6;
 
     let topContainerWidth = $(".conainer-image-frame").width();
@@ -35,10 +39,6 @@ export class FramedImageComponent {
     $(".conainer-image-inner").css("left",((topContainerWidth * (1-imageToFrameRatio) * 0.5) + responsiveMargin));
     $(".conainer-image-inner").css("top",(topContainerHeight * (1-imageToFrameRatio) * 0.5));
 
-    setTimeout(_=> this.fadeIn());
-  }
-
-  fadeIn(){
     this.fadingIn = true;
   }
 }
