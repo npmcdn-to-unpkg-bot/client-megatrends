@@ -29,13 +29,14 @@ export class PageComponent {
   constructor(private router: Router) {
     this.mobileMenuVisible = false;
     router.subscribe((path) => {
+      $("a").click(function(event) {$("footer").removeClass('fadingInFast');});
       this.closeMobileMenu();
       this.adjustFooterAndFadeIn();
     });
   }
 
   ngAfterViewInit(){
-    this.bindLinksFooterHide();
+    $("a").click(function(event) {$("footer").removeClass('fadingInFast');});
     this.adjustFooterAndFadeIn();
     this.setupNavbarMobileMenu();
   }
@@ -61,12 +62,6 @@ export class PageComponent {
   handleMobileMenuToggle(){
     if(this.mobileMenuVisible){
 
-      /*
-      $('.navbar-mobileMenu-button-icon').removeClass("fa-times").addClass("fa-bars");
-      $('.navbar-mobileMenu-container').removeClass("fadingInFast").addClass("fadingOutFast");
-      $("footer").removeClass('fadingInFast');
-      this.mobileMenuVisible = false;
-      */
       this.closeMobileMenu();
 
     } else {
@@ -84,12 +79,6 @@ export class PageComponent {
 
       this.mobileMenuVisible = true;
     }
-  }
-
-  bindLinksFooterHide(){
-    $("a").click(function(event) {
-      $("footer").removeClass('fadingInFast');
-    });
   }
 
   adjustFooterAndFadeIn(){

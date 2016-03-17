@@ -16,6 +16,10 @@
           </div>
         </div>
         <hr class="mT2R mB2R"/>
+        <div class="driveFrameworkTrend-graphContainer">
+          <chartRotator [graphSource]="graphSource"></chartRotator>
+        </div>
+        <hr class="mT2R mB2R"/>
         <p class="mB5"><strong>Related Articles</strong></p>
         <div *ngFor="#article of trend.relatedArticles;  #i = index">
           <a *ngIf="article.type == 'internal'" [routerLink]="['/Articles/Article Detail',{id:article.url}]"><p class="mB5"><i class="fa fa-link mR5"></i>{{article.title}}</p></a>

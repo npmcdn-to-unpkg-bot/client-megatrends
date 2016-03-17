@@ -18,15 +18,15 @@
 
 /* Fonts */
 @import "modules/fontface";
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Thin', 100, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Light', 300, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Regular', 400, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Medium', 500, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Bold', 700, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Thin', 100, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Light', 300, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Regular', 400, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Medium', 500, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Bold', 700, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
 
 /* Icons */
 @import "font-awesome/font-awesome";
@@ -59,7 +59,7 @@ $color-purple:#884a9c;
 ::-webkit-scrollbar { display: none; }
 
 body{
-  background:url('images/Background_Main.svg') no-repeat;
+  background:url('../images/Background_Main.svg') no-repeat;
   background-size:100%;
   background-position: top left;
 }
@@ -272,7 +272,7 @@ $navbar-link-height:30px;
 
 navbar{
   display:block;
-  background:url('images/Background_Gray.svg') no-repeat;
+  background:url('../images/Background_Gray.svg') no-repeat;
   background-position: top right;
 }
 
@@ -414,26 +414,26 @@ navbar .container{
 
 /*
 .bg-green{
-  background:url('images/Background_Green.svg') no-repeat;
+  background:url('../images/Background_Green.svg') no-repeat;
   background-position: left bottom;
   //height:100%;
 }
 */
 
 .bg-TopArrow{
-  background:url('images/Arrow_Top_Arrow.svg') no-repeat;
+  background:url('../images/Arrow_Top_Arrow.svg') no-repeat;
   background-position: left bottom;
   background-size: 100% auto;
 }
 
 .bg-LeftArrow{
-  background:url('images/Arrow_Left_Bar_Long.svg');
+  background:url('../images/Arrow_Left_Bar_Long.svg');
   background-position: top left;
   background-size: 100%;
 }
 
 .bg-BottomArrow{
-  background:url('images/Arrow_Bottom_Arrow.svg') no-repeat;
+  background:url('../images/Arrow_Bottom_Arrow.svg') no-repeat;
   background-position: left top;
   background-size: 100%;
 }

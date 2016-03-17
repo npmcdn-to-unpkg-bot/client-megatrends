@@ -27,8 +27,8 @@ export class DriveFrameworkDiagramComponent {
   }
 
   ngAfterViewInit(){
-    this.bindLinksFooterHide();
     setTimeout(_=> this.listenFlipCards());
+    setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
   }
 
   getTrends() {
@@ -36,15 +36,6 @@ export class DriveFrameworkDiagramComponent {
       data => this.trends = data,
       err => console.log(err)
     );
-  }
-
-  bindLinksFooterHide(){
-    console.log("qwd");
-    console.log($("a").length);
-    $(".driveFrameworkDiagram-trendConainer").click(function(event) {
-      console.log("Trump");
-      $("footer").removeClass('fadingInFast');
-    });
   }
 
   listenFlipCards(){
