@@ -9,13 +9,6 @@
         <h4 class="mT2R">{{trend.name}}</h4>
         <div class="multi-column-text" [innerHTML]="trend.bodyHTML"></div>
         <hr class="mT2R mB2R"/>
-        <div class="trend-questionBox mT15">
-          <div *ngFor="#question of trend.questions;  #i = index">
-            <h6 *ngIf="i < trend.questions.length - 1"><em>{{question}}</em></h6>
-            <h6 *ngIf="i >= trend.questions.length - 1" class="mT2R mB0"><em>{{question}}</em></h6>
-          </div>
-        </div>
-        <hr class="mT2R mB2R"/>
         <div class="driveFrameworkTrend-graphContainer">
           <chartRotator [graphSource]="graphSource"></chartRotator>
         </div>
@@ -28,6 +21,13 @@
       </div>
       <div class="four columns">
         <img class="u-max-full-width" src="assets/images/{{trend.name}}_Icon.svg">
+        <hr class="mT2R mB2R"/>
+        <div class="trend-questionBox mT15">
+          <div *ngFor="#question of trend.questions;  #i = index">
+            <h6 *ngIf="i < trend.questions.length - 1"><em>{{question}}</em></h6>
+            <h6 *ngIf="i >= trend.questions.length - 1" class="mT2R mB0"><em>{{question}}</em></h6>
+          </div>
+        </div>
       </div>
     </div>
   </div>

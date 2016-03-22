@@ -56,12 +56,18 @@ $color-purple:#884a9c;
   color: $color-navy !important;
 }
 
+/*
 ::-webkit-scrollbar { display: none; }
+*/
 
 body{
   background:url('../images/Background_Main.svg') no-repeat;
   background-size:100%;
   background-position: top left;
+}
+
+.mT5{
+  margin-top:5px;
 }
 
 .mT15{
@@ -201,6 +207,12 @@ main-app{
 
 .is-absolute{
   position:absolute;
+}
+
+.invisible-seperator{
+  border-top:0px;
+  margin:0px;
+  clear:both;
 }
 
 /* Page */
@@ -353,6 +365,73 @@ navbar .container{
 .conainer-image-inner{
   overflow:hidden;
   position:absolute;
+}
+
+/* Chart Rotator */
+.chartRotator-top-container{
+  border:1px solid #eee;
+  padding:15px;  
+}
+
+.chartRotator-outer-container{
+  overflow:hidden;
+  clear:both;
+}
+
+.chartRotator-inner-container{
+  position:relative;
+}
+
+.chartRotator-button-container{
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+  border-right:1px solid #eee;
+}
+
+.chartRotator-button{
+  width:50%;
+}
+
+.chartRotator-button p{
+  margin:5px;
+  color:#eee;
+}
+
+.chartRotator-button-left{
+  float:left;
+}
+
+.chartRotator-button-right{
+  text-align:right;
+  float:right;
+}
+
+.chartRotator-graph-container{
+  float:left;
+}
+
+.graph{
+  height:400px;
+  //margin:15px;
+}
+
+.chartRotator-text-container{
+  overflow:hidden;
+  //padding:15px;
+}
+
+.buttonChevron{
+  position:relative;
+  top:1px;
+}
+
+.is-clickable p{
+  color:$color-navy !important;
+}
+
+.is-clickable:hover{
+  cursor:pointer;
+  background:$color-dark-gray;
 }
 
 /* Custom Elements */

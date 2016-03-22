@@ -1,4 +1,5 @@
 ///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+///<reference path="../../typings/browser/ambient/jquery/jquery.d.ts"/>
 
 import {Component} from 'angular2/core';
 
@@ -8,4 +9,11 @@ import {Component} from 'angular2/core';
 })
 
 export class HomeComponent {
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit(){
+  }
+
 }

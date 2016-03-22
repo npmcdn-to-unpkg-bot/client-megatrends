@@ -2,8 +2,11 @@
 ///<reference path="../../../typings/browser/ambient/jquery/jquery.d.ts"/>
 ///<reference path="../../../typings/browser/ambient/canvasjs/canvasjs.d.ts"/>
 
+///<reference path="./graph.d.ts"/>
+
 import {Component, Input} from 'angular2/core';
 import {NgClass} from 'angular2/common';
+import {JSONReaderService} from '../../services/jsonReader.service';
 
 @Component({
     selector: 'chartRotator',
@@ -15,10 +18,15 @@ import {NgClass} from 'angular2/common';
 export class ChartRotatorComponent {
   public graphSource : string;
 
+  @Input() graphs: graphObject.RootObject[];
   @Input() fadingIn;
 
-  constructor(){
+  constructor(private _jsonReaderService: JSONReaderService){
 
+  }
+
+  ngOnInit() {
+    this.getGraphs();
   }
 
   ngAfterViewInit(){
@@ -30,33 +38,112 @@ export class ChartRotatorComponent {
     this.fadingIn = true;
   }
 
+  getGraphs() {
+    this._jsonReaderService.getFile("../app/data/graphs.data.json").subscribe(
+      data => this.graphs = data,
+      err => console.log(err)
+    );
+  }
+
   initiateCanvasJS(){
 
-    if($("#canvasjs-graph-1").length <= 0){
+    if($("#" + this.graphs[0].id).length <= 0){
       setTimeout(_=> this.initiateCanvasJS());
     } else {
-      var chart = new CanvasJS.Chart("canvasjs-graph-1", {
-    		title:{
-    			text: "My First Chart in CanvasJS"
-    		},
-    		data: [
-    		{
-    			// Change type to "doughnut", "line", "splineArea", etc.
-    			type: "column",
-    			dataPoints: [
-    				{ label: "apple",  y: 10  },
-    				{ label: "orange", y: 15  },
-    				{ label: "banana", y: 25  },
-    				{ label: "mango",  y: 30  },
-    				{ label: "grape",  y: 28  }
-    			]
-    		}
-    		]
-      });
-      chart.render();
-      $("#canvasjs-graph-1").outerHeight($("#canvasjs-graph-1").find(".canvasjs-chart-canvas").outerHeight());
-      setTimeout(_=> this.fadeIn());
+      this.deployGraphSet();
     }
+  }
+
+  deployGraphSet(){
+    let graphCounter = 1;
+    let graphCount = $('.graph').length;
+    let graphWidth = $('.chartRotator-outer-container').outerWidth();
+    $('.chartRotator-inner-container').outerWidth(graphCount * graphWidth);
+
+    if($('.graph').length <= 1){
+      $(".chartRotator-button-left").removeClass("is-clickable");
+    }
+
+    if(graphCounter > 1){
+      $(".chartRotator-button-left").addClass("is-clickable");
+    }
+
+    $(".chartRotator-button").click(function(event) {
+
+      var direction = $(this).attr("data-direction");
+      var currentPosition = $('.chartRotator-inner-container').offset().left;
+
+      if($(this).hasClass("is-clickable")){
+
+
+        if(direction=="left"){
+          if(graphCounter <= 1){graphCounter = 1;} else {graphCounter--;}
+        } else {
+          if(graphCounter > graphCount - 1){graphCounter = graphCount;} else {graphCounter++;}
+        }
+
+
+        var distance = -1 * graphWidth * (graphCounter-1);
+
+        $(".chartRotator-inner-container").stop().animate({left:distance}, 300,'',function(){
+
+          if(graphCounter <= 1){ $(".chartRotator-button-left").removeClass("is-clickable");}
+          if(graphCounter > 1){ $(".chartRotator-button-left").addClass("is-clickable");}
+
+          if(graphCounter < graphCount){ $(".chartRotator-button-right").addClass("is-clickable");}
+          if(graphCounter >= graphCount){ $(".chartRotator-button-right").removeClass("is-clickable");}
+
+        });
+      }
+
+    });
+
+    let graphDataSetLocal = this.graphs;
+
+    $('.graph').each(function(){
+
+      $(this).parent().outerWidth(graphWidth);
+      $(this).outerWidth(graphWidth);
+      let graphId = $(this).attr("id");
+
+      let currentGraphData;
+      $(graphDataSetLocal).each(function(){
+        if($(this)[0].id == graphId){
+          currentGraphData = $(this)[0]
+        }
+      });
+
+      var chart = new CanvasJS.Chart(graphId, {
+        title:{
+          text: currentGraphData.title
+        },
+        data: currentGraphData.data
+        /*
+        data: [
+        {
+          // Change type to "doughnut", "line", "splineArea", etc.
+          type: "column",
+          dataPoints: [
+            { label: "apple",  y: 10  },
+            { label: "orange", y: 15  },
+            { label: "banana", y: 25  },
+            { label: "mango",  y: 30  },
+            { label: "grape",  y: 28  }
+          ]
+        }
+        ]
+        */
+      });
+
+      chart.render();
+      $('.chartRotator-outer-container').outerHeight(
+        $('.chartRotator-outer-container').find(".canvasjs-chart-canvas").outerHeight()
+      + $('.chartRotator-outer-container').find(".chartRotator-text-container").outerHeight()
+      );
+
+    });
+
+    setTimeout(_=> this.fadeIn());
   }
 
   adjustFooterAndFadeIn(){

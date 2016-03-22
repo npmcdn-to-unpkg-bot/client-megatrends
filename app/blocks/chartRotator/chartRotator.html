@@ -1,7 +1,25 @@
-<div class="chartRotator-outer-container hidden" [ngClass]="{fadingIn:fadingIn}">
-  <div class="chartRotator-inner-container">
-    <div id="canvasjs-graph-1" class="{{graphSource}}">
+<div class="chartRotator-button-container">
+  <div class="chartRotator-button chartRotator-button-left" data-direction="left">
+    <p class="mB0"><i class="fa fa-chevron-left buttonChevron mR5"></i> Previous</p>
+  </div>
+  <div class="chartRotator-button chartRotator-button-right is-clickable" data-direction="right">
+    <p class="mB0">Next <i class="fa fa-chevron-right buttonChevron mL5"></i></p>
+  </div>
+  <hr class="invisible-seperator"/>
+</div>
+<div class="hidden chartRotator-top-container" [ngClass]="{fadingIn:fadingIn}">
+  <div class="chartRotator-outer-container">
+    <div class="chartRotator-inner-container">
+      <div class="chartRotator-graph-container" *ngFor="#graph of graphs;  #i = index">
+        <div id="{{graph.id}}" class="{{graphSource}} graph">
 
+        </div>
+        <div class="chartRotator-text-container">
+          <p class="mB0">
+            {{graph.text}}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

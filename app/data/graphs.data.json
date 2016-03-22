@@ -1,0 +1,42 @@
+[
+  {
+    "trend" : "D",
+    "id" : "graphId-a-nice-column-graph",
+    "title" : "A Nice Column Graph",
+    "data":
+    [
+      {
+        "type": "column",
+        "dataPoints":
+        [
+          { "label": "apple",  "y": 10  },
+          { "label": "orange", "y": 15  },
+          { "label": "banana", "y": 25  },
+          { "label": "mango",  "y": 30  },
+          { "label": "grape",  "y": 28  }
+        ]
+      }
+    ],
+    "text":"Higher populations create consumption, leading to more income. Also, clusters form around cities, with distinct economic characteristics, opening up opportunities to reach new customers; e.g., clusters around 14 Indian cities will access 40% of the 2030 market."
+  },
+  {
+    "trend" : "D",
+    "id" : "graphId-a-nice-line-graph",
+    "title" : "A Nice Line Graph",
+    "data":
+    [
+      {
+        "type": "line",
+        "dataPoints":
+        [
+          { "label": "apple",  "y": 10  },
+          { "label": "orange", "y": 15  },
+          { "label": "banana", "y": 25  },
+          { "label": "mango",  "y": 30  },
+          { "label": "grape",  "y": 28  }
+        ]
+      }
+    ],
+    "text":"Related is urbanisation, and countries with the highest urbanisation ratios and populations are showing the greatest GDPs per head. Currently, the top-performing middleweight cities outperform most megacities in household growth and income potential, making them attractive business prospects, and 577 such fast-changing cities globally will make greater economic contribution."    
+  }
+]
