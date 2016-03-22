@@ -29,9 +29,29 @@ export class PageComponent {
   constructor(private router: Router) {
     this.mobileMenuVisible = false;
     router.subscribe((path) => {
+
       $("a").click(function(event) {$("footer").removeClass('fadingInFast');});
+
       this.closeMobileMenu();
       this.adjustFooterAndFadeIn();
+
+      if(path == "home"){
+        $("navbar").removeClass().addClass("navbar deleted");
+        $("footer").removeClass().addClass("footer deleted");
+      } else {
+        $("navbar").removeClass("deleted");
+        $("footer").removeClass("deleted");
+      }
+
+      setTimeout(_=> {
+        console.log("Applied");
+        (<any>$("body")).customScrollbar({
+      		skin: "default-skin",
+      		vScroll: true,
+      		hScroll: false,
+      		updateOnWindowResize: true
+      	});
+      });
     });
   }
 

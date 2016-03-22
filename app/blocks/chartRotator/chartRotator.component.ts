@@ -85,7 +85,7 @@ export class ChartRotatorComponent {
 
         var distance = -1 * graphWidth * (graphCounter-1);
 
-        $(".chartRotator-inner-container").stop().animate({left:distance}, 300,'',function(){
+        $(".chartRotator-inner-container").stop().animate({left:distance}, 300,'easeInOutExpo',function(){
 
           if(graphCounter <= 1){ $(".chartRotator-button-left").removeClass("is-clickable");}
           if(graphCounter > 1){ $(".chartRotator-button-left").addClass("is-clickable");}

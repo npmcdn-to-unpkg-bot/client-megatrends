@@ -1,3 +1,20 @@
-<div class="container contentContainer">
-  <p>Home (Will be added at the end)</p>
+<div class="hidden" [ngClass]="{fadingIn:fadingIn}">
+  <section class="homeLogo-outer-container homeSection">
+    <div class="homeLogo-inner-container">
+      <img class="u-full-width" src="assets/images/Megatrends_Logo.svg"/>
+    </div>
+  </section>
+  <section class="homeSection">
+    <div class="container contentContainer">
+      <p>Home (Will be added at the end)</p>
+      <a [routerLink]="['About']"><p>
+        About
+      </p></a>
+    </div>
+  </section>
+  <section class="homeSection">
+    <div class="container contentContainer">
+      <p>Kebap</p>
+    </div>
+  </section>
 </div>

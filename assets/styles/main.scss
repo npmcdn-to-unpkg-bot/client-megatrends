@@ -34,6 +34,9 @@
 /* Spinner */
 @import "modules/spinner";
 
+/* Custom Scrollbar */
+@import "modules/customScrollbar";
+
 $color-background-gray:#f5f5f5;
 $color-border-gray:#e7e7e7;
 $color-dark-gray:#ddd;
@@ -222,7 +225,7 @@ page{
 
 .pageContent{
   display:block;
-  padding:15px 0px;
+  //padding:15px 0px;
 }
 
 .placeHolder-image{
@@ -370,7 +373,7 @@ navbar .container{
 /* Chart Rotator */
 .chartRotator-top-container{
   border:1px solid #eee;
-  padding:15px;  
+  padding:15px;
 }
 
 .chartRotator-outer-container{
@@ -489,6 +492,24 @@ navbar .container{
     border:1px solid #eee;
     padding:15px;
   }
+}
+
+.homeSection{
+  width:100%;
+  position:absolute;
+}
+
+.homeLogo-outer-container{
+}
+
+.homeLogo-inner-container{
+  width:360px;
+  height:360px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-180px;
+  margin-left:-180px;
 }
 
 /*

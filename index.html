@@ -20,6 +20,8 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="assets/plugins/canvasjs.min.js"></script>
     <script src="assets/plugins/jquery.flip.min.js"></script>
+    <script src="assets/plugins/easing.js"></script>
+    <script src="assets/plugins/customScrollbar.js"></script>
 
     <!-- endbuild -->
     <!-- build:remove -->
@@ -43,14 +45,6 @@
         }
       });
       System.import('app/boot').then(null, console.error.bind(console));
-    </script>
-
-    <script>
-      $(".card").flip({
-        axis: 'x',
-        trigger: 'hover',
-        reverse: true
-      });
     </script>
 
   </body>
