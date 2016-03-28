@@ -64,9 +64,15 @@ $color-purple:#884a9c;
 */
 
 body{
+  /*
   background:url('../images/Background_Main.svg') no-repeat;
   background-size:100%;
   background-position: top left;
+  */
+}
+
+.mT0{
+  margin-top:0px;
 }
 
 .mT5{
@@ -258,6 +264,10 @@ page{
   border-color:#2c3e50;
 }
 
+.darkGrayBorder{
+  border-color:#ccc;
+}
+
 /* Footer */
 footer{
   display: block;
@@ -265,6 +275,7 @@ footer{
   width: 100%;
   background: #f7f7f7;
   border-top:1px solid #eee;
+  margin-top:15px;
 }
 
 .footer-label{
@@ -289,6 +300,7 @@ navbar{
   display:block;
   background:url('../images/Background_Gray.svg') no-repeat;
   background-position: top right;
+  margin-bottom:15px;
 }
 
 navbar .container{
@@ -437,6 +449,10 @@ navbar .container{
   background:$color-dark-gray;
 }
 
+.is-text-center{
+  text-align: center !important;
+}
+
 /* Custom Elements */
 
 .drive-navbar-label{
@@ -461,8 +477,8 @@ navbar .container{
 }
 
 .trend-header{
-    font-weight:700;
-    text-align:center;
+  font-weight:700;
+  text-align:center;
 }
 
 .driveFrameworkDiagram-container{
@@ -499,26 +515,193 @@ navbar .container{
   position:absolute;
 }
 
-.homeLogo-outer-container{
-}
-
 .homeLogo-inner-container{
-  width:360px;
-  height:360px;
   position:absolute;
-  top:50%;
+  top:42%;
   left:50%;
-  margin-top:-180px;
-  margin-left:-180px;
+  width:240px;
+  height:240px;
+  margin-top:-120px;
+  margin-left:-120px;
+  @media screen and ($bp-larger-than-phablet) {
+    width:360px;
+    height:360px;
+    margin-top:-180px;
+    margin-left:-180px;
+  }
 }
 
-/*
-.bg-green{
-  background:url('../images/Background_Green.svg') no-repeat;
-  background-position: left bottom;
-  //height:100%;
+.homeLogo-bottom-container{
+  position: absolute;
+  bottom:0px;
+  left:50%;
+  height:16%;
 }
-*/
+
+.homeLogo-bottom-container:hover{
+  cursor:pointer;
+}
+
+.homeLogo-bottomLeft-container{
+  width:10%;
+  float:left;
+}
+
+.homeLogo-bottomRight-container{
+  display:none;
+  width:90%;
+  float:right;
+  @media screen and ($bp-larger-than-phablet) {
+    display:block;
+  }
+}
+
+.homeLogo-bottomImage-container{
+  bottom:0px;
+  height:40px;
+  width:100%;
+  background: #fafafa;
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+  border-right:1px solid #eee;
+  position: absolute;
+}
+
+.home-slider-link{
+  margin:10px 10px 0px 0px;
+  color:#aaa;
+}
+
+.homeLogo-circle-arrow{
+  position:absolute;
+  left:13px;
+  z-index:9;
+}
+
+.homeLogo-arrow-container{
+  z-index:9;
+}
+
+.homeLogo-image-arrow{
+  position:absolute;
+  left:35px;
+  z-index:9;
+}
+
+.homeDiagram-top-container{
+  height:60px;
+  background: #fafafa;
+  border-bottom:1px solid #eee;
+  border-left:1px solid #eee;
+  border-right:1px solid #eee;
+}
+
+.homeLogo-circleTop-arrow{
+  position:absolute;
+  top:-30px;
+  left:34px;
+  z-index:1;
+  @media screen and ($bp-larger-than-mobile) {
+    left:16px;
+  }
+}
+
+#hs-driveFramework{
+  height:800px;
+}
+
+.home-DF-trend-container{
+  width:20%;
+  float:left;
+}
+
+.home-DF-trend-inner-container{
+  width:95%;
+  margin-right:5%;
+  background:url('../images/Web_Card_Background.svg') no-repeat;
+  background-size: 100%;
+}
+
+.home-DF-trend-image-container{
+  width:80%;
+  border-radius: 50%;
+  position:relative;
+  left:10%;
+}
+
+.home-DF-trend-title{
+  margin-top:45px;
+  margin-left:15px;
+  margin-right:15px;
+  font-weight: 700;
+  height:50px;
+}
+
+.home-DF-seperator{
+  margin-left:15px;
+  margin-right:15px;
+}
+
+.home-DF-questions-container{
+  margin-right: 15px;
+  margin-left: 15px;
+  text-align:right;
+}
+
+.home-DF-question{
+  height:135px;
+}
+
+.home-DF-arrow-container{
+}
+
+.home-about-container{
+  width:50%;
+  margin:0px auto;
+}
+
+.articles-backgroundRow{
+  background:#eee;
+  margin-top:15px;
+}
+
+.article-top-container{
+  width:25%;
+  float:left;
+  overflow:hidden;
+  position:relative;
+  top:-15px;
+}
+
+.article-inner-container{
+  border:1px solid #ccc;
+  background:#fff;
+  padding:15px;
+  margin-right:15px;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    1px 1px 1px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         1px 1px 1px 0px rgba(50, 50, 50, 0.5);
+  z-index:99;
+}
+
+.article-author{
+  border-bottom:1px solid #ccc;
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+
+.article-top-effect{
+  position:relative;
+  float:left;
+}
+
+.article-top-right-effect{
+  position:relative;
+  float:right;
+  right:-1px;
+}
+
+/* Backgrounds */
 
 .bg-TopArrow{
   background:url('../images/Arrow_Top_Arrow.svg') no-repeat;

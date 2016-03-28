@@ -1,5 +1,6 @@
 ///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
 ///<reference path="../../typings/browser/ambient/jquery/jquery.d.ts"/>
+
 ///<reference path="./article.d.ts"/>
 
 import {Component, Input} from 'angular2/core';
@@ -25,7 +26,7 @@ export class ArticleListComponent {
   }
 
   ngAfterViewInit(){
-    setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
+    setTimeout(_=> $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');}));
   }
 
   getArticles() {

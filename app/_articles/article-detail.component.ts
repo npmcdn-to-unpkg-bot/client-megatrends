@@ -27,7 +27,10 @@ export class ArticleDetailComponent {
   }
 
   ngAfterViewInit(){
-    setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
+    //setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
+    setTimeout(_=> {
+      $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');})
+    });
   }
 
   getArticles() {

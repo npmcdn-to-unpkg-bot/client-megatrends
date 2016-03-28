@@ -26,6 +26,13 @@ export class AppComponent {
   }
 
   ngAfterViewInit(){
+    (<any>$("body")).customScrollbar({
+      skin: "default-skin",
+      vScroll: true,
+      hScroll: false,
+      updateOnWindowResize: true
+    });
+
     setTimeout(_=> this.fadeIn());
   }
 

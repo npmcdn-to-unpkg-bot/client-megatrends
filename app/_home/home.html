@@ -1,20 +1,144 @@
-<div class="hidden" [ngClass]="{fadingIn:fadingIn}">
+<div class="home-top-container hidden" [ngClass]="{fadingIn:fadingIn}">
   <section class="homeLogo-outer-container homeSection">
     <div class="homeLogo-inner-container">
       <img class="u-full-width" src="assets/images/Megatrends_Logo.svg"/>
     </div>
-  </section>
-  <section class="homeSection">
-    <div class="container contentContainer">
-      <p>Home (Will be added at the end)</p>
-      <a [routerLink]="['About']"><p>
-        About
-      </p></a>
+    <div class="homeLogo-bottom-container">
+      <div class="homeLogo-bottomLeft-container">
+        <div class="homeLogo-arrow-container">
+          <div class="front">
+            <img class="homeLogo-image-arrow" src="assets/images/Button_ArrowCircleGrayThin_Home.svg"/>
+          </div>
+          <div class="back">
+            <img class="homeLogo-image-arrow" src="assets/images/Button_ArrowCircleNavyThin_Home.svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="homeLogo-bottomRight-container">
+        <h5 class="mB0">
+          Our DRIVE framework represents a valuable tool for companies to
+          identify new opportunities based on the insights gained from
+          some prevailing megatrends.
+        </h5>
+        <p class="mB0 mT15">
+          Continue reading to find out more about how these trends can have
+          an impact on your business...
+        </p>
+      </div>
+      <div class="homeLogo-bottomImage-container">
+        <img class="homeLogo-circle-arrow" src="assets/images/Button_ArrowCircle_Home.svg"/>
+        <p class="home-slider-link u-pull-right" href="hs-articles">Articles</p>
+        <p class="home-slider-link u-pull-right" href="hs-about">About</p>
+        <p class="home-slider-link u-pull-right" href="hs-driveFramework">Drive Framework</p>
+      </div>
     </div>
   </section>
-  <section class="homeSection">
+  <section id="hs-driveFramework" class="homeSection">
     <div class="container contentContainer">
-      <p>Kebap</p>
+      <div class="homeDiagram-top-container">
+        <img class="homeLogo-circleTop-arrow" src="assets/images/Button_ArrowCircle_Home_Top.svg"/>
+      </div>
+      <hr class="mB2R"/>
+      <div class="row">
+        <div class="six columns">
+          <h5 class="mB0">
+            We have identified 5 megatrends that are most likely to have significant and long-lasting impacts on businesses, economies and societies
+          </h5>
+        </div>
+        <div class="six columns">
+          <img class="u-full-width" src="assets/images/DriveFrameworkLogo.svg">
+          <hr class="mT2R mB2R"/>
+        </div>
+      </div>
+      <div class="home-DF-top-container">
+        <a *ngFor="#trend of trends; #i = index" [routerLink]="['/Drive Framework/Drive Framework Trend',{id:trend.url}]">
+          <div class="home-DF-trend-container">
+            <img class="home-DF-arrow-container mB2R" src="assets/images/Button_ArrowHorizontalGray_Home.svg">
+            <div class="home-DF-trend-inner-container">
+              <div class="home-DF-trend-image-container">
+                <div class="front">
+                  <img class="u-full-width" src="assets/images/{{trend.letter}}_Letter.svg">
+                </div>
+                <div class="back">
+                  <img class="u-full-width" src="assets/images/{{trend.name}}_Icon.svg">
+                </div>
+              </div>
+              <h6 class="home-DF-trend-title mB0">{{trend.name}}</h6>
+              <hr class="home-DF-seperator"/>
+              <div class="home-DF-questions-container">
+                <div *ngFor="#question of trend.questions; #j = index" class="home-DF-question">
+                  <p class="mB0">
+                    <i class="fa fa-question-circle mR5"></i>{{question}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <hr class="invisible-seperator"/>
+      </div>
+      <hr/>
+      <h5 class="mB0">
+        Individually, the five aspects of DRIVE are likely to be thought-provoking; in combination, they greatly influence how businesses can succeed in identifying new business opportunities
+      </h5>
+    </div>
+  </section>
+  <section id="hs-about" class="homeSection">
+    <div class="container contentContainer">
+      <hr class="mB0"/>
+      <div class="row">
+        <div class="four columns">
+          <p class="hidden">
+            Deleted
+          </p>
+        </div>
+        <div class="four columns">
+          <framedImage [imageSource]="aboutIS"></framedImage>
+        </div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <p class="hidden">
+            Deleted
+          </p>
+        </div>
+        <div class="six columns">
+          <a [routerLink]="['About']">
+            <p>
+            Shankle shank andouille tail frankfurter meatloaf biltong swine spare ribs corned beef short loin porchetta chicken chuck cupim.
+            Shank kevin ground round ball tip frankfurter, cupim picanha pancetta.
+            </p>
+            <p class="mB0">
+            Filet mignon sausage pork salami corned beef bresaola pastrami, tri-tip porchetta ball tip chuck tongue short loin.
+            Ribeye jowl spare ribs, kevin biltong chuck beef jerky strip steak prosciutto.
+            Doner meatloaf strip steak, pork loin frankfurter ribeye pastrami tenderloin pork shankle rump ball tip.
+            </p>
+          </a>
+        </div>
+      </div>
+      <hr class="mT2R mB2R"/>
+    </div>
+  </section>
+  <section id="hs-articles" class="homeSection">
+    <div class="articles-backgroundRow">
+      <div class="container contentContainer">
+        <a *ngFor="#article of articles; #i = index" [routerLink]="['/Articles/Article Detail',{id:article.url}]">
+          <div class="article-top-container">
+            <img class="article-top-effect deleted" src="assets/images/Article_Top_Effect.svg">
+            <img class="article-top-right-effect" src="assets/images/Article_TopRight_Effect.svg">
+            <div class="article-inner-container">
+              <h6 class="mB0">{{article.title}}</h6>
+              <p class="article-author">by {{article.author}}, {{article.date}}</p>
+              <p class="mB0">{{article.summary}}</p>
+            </div>
+          </div>
+        </a>
+        <hr class="invisible-seperator"/>
+        <hr class="darkGrayBorder mT0"/>
+        <a [routerLink]="['Articles']"><p class="mB1R">
+          See all the Articles
+        </p></a>
+      </div>
     </div>
   </section>
 </div>

@@ -32,6 +32,9 @@ export class DriveFrameworkTrendComponent {
 
   ngAfterViewInit(){
     setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
+    (<any>$("body")).customScrollbar("resize");
+    $(".overview").css('top',0);
+    $(".thumb").css('top',0);
   }
 
   getTrends() {

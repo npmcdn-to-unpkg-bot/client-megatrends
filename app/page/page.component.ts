@@ -30,33 +30,30 @@ export class PageComponent {
     this.mobileMenuVisible = false;
     router.subscribe((path) => {
 
-      $("a").click(function(event) {$("footer").removeClass('fadingInFast');});
+      $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
 
       this.closeMobileMenu();
       this.adjustFooterAndFadeIn();
 
       if(path == "home"){
         $("navbar").removeClass().addClass("navbar deleted");
-        $("footer").removeClass().addClass("footer deleted");
+        //$("footer").removeClass().addClass("footer deleted");
       } else {
         $("navbar").removeClass("deleted");
-        $("footer").removeClass("deleted");
+        //$("footer").removeClass("deleted");
       }
 
       setTimeout(_=> {
-        console.log("Applied");
-        (<any>$("body")).customScrollbar({
-      		skin: "default-skin",
-      		vScroll: true,
-      		hScroll: false,
-      		updateOnWindowResize: true
-      	});
+        (<any>$("body")).customScrollbar("resize");
+        $(".overview").css('top',0);
+        $(".thumb").css('top',0);
       });
+
     });
   }
 
   ngAfterViewInit(){
-    $("a").click(function(event) {$("footer").removeClass('fadingInFast');});
+    $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
     this.adjustFooterAndFadeIn();
     this.setupNavbarMobileMenu();
   }
@@ -75,7 +72,7 @@ export class PageComponent {
   closeMobileMenu(){
     $('.navbar-mobileMenu-button-icon').removeClass("fa-times").addClass("fa-bars");
     $('.navbar-mobileMenu-container').removeClass("fadingInFast").addClass("fadingOutFast");
-    $("footer").removeClass('fadingInFast');
+    $(".pageContent").removeClass('fadingInFast');
     this.mobileMenuVisible = false;
   }
 
@@ -88,14 +85,14 @@ export class PageComponent {
       $('.navbar-mobileMenu-button-icon').removeClass("fa-bars").addClass("fa-times");
       $('.navbar-mobileMenu-container').removeClass("fadingOutFast").addClass("fadingInFast");
 
-
       let topDistance = $(window).outerHeight()
       - $('footer').outerHeight()
       - $(".pageContent").outerHeight()
       - $("navbar").outerHeight();
 
       $('footer').css("top",topDistance + "px");
-      $("footer").addClass('fadingInFast');
+
+      $(".pageContent").addClass('fadingInFast');
 
       this.mobileMenuVisible = true;
     }
@@ -118,7 +115,7 @@ export class PageComponent {
       $('footer').css("top","0px");
     }
 
-    $("footer").addClass('fadingInFast');
+    $(".pageContent").addClass('fadingInFast');
 
   }
 

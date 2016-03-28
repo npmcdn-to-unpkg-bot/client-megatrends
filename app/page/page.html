@@ -1,6 +1,6 @@
 <navbar (mobileMenuTrigger)="handleMobileMenuToggle()"></navbar>
 <navbar-mobileMenu [routes]="appRoutes" ></navbar-mobileMenu>
-<div class="pageContent">
+<div class="pageContent hidden" [ngClass]="{fadingIn:fadingIn}">
   <router-outlet></router-outlet>
+  <footer class=""></footer>
 </div>
-<footer class="hidden"></footer>

@@ -28,14 +28,14 @@ export class DriveFrameworkDiagramComponent {
 
   ngAfterViewInit(){
     setTimeout(_=> this.listenFlipCards());
-    setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
+    //setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
   }
 
   getTrends() {
     this._jsonReaderService.getFile("/app/data/driveFramework.data.json").subscribe(
       data => this.trends = data,
       err => console.log(err)
-    );
+    )
   }
 
   listenFlipCards(){
@@ -50,11 +50,15 @@ export class DriveFrameworkDiagramComponent {
     });
 
     this.flipCards();
+
   }
 
   flipCards(){
     $(".trendCard-container").flip({},function(){
       $(".driveFrameworkDiagram-icon-container").height($(".driveFrameworkDiagram-icon").height());
+      (<any>$("body")).customScrollbar("resize");
+      $(".overview").css('top',0);
+      $(".thumb").css('top',0);
     });
     if($(".trendCard-container").length <= 0){
       setTimeout(_=> this.flipCards());
