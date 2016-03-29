@@ -15,15 +15,16 @@
         </div>
       </div>
       <div class="homeLogo-bottomRight-container">
-        <h5 class="mB0">
-          Our DRIVE framework represents a valuable tool for companies to
-          identify new opportunities based on the insights gained from
-          some prevailing megatrends.
-        </h5>
-        <p class="mB0 mT15">
-          Continue reading to find out more about how these trends can have
-          an impact on your business...
-        </p>
+        <div class="homeLogo-bottomText-container">
+          <h5 class="mB0 is-bold">Welcome to Megatrends</h5>
+          <hr/>
+          <h6 class="mB0">
+            Our DRIVE framework represents a valuable tool for companies to
+            identify new opportunities based on the insights gained from
+            some prevailing megatrends. Continue reading to find out more about how these trends can have
+            an impact on your business...
+          </h6>
+        </div>
       </div>
       <div class="homeLogo-bottomImage-container">
         <img class="homeLogo-circle-arrow" src="assets/images/Button_ArrowCircle_Home.svg"/>
@@ -38,22 +39,24 @@
       <div class="homeDiagram-top-container">
         <img class="homeLogo-circleTop-arrow" src="assets/images/Button_ArrowCircle_Home_Top.svg"/>
       </div>
-      <hr class="mB2R"/>
+      <hr class="mB0"/>
       <div class="row">
-        <div class="six columns">
-          <h5 class="mB0">
+        <div class="five columns">
+          <h6 class="homeDiagram-topText-container mB0">
             We have identified 5 megatrends that are most likely to have significant and long-lasting impacts on businesses, economies and societies
-          </h5>
+          </h6>
         </div>
-        <div class="six columns">
-          <img class="u-full-width" src="assets/images/DriveFrameworkLogo.svg">
-          <hr class="mT2R mB2R"/>
+        <div class="seven columns">
+          <img class="u-full-width mT2R deleted" src="assets/images/DriveFrameworkLogo.svg">
+          <hr class="mT2R mB2R deleted"/>
         </div>
       </div>
       <div class="home-DF-top-container">
         <a *ngFor="#trend of trends; #i = index" [routerLink]="['/Drive Framework/Drive Framework Trend',{id:trend.url}]">
           <div class="home-DF-trend-container">
-            <img class="home-DF-arrow-container mB2R" src="assets/images/Button_ArrowHorizontalGray_Home.svg">
+            <img *ngIf="i == 0" class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGrayTopCurve_Home.svg">
+            <img *ngIf="i > 0 && i < 4" class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGray_Home.svg">
+            <img *ngIf="i == 4" class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGrayBottomCurve_Home.svg">
             <div class="home-DF-trend-inner-container">
               <div class="home-DF-trend-image-container">
                 <div class="front">
@@ -77,14 +80,27 @@
         </a>
         <hr class="invisible-seperator"/>
       </div>
-      <hr/>
-      <h5 class="mB0">
-        Individually, the five aspects of DRIVE are likely to be thought-provoking; in combination, they greatly influence how businesses can succeed in identifying new business opportunities
-      </h5>
+      <div class="row">
+        <div class="seven columns">
+          <hr class="mT2R mB2R"/>
+          <img class="u-full-width mB2R" src="assets/images/DriveFrameworkLogo.svg">
+          <hr class="mT2R mB2R"/>
+          <p class="mB0">
+            Click the trend icons above to read more about each trend..
+          </p>
+        </div>
+        <div class="five columns">
+          <h6 class="homeDiagram-bottomText-container mB0">
+            Individually, the five aspects of DRIVE are likely to be thought-provoking; in combination, they greatly influence how businesses can succeed in identifying new business opportunities
+          </h6>
+        </div>
+      </div>
+
     </div>
   </section>
   <section id="hs-about" class="homeSection">
     <div class="container contentContainer">
+      <hr class="invisible-seperator"/>
       <hr class="mB0"/>
       <div class="row">
         <div class="four columns">

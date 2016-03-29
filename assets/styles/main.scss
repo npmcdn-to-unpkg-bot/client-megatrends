@@ -151,6 +151,14 @@ body{
   padding-top:7.5%;
 }
 
+.pT2R{
+  padding-top:2rem;
+}
+
+.pB2R{
+  padding-bottom:2rem;
+}
+
 .pB5{
   padding-bottom:5px;
 }
@@ -216,6 +224,10 @@ main-app{
 
 .is-absolute{
   position:absolute;
+}
+
+.is-bold{
+  font-weight:700px;
 }
 
 .invisible-seperator{
@@ -517,7 +529,7 @@ navbar .container{
 
 .homeLogo-inner-container{
   position:absolute;
-  top:42%;
+  top:40%;
   left:50%;
   width:240px;
   height:240px;
@@ -535,7 +547,7 @@ navbar .container{
   position: absolute;
   bottom:0px;
   left:50%;
-  height:16%;
+  height:20%;
 }
 
 .homeLogo-bottom-container:hover{
@@ -543,14 +555,15 @@ navbar .container{
 }
 
 .homeLogo-bottomLeft-container{
-  width:10%;
+  width:110px;
   float:left;
 }
 
 .homeLogo-bottomRight-container{
   display:none;
-  width:90%;
-  float:right;
+  position:absolute;
+  left:110px;
+  top:-3px;
   @media screen and ($bp-larger-than-phablet) {
     display:block;
   }
@@ -606,8 +619,22 @@ navbar .container{
   }
 }
 
-#hs-driveFramework{
-  height:800px;
+.homeDiagram-topText-container{
+  background:url('../images/Home_Arrow_Background_1.svg') no-repeat;
+  background-position: bottom left;
+  padding-top: 5rem;
+  padding-bottom: 5rem
+}
+
+.homeDiagram-bottomText-container{
+  background:url('../images/Home_Arrow_Background_2.svg') no-repeat;
+  background-position: top right;
+  padding-top: 5rem;
+  padding-bottom: 5rem
+}
+
+.home-DF-top-container{
+  overflow:hidden;
 }
 
 .home-DF-trend-container{
@@ -620,6 +647,7 @@ navbar .container{
   margin-right:5%;
   background:url('../images/Web_Card_Background.svg') no-repeat;
   background-size: 100%;
+  border:1px solid #eee;
 }
 
 .home-DF-trend-image-container{
@@ -653,6 +681,7 @@ navbar .container{
 }
 
 .home-DF-arrow-container{
+  width:100%;
 }
 
 .home-about-container{

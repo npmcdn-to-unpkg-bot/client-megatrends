@@ -20,18 +20,23 @@ import {ARTICLE_ROUTES} from './_articles/article.routes';
 
 export class AppComponent {
 
+
+
   @Input() fadingIn;
 
   constructor() {
   }
 
   ngAfterViewInit(){
+
+    /*
     (<any>$("body")).customScrollbar({
       skin: "default-skin",
       vScroll: true,
       hScroll: false,
       updateOnWindowResize: true
     });
+    */
 
     setTimeout(_=> this.fadeIn());
   }

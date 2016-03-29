@@ -17,6 +17,7 @@ import {JSONReaderService} from '../services/jsonReader.service';
 })
 
 export class HomeComponent {
+  public isFirefox : Boolean;
   public aboutIS : String;
   @Input() fadingIn;
   @Input() trends: trendObject.RootObject[];
@@ -27,24 +28,32 @@ export class HomeComponent {
   }
 
   ngOnInit() {
+    this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
     this.getTrends();
     this.getArticles();
     this.bindClicks();
+
   }
 
   ngAfterViewInit(){
 
-    setTimeout(_=> this.setupFlipArrows());
-    setTimeout(_=> this.setupFlipTrends());
+    //if(!this.isFirefox){
+      setTimeout(_=> this.setupFlipArrows());
+      setTimeout(_=> this.setupFlipTrends());
+    //}
     setTimeout(_=> this.stackSections());
-    //setTimeout(_=> this.fadeIn());
+    setTimeout(_=> this.fadeIn());
 
     /*
-    setTimeout(_=>
-      this.setupFlipArrows(_=>
-        this.setupFlipTrends(_=>
-          this.stackSections())));
+    window.onload = function () {
+      if(this.isFirefox){
+        console.log($(".back").length);
+        setTimeout(_=> $(".back").addClass("deleted"));
+      }
+    };
     */
+
   }
 
   // On Init
@@ -63,32 +72,26 @@ export class HomeComponent {
     );
   }
 
-  /*
   fadeIn(){
     this.fadingIn = true;
   }
-  */
 
   // After View Init
 
   stackSections(){
 
-    $(".homeLogo-outer-container").height($(window).height());
+    $(".homeLogo-outer-container").height($(window).height()); // No firefox
+    $(".homeLogo-outer-container").height(window.innerHeight);
+
     let totalTop = 0;
   	$.each( $(".homeSection"), function( i, section ) {
       $(this).css('top',totalTop);
       totalTop = totalTop + $(this).outerHeight();
-      console.log();
   	});
     $(".home-top-container").height(totalTop);
 
-    this.fadingIn = true;
-
-    /*
-    if($(".home-DF-trend-container").length <= 0){
-      setTimeout(_=> this.stackSections());
-    }
-    */
+    $("footer").css("position","absolute");
+    $("footer").css('top',totalTop);
 
   }
 
@@ -99,14 +102,14 @@ export class HomeComponent {
     $(".homeLogo-bottom-container").width(containerWidth).css("margin-left",marginLength);
 
     $(".home-slider-link").click(function() {
-
       let sectionTop = $("#" + $(this).attr('href')).offset().top;
-
-      $(".overview").stop().animate({top:(-1 * sectionTop)}, 1000,'easeInOutExpo',function(){
+      $("body").stop().animate({scrollTop:(sectionTop)}, 1000,'easeInOutExpo',function(){
       });
-      $(".thumb").stop().animate({top:(-1 * sectionTop)}, 1000,'easeInOutExpo',function(){
-      });
+    });
 
+    $(".homeLogo-bottomText-container").click(function() {
+      console.log("Mul");
+      $(".home-slider-link[href='hs-driveFramework']").trigger('click');
     });
   }
 
@@ -118,7 +121,6 @@ export class HomeComponent {
     $(".homeLogo-bottom-container").mouseout(function(event) {
       $(event.currentTarget).find(".homeLogo-arrow-container").flip('toggle');
     });
-
     this.flipArrows();
 
   }
@@ -134,11 +136,8 @@ export class HomeComponent {
 
   setupFlipTrends(){
 
-    /*
     let topContainerWidth = $(".home-DF-trend-image-container").width();
     $(".home-DF-trend-image-container").height(topContainerWidth);
-
-    console.log($(".home-DF-trend-image-container"));
 
     $(".home-DF-trend-image-container").css("top",$(".home-DF-trend-image-container").position().left);
 
@@ -148,7 +147,6 @@ export class HomeComponent {
     $(".home-DF-trend-container").mouseout(function(event) {
       $(event.currentTarget).find(".home-DF-trend-image-container").flip('toggle');
     });
-    */
 
     this.flipTrends();
 

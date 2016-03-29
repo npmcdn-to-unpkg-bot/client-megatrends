@@ -8,6 +8,9 @@ import 'rxjs/add/operator/map';
 
 import {JSONReaderService} from './services/jsonReader.service'
 
+//import {enableProdMode} from 'angular2/core';
+// enableProdMode();
+
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
   HTTP_PROVIDERS,

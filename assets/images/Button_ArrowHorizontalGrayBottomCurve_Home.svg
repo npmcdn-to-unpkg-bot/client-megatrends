@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="180px" height="60px" viewBox="0 0 180 60" enable-background="new 0 0 180 60" xml:space="preserve">
+<g>
+	
+		<line opacity="0.25" fill="none" stroke="#DDDDDD" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="150" y1="60" x2="150" y2="80"/>
+	
+		<line opacity="0.25" fill="none" stroke="#CCCCCC" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="170" y1="60" x2="170" y2="80"/>
+</g>
+<rect x="140" y="40" fill="#FFFFFF" width="40" height="20"/>
+<g>
+	<polygon fill="#FFFFFF" points="172,68 160,80 160,60 180,60 	"/>
+	<polygon fill="#FFFFFF" points="148,68 160,80 160,60 140,60 	"/>
+</g>
+<g>
+	<g>
+		
+			<line opacity="0.75" fill="none" stroke="#DDDDDD" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="0" y1="30" x2="135" y2="30"/>
+		
+			<line opacity="0.75" fill="none" stroke="#CCCCCC" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="0" y1="10" x2="135" y2="10"/>
+	</g>
+	<polygon fill="#FFFFFF" points="8.258,8 0,0 0,20 0,40 8.258,32 20.645,20 	"/>
+</g>
+<g>
+	<g>
+		<polygon fill="#FFFFFF" points="139,24 115,0 155,0 155,40 		"/>
+		<polygon opacity="0.75" fill="#DDDDDD" enable-background="new    " points="135,20 135,40 155,40 143,28 		"/>
+	</g>
+</g>
+<g>
+	<polygon opacity="0.85" fill="#CCCCCC" enable-background="new    " points="115,40 135,40 135,60 123,48 	"/>
+	<polygon opacity="0.85" fill="#DDDDDD" enable-background="new    " points="155,40 135,40 135,60 147,48 	"/>
+</g>
+</svg>

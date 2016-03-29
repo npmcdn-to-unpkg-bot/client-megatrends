@@ -40,7 +40,7 @@ export class PageComponent {
         //$("footer").removeClass().addClass("footer deleted");
       } else {
         $("navbar").removeClass("deleted");
-        //$("footer").removeClass("deleted");
+        $("footer").css("position","relative");
       }
 
       setTimeout(_=> {
