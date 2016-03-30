@@ -29,11 +29,9 @@ export class HomeComponent {
 
   ngOnInit() {
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-
     this.getTrends();
     this.getArticles();
     this.bindClicks();
-
   }
 
   ngAfterViewInit(){

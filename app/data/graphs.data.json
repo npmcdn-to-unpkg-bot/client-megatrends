@@ -1,19 +1,46 @@
 [
   {
     "trend" : "D",
-    "id" : "graphId-a-nice-column-graph",
-    "title" : "A Nice Column Graph",
+    "id" : "graphId-d1-number-of-workers-per-dependents",
+    "title" : "Number of Workers per Dependents",
     "data":
     [
       {
-        "type": "column",
+        "name" : "China",
+        "type": "spline",
+        "color" : "#2C3E50",
         "dataPoints":
         [
-          { "label": "apple",  "y": 10  },
-          { "label": "orange", "y": 15  },
-          { "label": "banana", "y": 25  },
-          { "label": "mango",  "y": 30  },
-          { "label": "grape",  "y": 28  }
+          { "label": "1950",  "y": 1.6  },
+          { "label": "1960", "y": 1.3  },
+          { "label": "1970", "y": 1.25  },
+          { "label": "1980",  "y": 1.4  },
+          { "label": "1990",  "y": 1.8  },
+          { "label": "2000", "y": 2.0  },
+          { "label": "2010", "y": 2.75  },
+          { "label": "2020",  "y": 2.35  },
+          { "label": "2030",  "y": 2.15  },
+          { "label": "2040",  "y": 1.7  },
+          { "label": "2050",  "y": 1.6  }
+        ]
+      },
+      {
+        "name" : "India",
+        "type" : "spline",
+        "color" : "#4EB96F",
+        "dataPoints":
+        [
+          { "label": "1950",  "y": 1.45  },
+          { "label": "1960", "y": 1.3  },
+          { "label": "1970", "y": 1.25  },
+          { "label": "1980",  "y": 1.3  },
+          { "label": "1990",  "y": 1.4  },
+          { "label": "2000", "y": 1.55  },
+          { "label": "2010", "y": 1.7  },
+          { "label": "2020",  "y": 2.0  },
+          { "label": "2030",  "y": 2.1  },
+          { "label": "2040",  "y": 2.2  },
+          { "label": "2050",  "y": 2.05  }
         ]
       }
     ],
@@ -37,6 +64,6 @@
         ]
       }
     ],
-    "text":"Related is urbanisation, and countries with the highest urbanisation ratios and populations are showing the greatest GDPs per head. Currently, the top-performing middleweight cities outperform most megacities in household growth and income potential, making them attractive business prospects, and 577 such fast-changing cities globally will make greater economic contribution."    
+    "text":"Related is urbanisation, and countries with the highest urbanisation ratios and populations are showing the greatest GDPs per head. Currently, the top-performing middleweight cities outperform most megacities in household growth and income potential, making them attractive business prospects, and 577 such fast-changing cities globally will make greater economic contribution."
   }
 ]

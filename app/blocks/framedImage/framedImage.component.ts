@@ -33,12 +33,17 @@ export class FramedImageComponent {
     let topContainerLeft = $(".conainer-image-frame").position().left;
     let topContainerTop = $(".conainer-image-frame").position().top;
 
+    if(topContainerHeight <= 0){
+      topContainerHeight = topContainerWidth;
+      $(".conainer-image-frame").height(topContainerWidth);
+    }
+
     $(".conainer-image-inner").width(topContainerWidth * imageToFrameRatio);
     $(".conainer-image-inner").height(topContainerHeight * imageToFrameRatio);
     $(".conainer-image-inner").css("border-radius",(topContainerWidth * imageToFrameRatio * 0.5));
     $(".conainer-image-inner").css("left",(topContainerWidth * (1-imageToFrameRatio) * 0.5) + (topContainerLeft));
     $(".conainer-image-inner").css("top",(topContainerHeight * (1-imageToFrameRatio) * 0.5) + topContainerTop);
 
-    this.fadingIn = true;
+    //this.fadingIn = true;
   }
 }

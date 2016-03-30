@@ -19,25 +19,14 @@ import {ARTICLE_ROUTES} from './_articles/article.routes';
 @RouteConfig(APP_ROUTES)
 
 export class AppComponent {
-
-
-
+  public aboutIS : String;
   @Input() fadingIn;
 
   constructor() {
+    this.aboutIS = "assets/images/partners_temp.jpg"
   }
 
   ngAfterViewInit(){
-
-    /*
-    (<any>$("body")).customScrollbar({
-      skin: "default-skin",
-      vScroll: true,
-      hScroll: false,
-      updateOnWindowResize: true
-    });
-    */
-
     setTimeout(_=> this.fadeIn());
   }
 

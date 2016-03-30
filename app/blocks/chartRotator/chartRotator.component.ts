@@ -47,11 +47,17 @@ export class ChartRotatorComponent {
 
   initiateCanvasJS(){
 
-    if($("#" + this.graphs[0].id).length <= 0){
+    this.deployGraphSet();
+
+    //if($("#" + this.graphs[0].id).length <= 0){
+    /*
+    console.log($("graph").length);
+    if($("graph").length <= 0){
       setTimeout(_=> this.initiateCanvasJS());
     } else {
       this.deployGraphSet();
     }
+    */
   }
 
   deployGraphSet(){
@@ -113,32 +119,29 @@ export class ChartRotatorComponent {
         }
       });
 
-      var chart = new CanvasJS.Chart(graphId, {
+      var chart = new CanvasJS.Chart(graphId,
+      {
+        animationEnabled: true,
         title:{
-          text: currentGraphData.title
+          text: "",
+        },
+        axisX: {
+          "gridColor": "#eee",
+          "labelFontFamily": "'Optima'"
+        },
+        axisY: {
+          "gridColor": "#eee",
+          "labelFontFamily": "'Optima'"
         },
         data: currentGraphData.data
-        /*
-        data: [
-        {
-          // Change type to "doughnut", "line", "splineArea", etc.
-          type: "column",
-          dataPoints: [
-            { label: "apple",  y: 10  },
-            { label: "orange", y: 15  },
-            { label: "banana", y: 25  },
-            { label: "mango",  y: 30  },
-            { label: "grape",  y: 28  }
-          ]
-        }
-        ]
-        */
       });
 
       chart.render();
+
       $('.chartRotator-outer-container').outerHeight(
         $('.chartRotator-outer-container').find(".canvasjs-chart-canvas").outerHeight()
       + $('.chartRotator-outer-container').find(".chartRotator-text-container").outerHeight()
+      + 30
       );
 
     });
