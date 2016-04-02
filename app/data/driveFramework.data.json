@@ -28,8 +28,8 @@
     "color" : "green"
   },
   {
-    "url" : "resources-scarcity",
-    "name" : "Resources Scarcity",
+    "url" : "resource-scarcity",
+    "name" : "Resource Scarcity",
     "questions": [
       "How would your business be affected if food and water take up more of your customers’ disposable income?",
       "Could your business gain from circular economy?"

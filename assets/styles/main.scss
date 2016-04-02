@@ -18,15 +18,15 @@
 
 /* Fonts */
 @import "modules/fontface";
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Thin', 100, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Light', 300, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Regular', 400, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Medium', 500, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Bold', 700, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
-@include font-face('Raleway', '../fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Thin', 100, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Light', 300, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Regular', 400, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Medium', 500, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Bold', 700, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
+@include font-face('Raleway', 'fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
 
 /* Icons */
 @import "font-awesome/font-awesome";
@@ -65,7 +65,7 @@ $color-purple:#884a9c;
 
 body{
   /*
-  background:url('../images/Background_Main.svg') no-repeat;
+  background:url('images/Background_Main.svg') no-repeat;
   background-size:100%;
   background-position: top left;
   */
@@ -93,6 +93,14 @@ body{
 
 .mT2R{
   margin-top:2rem;
+}
+
+.mT8R{
+  margin-top:8rem;
+}
+
+.mT10R{
+  margin-top:10rem;
 }
 
 .mT25D{
@@ -322,7 +330,7 @@ $navbar-link-height:30px;
 
 navbar{
   display:block;
-  background:url('../images/Background_Gray.svg') no-repeat;
+  background:url('images/Background_Gray.svg') no-repeat;
   background-position: top right;
   margin-bottom:15px;
 }
@@ -544,7 +552,7 @@ navbar .container{
 
 .homeLogo-inner-container{
   position:absolute;
-  top:40%;
+  top:37%;
   left:50%;
   width:240px;
   height:240px;
@@ -562,7 +570,7 @@ navbar .container{
   position: absolute;
   bottom:0px;
   left:50%;
-  height:20%;
+  height:25%;
 }
 
 .homeLogo-bottom-container:hover{
@@ -635,17 +643,23 @@ navbar .container{
 }
 
 .homeDiagram-topText-container{
-  background:url('../images/Home_Arrow_Background_1.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_1.svg') no-repeat;
   background-position: bottom left;
   padding-top: 5rem;
   padding-bottom: 5rem
 }
 
 .homeDiagram-bottomText-container{
-  background:url('../images/Home_Arrow_Background_2.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_2.svg') no-repeat;
   background-position: top right;
   padding-top: 5rem;
-  padding-bottom: 5rem
+}
+
+.homeDiagram-finalText-container{
+  padding:15px;
+  border:1px solid #eee;
+  background:#fffeee;
+  color:#2C3E50;
 }
 
 .home-DF-top-container{
@@ -660,7 +674,7 @@ navbar .container{
 .home-DF-trend-inner-container{
   width:95%;
   margin-right:5%;
-  background:url('../images/Web_Card_Background.svg') no-repeat;
+  background:url('images/Web_Card_Background.svg') no-repeat;
   background-size: 100%;
   border:1px solid #eee;
 }
@@ -746,19 +760,19 @@ navbar .container{
 /* Backgrounds */
 
 .bg-TopArrow{
-  background:url('../images/Arrow_Top_Arrow.svg') no-repeat;
+  background:url('images/Arrow_Top_Arrow.svg') no-repeat;
   background-position: left bottom;
   background-size: 100% auto;
 }
 
 .bg-LeftArrow{
-  background:url('../images/Arrow_Left_Bar_Long.svg');
+  background:url('images/Arrow_Left_Bar_Long.svg');
   background-position: top left;
   background-size: 100%;
 }
 
 .bg-BottomArrow{
-  background:url('../images/Arrow_Bottom_Arrow.svg') no-repeat;
+  background:url('images/Arrow_Bottom_Arrow.svg') no-repeat;
   background-position: left top;
   background-size: 100%;
 }

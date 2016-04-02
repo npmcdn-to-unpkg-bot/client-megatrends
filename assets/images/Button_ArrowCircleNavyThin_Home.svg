@@ -2,26 +2,28 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="40px" height="300px" viewBox="0 0 40 300" enable-background="new 0 0 40 300" xml:space="preserve">
-<rect y="250" fill="#FFFFFF" width="40" height="30"/>
+	 width="40px" height="360px" viewBox="0 0 40 360" enable-background="new 0 0 40 360" xml:space="preserve">
 <g>
-	<polygon fill="#FFFFFF" points="32,288 20,300 20,280 40,280 	"/>
-	<polygon fill="#FFFFFF" points="8,288 20,300 20,280 0,280 	"/>
+	<rect y="310" fill="#FFFFFF" width="40" height="30"/>
+	<g>
+		<polygon fill="#FFFFFF" points="32,348 20,360 20,340 40,340 		"/>
+		<polygon fill="#FFFFFF" points="8,348 20,360 20,340 0,340 		"/>
+	</g>
 </g>
 <g>
 	<g>
 		
-			<line opacity="0.75" fill="none" stroke="#56799C" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="10" y1="0" x2="10" y2="260"/>
+			<line opacity="0.75" fill="none" stroke="#56799C" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="10" y1="0" x2="10" y2="320"/>
 		
-			<line opacity="0.75" fill="none" stroke="#33485D" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="30" y1="0" x2="30" y2="260"/>
+			<line opacity="0.75" fill="none" stroke="#33485D" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="30" y1="0" x2="30" y2="320"/>
 	</g>
 	<g>
 		<polygon fill="#FFFFFF" points="32,8 20,20 20,0 40,0 		"/>
 		<polygon fill="#FFFFFF" points="8,8 20,20 20,0 0,0 		"/>
 	</g>
 	<g>
-		<polygon opacity="0.85" fill="#33485D" enable-background="new    " points="32,268 20,280 20,260 40,260 		"/>
-		<polygon opacity="0.85" fill="#56799C" enable-background="new    " points="8,268 20,280 20,260 0,260 		"/>
+		<polygon opacity="0.85" fill="#33485D" enable-background="new    " points="32,328 20,340 20,320 40,320 		"/>
+		<polygon opacity="0.85" fill="#56799C" enable-background="new    " points="8,328 20,340 20,320 0,320 		"/>
 	</g>
 </g>
 </svg>
