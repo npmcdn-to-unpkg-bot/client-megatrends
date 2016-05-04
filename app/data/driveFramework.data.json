@@ -3,6 +3,7 @@
     "url" : "demographic-and-social-changes",
     "name" : "Demographic & Social Changes",
     "bodyHTML": "<p>If there is one prediction of the future that is certain, it is the fact that the world’s population is ageing. Projections show that the majority of the population of developed countries will be 40 years old by 2030, 52 in Japan. This is also happening in most developing countries.<br/><br/>Even China’s ageing population is “catching up” with the developed world. At the same time, whilst populations are getting older, more and more of us are living in cities. Such urbanisation is seemingly creating significant economic benefits. However, instead of megacities, future economies will most likely be driven by the middle-sized cities. The result is that the powerful economic players could still be relatively unknown today.<br/><br/>European countries have <strong>high life expectancies and low fertilities</strong>, creating challenges for social security and pensions, leading to insufficient labour forces to support the old-age pensioners.  Continuous investments will therefore drive economic growth. <strong><br/><br/>Related is urbanisation</strong>, and countries with the highest urbanisation ratios and populations are showing the greatest GDPs per head.  Currently, the top-performing middleweight cities outperform most megacities in household growth and income potential, making them attractive business prospects, and 577 such fast-changing cities globally will make greater economic contributions. <strong><br/><br/>Higher populations create consumption</strong>, leading to more income. Also, clusters form around cities, with distinct economic characteristics, opening up opportunities to reach new customers; e.g., clusters around 14 Indian cities will access 40% of the 2030 market.</p>",
+    "intro": "At the centre of any future scenarios is people. How our state of living would evolve very much depends on many elements happening today. Answering questions like how old they are, how healthy they are, how they would want to live, and how much they can afford can give us a lot ideas of what our societies would look like.",
     "questions": [
       "How could the ageing of your customers – and their customers – affect your products and services in the near future?",
       "Would your business need to change as there are more and more major cities and city dwellers?"
@@ -30,6 +31,7 @@
   {
     "url" : "resource-scarcity",
     "name" : "Resource Scarcity",
+    "intro": "People live on inputs. More precisely, a constant supply of inputs at acceptable prices. People, together with their social composition, have enormous impact on the resources of our planet, often shaping new geographies. How and how much we will consume define how we will thrive in the future. Understanding how the resource flow is changing will enable us to manage it rather than suffering from the lack of it.",
     "questions": [
       "How would your business be affected if food and water take up more of your customers’ disposable income?",
       "Could your business gain from circular economy?"
@@ -40,6 +42,7 @@
   {
     "url" : "inequalities",
     "name" : "Inequalities",
+    "intro": "Throughout history, our economies have grown by combining inputs to create welfare that raises the standard of living. But this is only possible if the outputs are distributed fairly among the people of different age, income and social groups. Sadly, both technological and socio-economic changes are widening the gap between haves and the have-nots. Deepening inequalities would lead to discontent.",
     "questions": [
       "How would the fact that your young(er) customers cannot afford your products and services be affecting your business?",
       "What would the increase in income and social inequalities mean to the products and services that you are selling?"
@@ -50,6 +53,7 @@
   {
     "url" : "volatility-scarcity-and-complexity",
     "name" : "Volatility, Scarcity & Complexity",
+    "intro": "Like it or not, technological developments are having increasing influence on people, inputs and distributions. This is leading to an ever more complex and unpredictable surrounding context at all levels, whether it is individual, business, societies and economies. The business-as-usual environment is no longer the norm. Understanding how to swim along – rather than against – such strong undercurrents would help us thrive better.",
     "questions": [
       "How automation and robotics could be changing your business, sectors and industries in the next 5 to 10 years?",
       "Have you considered using crowd wisdom and trial & error approaches to help find new business opportunities?"
@@ -60,6 +64,7 @@
   {
     "url" : "enterprising-dynamics",
     "name" : "Enterprising Dynamics",
+    "intro": "The fact that the speed of change is much faster than before has brought not only new types of companies, but also urgency for existing ones to transform themselves. With the help of constantly refreshing technologies, many of them have come up with innovative ways of running and doing business, opening up new and previously unimaginable opportunities to the individuals, societies and economies.",
     "questions": [
       "What can be the new ways of business tomorrow?",
       "How can you deal with the challenges posed by newly arrived companies that seemingly come out of nowhere?"

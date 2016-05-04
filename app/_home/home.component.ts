@@ -20,6 +20,7 @@ export class HomeComponent {
   public isFirefox : Boolean;
   public aboutIS : String;
   @Input() fadingIn;
+  @Input() panelCount;
   @Input() trends: trendObject.RootObject[];
   @Input() articles: articleObject.RootObject[];
 
@@ -29,32 +30,44 @@ export class HomeComponent {
 
   ngOnInit() {
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    this.calculatePanelCount();
     this.getTrends();
     this.getArticles();
     this.bindClicks();
   }
 
   ngAfterViewInit(){
-
-    //if(!this.isFirefox){
+    this.arrangeHomeLogo();
+    if(!this.isFirefox){
+      $(".back").removeClass("deleted");
       setTimeout(_=> this.setupFlipArrows());
       setTimeout(_=> this.setupFlipTrends());
-    //}
+    } else {
+    }
     setTimeout(_=> this.stackSections());
     setTimeout(_=> this.fadeIn());
+    
 
-    /*
-    window.onload = function () {
-      if(this.isFirefox){
-        console.log($(".back").length);
-        setTimeout(_=> $(".back").addClass("deleted"));
-      }
-    };
-    */
+    if(this.isFirefox){
+      setTimeout(_=> $(".back").addClass("deleted"));
+    }
 
   }
 
   // On Init
+
+  calculatePanelCount(){
+    let screenWidth = $(window).width();
+    if(screenWidth > 1200){
+      this.panelCount = 4;
+    } else if (screenWidth > 1000){
+      this.panelCount = 3;
+    } else if (screenWidth > 750){
+      this.panelCount = 2;
+    } else {
+      this.panelCount = 1;
+    }
+  }
 
   getTrends() {
     this._jsonReaderService.getFile("/app/data/driveFramework.data.json").subscribe(
@@ -76,6 +89,21 @@ export class HomeComponent {
 
   // After View Init
 
+  arrangeHomeLogo(){
+    let panelWidthCorrection1 = 0;
+    let panelWidthCorrection2 = 2;
+    if($(window).width() < 1000){
+      panelWidthCorrection1 = 2;
+      panelWidthCorrection2 = 0;
+    }
+
+    let containerWidth = $(".contentContainer").width() - panelWidthCorrection2;
+    let marginLength = (containerWidth / 2 * -1) - 1;
+
+    $(".homeLogo-bottom-container").width(containerWidth).css("margin-left",marginLength);
+    $(".homeLogo-bottomImage-container").width($(".homeLogo-bottom-container").width() - panelWidthCorrection1);
+  }
+
   stackSections(){
 
     $(".homeLogo-outer-container").height($(window).height()); // No firefox
@@ -94,10 +122,6 @@ export class HomeComponent {
   }
 
   bindClicks(){
-    let containerWidth = $(".container").width() - 2;
-    let marginLength = (containerWidth / 2 * -1) - 1;
-
-    $(".homeLogo-bottom-container").width(containerWidth).css("margin-left",marginLength);
 
     $(".home-slider-link").click(function() {
       let sectionTop = $("#" + $(this).attr('href')).offset().top;
@@ -106,7 +130,6 @@ export class HomeComponent {
     });
 
     $(".homeLogo-bottomText-container").click(function() {
-      console.log("Mul");
       $(".home-slider-link[href='hs-driveFramework']").trigger('click');
     });
   }
@@ -136,8 +159,6 @@ export class HomeComponent {
 
     let topContainerWidth = $(".home-DF-trend-image-container").width();
     $(".home-DF-trend-image-container").height(topContainerWidth);
-
-    $(".home-DF-trend-image-container").css("top",$(".home-DF-trend-image-container").position().left);
 
     $(".home-DF-trend-container").mouseover(function(event) {
       $(event.currentTarget).find(".home-DF-trend-image-container").flip('toggle');

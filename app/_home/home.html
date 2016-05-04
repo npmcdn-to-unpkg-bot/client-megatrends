@@ -5,45 +5,42 @@
     </div>
     <div class="homeLogo-bottom-container">
       <div class="homeLogo-bottomLeft-container">
-        <div class="homeLogo-arrow-container">
+        <div class="homeLogo-arrow-container visible-from-desktop">
           <div class="front">
             <img class="homeLogo-image-arrow" src="assets/images/Button_ArrowCircleGrayThin_Home.svg"/>
           </div>
-          <div class="back">
+          <div class="back deleted">
             <img class="homeLogo-image-arrow" src="assets/images/Button_ArrowCircleNavyThin_Home.svg"/>
           </div>
         </div>
+        <img class="homeLogo-image-arrow deleted-from-desktop" src="assets/images/Button_ArrowCircleNavyThin_Home_Mobile.svg"/>
       </div>
       <div class="homeLogo-bottomRight-container">
-        <div class="homeLogo-bottomText-container">
-          <h5 class="mB0 is-semibold">Welcome to Megatrends</h5>
-          <hr/>
-          <p class="mB0 multi-column-text">
-            Chief executives these days are facing more challenges than ever.
-            The world's operation system is being constantly rewritten.
-            And it does not out with gradual release.
-            <br/><br/>As the chief executive of
-            a global information services company once confided in us:
-            “as the business landscape changes so quickly, executives have to make correct
-            business decisions within a much shorter timeframe. This is all happening when
-            there is little visibility of what's ahead of us and everything is so uncertain.
-            One way to deal with these is to <strong>gain intelligence and insights
-            into what the future lies</strong>”.
-            <br/><br/>We cannot agree more. Continue reading to
-            find out how Megatrends team can help your business prepare for the future.
-          </p>
-          <h6 class="mB0 deleted">
-            The world’s economies apparently change at random, reacting unforeseeably.
-            However, certain large-scale processes can be understood and predicted as inter-related, evolving mechanisms driving
-            business, government, and societal behaviour and decision-making.
-            Our <strong>DRIVE Framework</strong> represents a valuable tool for companies to
-            identify new opportunities based on the insights gained from
-            some prevailing megatrends <i class="fa fa-arrow-down deleted"></i>
-          </h6>
-        </div>
+        <h5 class="mB0 is-semibold visible-from-phablet">Welcome to Megatrends</h5>
+        <hr class="mB2R visible-from-phablet"/>
+        <p class="mB0 multi-column-text visible-from-desktophd">
+          Chief executives these days are facing more challenges than ever.
+          The world's operation system is being constantly rewritten.
+          And it does not out with gradual release.
+          <br/><br/>As the chief executive of
+          a global information services company once confided in us:
+          “as the business landscape changes so quickly, executives have to make correct
+          business decisions within a much shorter timeframe. This is all happening when
+          there is little visibility of what's ahead of us and everything is so uncertain.
+          One way to deal with these is to <strong>gain intelligence and insights
+          into what the future lies</strong>”.
+          <br/><br/>We cannot agree more. Continue reading to
+          find out how Megatrends team can help your business prepare for the future.
+        </p>
+        <p class="deleted-from-desktophd">
+          Chief executives these days are facing more challenges than ever.
+          The world's operation system is being constantly rewritten.
+          One way to deal with these is to <strong>gain intelligence and insights
+          into what the future lies</strong>”. Find out how Megatrends team can help...
+        </p>
       </div>
       <div class="homeLogo-bottomImage-container">
-        <img class="homeLogo-circle-arrow" src="assets/images/Button_ArrowCircle_Home.svg"/>
+        <img class="homeLogo-circle-arrow" src="assets/images/Button_ArrowElipse_Home.svg"/>
         <p class="home-slider-link u-pull-right" href="hs-articles">Articles</p>
         <p class="home-slider-link u-pull-right" href="hs-about">About</p>
         <p class="home-slider-link u-pull-right" href="hs-driveFramework">Drive Framework</p>
@@ -53,11 +50,47 @@
   <section id="hs-driveFramework" class="homeSection">
     <div class="container contentContainer">
       <div class="homeDiagram-top-container">
-        <img class="homeLogo-circleTop-arrow" src="assets/images/Button_ArrowCircle_Home_Top.svg"/>
+        <img class="homeLogo-circleTop-arrow" src="assets/images/Button_ArrowElipse_Home_Top.svg"/>
+        <img class="homeLogo-image-arrow-tip deleted-from-desktop" src="assets/images/Button_ArrowCircleNavyTip_Home.svg"/>
       </div>
-      <div class="row">
+      <div class="row deleted-from-phablet arrow-bg-3 mB0 pT5R">
+        <p class="mB0">
+          As the chief executive of a global information services company once confided in us:
+          “as the business landscape changes so quickly, executives have to make correct
+          business decisions within a much shorter timeframe. This is all happening when
+          there is little visibility of what's ahead of us and everything is so uncertain.
+          One way to deal with these is to <strong>gain intelligence and insights
+          into what the future lies</strong>”. We cannot agree more.
+        </p>
+      </div>
+      <div class="row deleted-from-phablet arrow-bg-4 h60">
+        <img class="u-pull-right deleted-from-phablet" src="assets/images/Home_Arrow_Background_5.svg">
+      </div>
+      <img class="u-full-width deleted-from-desktophd" src="assets/images/DriveFrameworkLogo.svg">
+      <hr class="mT2R mB2R deleted-from-desktophd"/>
+      <div class="row deleted-from-phablet arrow-bg-5 pT20">
+        <h6 class="">
+          While it may appear that our world is changing randomly and more unforeseeable events are emerging often,
+          the truth is that certain large-scale processes determine how businesses,
+          governments, and societies behave and how decisions are made.
+          <br/><br/>In the vast oceans of knowledge, information and data, we find that there
+          are <strong>five undercurrents</strong> that can give us some directions as to how the future would unfold.
+        </h6>
+      </div>
+      <div class="deleted-from-desktophd">
+        <a *ngFor="#trend of trends; #i = index" [routerLink]="['/Drive Framework/Drive Framework Trend',{id:trend.url}]">
+          <div class="HDFM-trendContainer">
+            <img class="HDFM-trendIcon" src="assets/images/{{trend.letter}}_Letter.svg">
+          </div>
+          <hr class="invisible-seperator"/>
+          <hr/>
+        </a>
+      </div>
+
+
+      <div class="row visible-from-desktophd">
         <div class="five columns">
-          <h6 class="homeDiagram-topText-container mB0">
+          <h6 class="arrow-bg-1 mB0 pT5R pB5R">
             While it may appear that our world is changing randomly and more unforeseeable events are emerging often,
             the truth is that certain large-scale processes determine how businesses,
             governments, and societies behave and how decisions are made.
@@ -66,36 +99,58 @@
           </h6>
         </div>
         <div class="seven columns">
-          <hr class="mT8R mB2R "/>
+          <hr class="homeSeperator-1"/>
           <img class="u-full-width " src="assets/images/DriveFrameworkLogo.svg">
-          <hr class="mT2R mB2R "/>
+          <hr class="mT2R mB2R visible-from-desktophd"/>
         </div>
       </div>
-      <div class="home-DF-top-container">
+
+      <div class="visible-from-desktophd">
+        <div class="u-pull-left w20p">
+          <img class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGrayTopCurve_Home.svg">
+        </div>
+        <div class="u-pull-left w20p">
+          <img class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGray_Home.svg">
+        </div>
+        <div class="u-pull-left w20p">
+          <img class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGray_Home.svg">
+        </div>
+        <div class="u-pull-left w20p">
+          <img class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGray_Home.svg">
+        </div>
+        <div class="u-pull-left w20p">
+          <img class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGrayBottomCurve_Home.svg">
+        </div>
+        <hr class="invisible-seperator"/>
+      </div>
+
+      <div class="home-DF-top-container visible-from-desktophd">
         <a *ngFor="#trend of trends; #i = index" [routerLink]="['/Drive Framework/Drive Framework Trend',{id:trend.url}]">
           <div class="home-DF-trend-container">
-            <img *ngIf="i == 0" class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGrayTopCurve_Home.svg">
-            <img *ngIf="i > 0 && i < 4" class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGray_Home.svg">
-            <img *ngIf="i == 4" class="home-DF-arrow-container" src="assets/images/Button_ArrowHorizontalGrayBottomCurve_Home.svg">
-            <div class="home-DF-trend-inner-container">
+            <div class="home-DF-trend-left-container">
               <div class="home-DF-trend-image-container">
                 <div class="front">
                   <img class="u-full-width" src="assets/images/{{trend.letter}}_Letter.svg">
                 </div>
-                <div class="back">
+                <div class="back deleted">
                   <img class="u-full-width" src="assets/images/{{trend.name}}_Icon.svg">
                 </div>
               </div>
-              <h6 class="home-DF-trend-title mB0">{{trend.name}}</h6>
-              <hr class="home-DF-seperator"/>
-              <div class="home-DF-questions-container">
-                <div *ngFor="#question of trend.questions; #j = index" class="home-DF-question">
-                  <p class="mB0">
+            </div>
+            <div class="home-DF-trend-right-container">
+              <div class="home-DF-trend-text-container">
+                <h6 class="home-DF-trend-title mB0"><strong>{{i + 1}}. {{trend.name}}</strong></h6>
+                <hr class="home-DF-seperator"/>
+                <p class="home-DF-trend-text mB0">{{trend.intro}}</p>
+                <hr class="home-DF-seperator"/>
+                <div *ngFor="#question of trend.questions; #j = index">
+                  <p class="mB0 home-DF-question">
                     <i class="fa fa-question-circle mR5"></i>{{question}}
                   </p>
                 </div>
               </div>
             </div>
+            <hr class="invisible-seperator"/>
           </div>
         </a>
         <hr class="invisible-seperator"/>
@@ -155,8 +210,7 @@
     <div class="articles-backgroundRow">
       <div class="container contentContainer">
         <a *ngFor="#article of articles; #i = index" [routerLink]="['/Articles/Article Detail',{id:article.url}]">
-          <div class="article-top-container">
-            <img class="article-top-effect deleted" src="assets/images/Article_Top_Effect.svg">
+          <div *ngIf="i < panelCount" class="article-top-container">
             <img class="article-top-right-effect" src="assets/images/Article_TopRight_Effect.svg">
             <div class="article-inner-container">
               <h6 class="mB0 is-semibold">{{article.title}}</h6>
@@ -177,12 +231,12 @@
     <div class="container contentContainer">
       <hr class="mT2R mB5R"/>
       <div class="row">
-        <div class="four columns">
+        <div class="three columns">
           <p class="hidden">
             Deleted
           </p>
         </div>
-        <div class="four columns">
+        <div class="six columns">
           <h1 class="color-navy-important is-text-center is-semibold mB1R"><i class="fa fa-envelope"></i></h1>
           <p class="color-navy-important is-text-center mB0">
               Get in touch with us for your questions, feedback, and learn how we
@@ -190,11 +244,6 @@
           </p>
           <hr class="mB mT1R"/>
           <h5 class="color-navy-important is-text-center is-semibold mB0">info@megatrends.com</h5>
-        </div>
-        <div class="four columns">
-          <p class="hidden">
-            Deleted
-          </p>
         </div>
       </div>
     </div>

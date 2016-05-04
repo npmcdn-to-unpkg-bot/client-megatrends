@@ -18,15 +18,15 @@
 
 /* Fonts */
 @import "modules/fontface";
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Thin', 100, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Light', 300, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Regular', 400, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Medium', 500, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Bold', 700, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
-@include font-face('Raleway', 'fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Thin', 100, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraLight', 200, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Light', 300, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Regular', 400, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Medium', 500, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-SemiBold', 600, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Bold', 700, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-ExtraBold', 800, normal, ttf);
+@include font-face('Raleway', '../fonts/Raleway/Raleway-Heavy', 900, normal, ttf);
 
 /* Icons */
 @import "font-awesome/font-awesome";
@@ -65,7 +65,7 @@ $color-purple:#884a9c;
 
 body{
   /*
-  background:url('images/Background_Main.svg') no-repeat;
+  background:url('../images/Background_Main.svg') no-repeat;
   background-size:100%;
   background-position: top left;
   */
@@ -93,6 +93,10 @@ body{
 
 .mT2R{
   margin-top:2rem;
+}
+
+.mT5R{
+  margin-top:5rem;
 }
 
 .mT8R{
@@ -167,12 +171,40 @@ body{
   padding-top:7.5%;
 }
 
+.pT20{
+  padding-top:20px;
+}
+
 .pT2R{
   padding-top:2rem;
 }
 
+.pT3R{
+  padding-top:3rem;
+}
+
+.pT5R{
+  padding-top:5rem;
+}
+
+.pT8R{
+  padding-top:8rem;
+}
+
+.pT10R{
+  padding-top:10rem;
+}
+
 .pB2R{
   padding-bottom:2rem;
+}
+
+.pB3R{
+  padding-bottom:3rem;
+}
+
+.pB5R{
+  padding-bottom:5rem;
 }
 
 .pB5{
@@ -204,12 +236,6 @@ main-app{
 .hidden{
   visibility: hidden;
   opacity: 0;
-}
-
-.visibleMobile{
-  @media screen and ($bp-larger-than-phablet) {
-    display:none;
-  }
 }
 
 .fadingIn {
@@ -272,12 +298,20 @@ page{
   border-radius: 5px;
 }
 
+.w20p{
+  width:20%;
+}
+
 .w120{
   width:120px;
 }
 
 .w160{
   width:160px;
+}
+
+.h60{
+  height:60px;
 }
 
 .h100{
@@ -330,7 +364,7 @@ $navbar-link-height:30px;
 
 navbar{
   display:block;
-  background:url('images/Background_Gray.svg') no-repeat;
+  background:url('../images/Background_Gray.svg') no-repeat;
   background-position: top right;
   margin-bottom:15px;
 }
@@ -550,28 +584,43 @@ navbar .container{
   position:absolute;
 }
 
+.homeSeperator-1{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  @media screen and ($bp-larger-than-desktophd) {
+    margin-top: 8rem;
+  }
+}
+
 .homeLogo-inner-container{
   position:absolute;
-  top:37%;
+  top:30%;
   left:50%;
-  width:240px;
-  height:240px;
-  margin-top:-120px;
-  margin-left:-120px;
+  width:200px;
+  height:200px;
+  margin-top:-100px;
+  margin-left:-100px;
   @media screen and ($bp-larger-than-phablet) {
     width:360px;
     height:360px;
     margin-top:-180px;
     margin-left:-180px;
+    top:32%;
   }
 }
 
 .homeLogo-bottom-container{
+  overflow: hidden;
   position: absolute;
   bottom:0px;
   left:50%;
-  height:25%;
-}
+  height:40%;
+  @media screen and ($bp-larger-than-phablet) {
+    height:26%;
+  }
+  @media screen and ($bp-larger-than-desktop) {
+    overflow:visible;
+  }}
 
 .homeLogo-bottom-container:hover{
   cursor:pointer;
@@ -583,11 +632,14 @@ navbar .container{
 }
 
 .homeLogo-bottomRight-container{
-  display:none;
   position:absolute;
   left:110px;
   top:-3px;
-  @media screen and ($bp-larger-than-phablet) {
+}
+
+.homeLogo-bottomText-container{
+  display:none;
+  @media screen and ($bp-larger-than-desktophd) {
     display:block;
   }
 }
@@ -624,8 +676,17 @@ navbar .container{
   z-index:9;
 }
 
+.homeLogo-image-arrow-tip{
+  position:absolute;
+  left:55px;
+  z-index:15;
+  @media screen and ($bp-larger-than-mobile) {
+    left:35px;
+  }
+}
+
 .homeDiagram-top-container{
-  height:60px;
+  height:10px;
   background: #fafafa;
   border-bottom:1px solid #eee;
   border-left:1px solid #eee;
@@ -634,7 +695,7 @@ navbar .container{
 
 .homeLogo-circleTop-arrow{
   position:absolute;
-  top:-30px;
+  top:-35px;
   left:34px;
   z-index:1;
   @media screen and ($bp-larger-than-mobile) {
@@ -642,15 +703,28 @@ navbar .container{
   }
 }
 
-.homeDiagram-topText-container{
-  background:url('images/Home_Arrow_Background_1.svg') no-repeat;
+.arrow-bg-1{
+  background:url('../images/Home_Arrow_Background_1.svg') no-repeat;
   background-position: bottom left;
-  padding-top: 5rem;
-  padding-bottom: 5rem
+}
+
+.arrow-bg-3{
+  background:url('../images/Home_Arrow_Background_3.svg') no-repeat;
+  background-position: top left;
+}
+
+.arrow-bg-4{
+  background:url('../images/Home_Arrow_Background_4.svg') no-repeat;
+  background-position: top left;
+}
+
+.arrow-bg-5{
+  background:url('../images/Home_Arrow_Background_6.svg') no-repeat;
+  background-position: top right;
 }
 
 .homeDiagram-bottomText-container{
-  background:url('images/Home_Arrow_Background_2.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_2.svg') no-repeat;
   background-position: top right;
   padding-top: 5rem;
 }
@@ -667,52 +741,44 @@ navbar .container{
 }
 
 .home-DF-trend-container{
+  clear: both;
+  border:1px solid #eee;
+  background: #fdfdfd;
+  padding:15px;
+  margin-bottom:15px;
+}
+
+.home-DF-trend-left-container{
   width:20%;
   float:left;
 }
 
-.home-DF-trend-inner-container{
-  width:95%;
-  margin-right:5%;
-  background:url('images/Web_Card_Background.svg') no-repeat;
-  background-size: 100%;
-  border:1px solid #eee;
-}
-
-.home-DF-trend-image-container{
+.home-DF-trend-right-container{
   width:80%;
-  border-radius: 50%;
-  position:relative;
-  left:10%;
+  float:right;
 }
 
-.home-DF-trend-title{
-  margin-top:45px;
-  margin-left:15px;
-  margin-right:15px;
-  font-weight: 700;
-  height:50px;
-}
-
-.home-DF-seperator{
-  margin-left:15px;
-  margin-right:15px;
-}
-
-.home-DF-questions-container{
-  margin-right: 15px;
-  margin-left: 15px;
-  text-align:right;
-}
-
-.home-DF-question{
-  height:135px;
+.home-DF-trend-text-container{
+  padding-left:15px;
 }
 
 .home-DF-arrow-container{
   width:100%;
-  height:64px;
+  //height:80px;
 }
+
+.home-DF-question{
+  width:35%;
+  padding-right:5%;
+  float:left;
+}
+
+/* Homepage DF Panel Mobile () */
+.HDFM-trendIcon{
+  width:25%;
+  float:left;
+}
+
 
 .home-about-container{
   width:50%;
@@ -725,11 +791,19 @@ navbar .container{
 }
 
 .article-top-container{
-  width:25%;
   float:left;
   overflow:hidden;
   position:relative;
   top:-15px;
+  @media screen and ($bp-larger-than-tablet) {
+    width:50%;
+  }
+  @media screen and ($bp-larger-than-desktop) {
+    width:33%;
+  }
+  @media screen and ($bp-larger-than-desktophd) {
+    width:25%;
+  }
 }
 
 .article-inner-container{
@@ -751,7 +825,7 @@ navbar .container{
   float:left;
 }
 
-.article-top-right-effect{
+.article-top-right-effect {
   position:relative;
   float:right;
   right:0px;
@@ -760,19 +834,19 @@ navbar .container{
 /* Backgrounds */
 
 .bg-TopArrow{
-  background:url('images/Arrow_Top_Arrow.svg') no-repeat;
+  background:url('../images/Arrow_Top_Arrow.svg') no-repeat;
   background-position: left bottom;
   background-size: 100% auto;
 }
 
 .bg-LeftArrow{
-  background:url('images/Arrow_Left_Bar_Long.svg');
+  background:url('../images/Arrow_Left_Bar_Long.svg');
   background-position: top left;
   background-size: 100%;
 }
 
 .bg-BottomArrow{
-  background:url('images/Arrow_Bottom_Arrow.svg') no-repeat;
+  background:url('../images/Arrow_Bottom_Arrow.svg') no-repeat;
   background-position: left top;
   background-size: 100%;
 }

@@ -18,3 +18,79 @@
 .u-pull-left {
   float: left;
 }
+
+.deleted-from-mobile{
+  display: block;
+  @media screen and ($bp-larger-than-mobile) {
+    display:none;
+  }
+}
+
+.deleted-from-phablet{
+  display: block;
+  @media screen and ($bp-larger-than-phablet) {
+    display:none;
+  }
+}
+
+.deleted-from-tablet{
+  display: block;
+  @media screen and ($bp-larger-than-tablet) {
+    display:none;
+  }
+}
+
+.deleted-from-desktop{
+  display: block;
+  @media screen and ($bp-larger-than-desktop) {
+    display:none;
+  }
+}
+
+.deleted-from-desktophd{
+  display: block;
+  @media screen and ($bp-larger-than-desktophd) {
+    display:none;
+  }
+}
+
+.visible-from-mobile{
+  display: none;
+  @media screen and ($bp-larger-than-mobile) {
+    display:block;
+  }
+}
+
+.visible-from-phablet{
+  display: none;
+  @media screen and ($bp-larger-than-phablet) {
+    display:block;
+  }
+}
+
+.visible-from-tablet{
+  display: none;
+  @media screen and ($bp-larger-than-tablet) {
+    display:block;
+  }
+}
+
+.visible-from-desktop{
+  display: none;
+  @media screen and ($bp-larger-than-desktop) {
+    display:block;
+  }
+}
+
+.visible-from-desktophd{
+  display: none;
+  @media screen and ($bp-larger-than-desktophd) {
+    display:block;
+  }
+}
+
+.visibleMobile{
+  @media screen and ($bp-larger-than-phablet) {
+    display:none;
+  }
+}
