@@ -5,11 +5,15 @@
 	 width="40px" height="500px" viewBox="0 0 40 500" enable-background="new 0 0 40 500" xml:space="preserve">
 <g>
 	<g>
-		
-			<line opacity="0.75" fill="none" stroke="#56799C" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="10" y1="0" x2="10" y2="645"/>
-		
-			<line opacity="0.75" fill="none" stroke="#33485D" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="30" y1="0" x2="30" y2="645"/>
+		<g opacity="0.75" enable-background="new    ">
+			<rect fill="#56799C" width="20" height="645"/>
+		</g>
+		<g opacity="0.75" enable-background="new    ">
+			<rect x="20" fill="#33485D" width="20" height="645"/>
+		</g>
 	</g>
-	<polygon fill="#FFFFFF" points="20,0 0,0 8,7.273 20,18.182 32,7.273 40,0 	"/>
+	<g>
+		<polygon fill="#FFFFFF" points="20,-1 0,-1 8,6.6 20,18 32,6.6 40,-1 		"/>
+	</g>
 </g>
 </svg>

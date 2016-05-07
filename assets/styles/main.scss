@@ -59,16 +59,11 @@ $color-purple:#884a9c;
   color: $color-navy !important;
 }
 
-/*
-::-webkit-scrollbar { display: none; }
-*/
+// Margins and Paddings
 
-body{
-  /*
-  background:url('../images/Background_Main.svg') no-repeat;
-  background-size:100%;
-  background-position: top left;
-  */
+.mT-5{
+  top:-5px;
+  position: relative;
 }
 
 .mT0{
@@ -93,6 +88,14 @@ body{
 
 .mT2R{
   margin-top:2rem;
+}
+
+.mT3R{
+  margin-top:3rem;
+}
+
+.mT4R{
+  margin-top:4rem;
 }
 
 .mT5R{
@@ -268,12 +271,20 @@ main-app{
   position:absolute;
 }
 
+.is-static{
+  position:static !important;
+}
+
 .is-semibold{
   font-weight:500;
 }
 
 .is-bold{
   font-weight:700;
+}
+
+.is-justify{
+  text-align:justify;
 }
 
 .invisible-seperator{
@@ -342,6 +353,9 @@ footer{
   background: #f7f7f7;
   border-top:1px solid #eee;
   margin-top:5rem;
+  @media print{
+    display:none;
+  }
 }
 
 .footer-label{
@@ -364,8 +378,6 @@ $navbar-link-height:30px;
 
 navbar{
   display:block;
-  background:url('../images/Background_Gray.svg') no-repeat;
-  background-position: top right;
   margin-bottom:15px;
 }
 
@@ -519,6 +531,22 @@ navbar .container{
   text-align: center !important;
 }
 
+.printOnly{
+  @media screen {
+    display:none;
+  }
+}
+
+.noPrint{
+  @media print {
+    display:none;
+  }
+}
+
+.pageBreak{
+  page-break-before: always;
+}
+
 /* Custom Elements */
 
 .drive-navbar-label{
@@ -579,15 +607,17 @@ navbar .container{
   }
 }
 
+/*
 .homeSection{
   width:100%;
-  position:absolute;
+  //position:absolute;
 }
+*/
 
 .homeSeperator-1{
   margin-top: 2rem;
   margin-bottom: 2rem;
-  @media screen and ($bp-larger-than-desktophd) {
+  @media screen and ($bp-larger-than-desktop) {
     margin-top: 8rem;
   }
 }
@@ -607,20 +637,42 @@ navbar .container{
     margin-left:-180px;
     top:32%;
   }
+  @media print {
+     top:32%;
+     width:240px;
+     height:240px;
+     margin-top:-120px;
+     margin-left:-120px;
+  }
 }
+
+.homeLogo-inner-wrapper{
+
+}
+
 
 .homeLogo-bottom-container{
   overflow: hidden;
-  position: absolute;
-  bottom:0px;
-  left:50%;
-  height:40%;
+  height:200px;
   @media screen and ($bp-larger-than-phablet) {
-    height:26%;
+    height:200px;
+  }
+  @media screen and ($bp-larger-than-tablet) {
+    height:320px;
   }
   @media screen and ($bp-larger-than-desktop) {
     overflow:visible;
-  }}
+    height:240px;
+  }
+  @media screen and ($bp-larger-than-desktophd) {
+    overflow:visible;
+    height:240px;
+  }
+  @media print {
+    height:300px;
+  }
+}
+
 
 .homeLogo-bottom-container:hover{
   cursor:pointer;
@@ -632,9 +684,12 @@ navbar .container{
 }
 
 .homeLogo-bottomRight-container{
-  position:absolute;
-  left:110px;
-  top:-3px;
+  padding-left:110px;
+  /*
+  @media print{
+    padding-left:105px;
+  }
+  */
 }
 
 .homeLogo-bottomText-container{
@@ -652,7 +707,7 @@ navbar .container{
   border-top:1px solid #eee;
   border-left:1px solid #eee;
   border-right:1px solid #eee;
-  position: absolute;
+  //position: absolute;
 }
 
 .home-slider-link{
@@ -662,8 +717,11 @@ navbar .container{
 
 .homeLogo-circle-arrow{
   position:absolute;
-  left:13px;
+  left:33px;
   z-index:9;
+  @media screen and ($bp-larger-than-mobile) {
+    left:13px;
+  }
 }
 
 .homeLogo-arrow-container{
@@ -672,8 +730,14 @@ navbar .container{
 
 .homeLogo-image-arrow{
   position:absolute;
-  left:35px;
+  left:55px;
   z-index:9;
+  @media screen and ($bp-larger-than-mobile) {
+    left:35px;
+  }
+  @media print {
+    left:35px;
+  }
 }
 
 .homeLogo-image-arrow-tip{
@@ -683,6 +747,13 @@ navbar .container{
   @media screen and ($bp-larger-than-mobile) {
     left:35px;
   }
+}
+
+.homeLogo-image-arrow-tip-print{
+  position:absolute;
+  left:35px;
+  bottom:-101px;
+  z-index:999;
 }
 
 .homeDiagram-top-container{
@@ -701,6 +772,12 @@ navbar .container{
   @media screen and ($bp-larger-than-mobile) {
     left:16px;
   }
+}
+
+.homeArrowClipperImage{
+  position: absolute;
+  right:0px;
+  z-index:99;
 }
 
 .arrow-bg-1{
@@ -723,10 +800,15 @@ navbar .container{
   background-position: top right;
 }
 
-.homeDiagram-bottomText-container{
-  background:url('../images/Home_Arrow_Background_2.svg') no-repeat;
+.arrow-bg-6{
+  background:url('../images/Home_Arrow_Background_9.svg') no-repeat;
   background-position: top right;
+}
+
+.homeDiagram-bottomText-container{
   padding-top: 5rem;
+  position:absolute;
+  z-index:999;
 }
 
 .homeDiagram-finalText-container{
@@ -744,7 +826,7 @@ navbar .container{
   clear: both;
   border:1px solid #eee;
   background: #fdfdfd;
-  padding:15px;
+  padding:15px 0px 15px 15px;
   margin-bottom:15px;
 }
 
@@ -760,25 +842,81 @@ navbar .container{
 
 .home-DF-trend-text-container{
   padding-left:15px;
+  @media screen and ($bp-larger-than-phablet) {
+    padding-left:30px;
+  }
+}
+
+.home-DF-trend-text{
+  padding-right:15px;
 }
 
 .home-DF-arrow-container{
   width:100%;
-  //height:80px;
 }
 
 .home-DF-question{
-  width:35%;
-  padding-right:5%;
-  float:left;
+  padding-right:15px;
+  @media screen and ($bp-larger-than-tablet) {
+    width:35%;
+    padding-right:5%;
+    float:left;
+  }
 }
 
-/* Homepage DF Panel Mobile () */
-.HDFM-trendIcon{
-  width:25%;
-  float:left;
+.home-DF-trend-circleTop-container{
+  background:url('../images/Home_Arrow_Background_8.svg') no-repeat;
+  width:80px;
+  height:120px;
+  position: relative;
+  float: right;
+  top: -71px;
+  right:1px;
+  z-index:9;
+  @media screen and ($bp-larger-than-tablet) {
+    right: 0px;
+  }
 }
 
+.home-DF-trend-circleBottom-container{
+  background:url('../images/DF-TrendCircleBottom.svg') no-repeat;
+  width:80px;
+  height:120px;
+  float:right;
+  z-index:1;
+  @media screen and ($bp-larger-than-tablet) {
+    position: absolute;
+    right: 0px;
+  }
+}
+
+.home-DF-final-circleTop-container{
+  background:url('../images/Home_Arrow_Background_10.svg') no-repeat;
+  width:80px;
+  height:120px;
+  position: relative;
+  float: right;
+  top: -75px;
+  right:-16px;
+  z-index:9;
+  @media screen and ($bp-larger-than-tablet) {
+    display:none;
+  }
+}
+
+.home-DF-final-circleTopHorizontal-container{
+  display:none;
+  @media screen and ($bp-larger-than-tablet) {
+    display:block;
+    background:url('../images/Home_Arrow_Background_11.svg') no-repeat;
+    width:160px;
+    height:53px;
+    position: relative;
+    float: right;
+    z-index:999;
+    right:-55px;
+  }
+}
 
 .home-about-container{
   width:50%;
@@ -829,6 +967,17 @@ navbar .container{
   position:relative;
   float:right;
   right:0px;
+}
+
+
+.back{
+  @media print{
+    display:none;
+  }
+  @-moz-document url-prefix() {
+
+       display:none;
+  }
 }
 
 /* Backgrounds */

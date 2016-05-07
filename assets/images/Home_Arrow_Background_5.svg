@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="40px" height="80px" viewBox="0 0 40 80" enable-background="new 0 0 40 80" xml:space="preserve">
+	 width="65px" height="80px" viewBox="0 0 65 80" enable-background="new 0 0 65 80" xml:space="preserve">
 <g>
 	<g>
 		<polygon fill="#FFFFFF" points="24,44 0,20 40,20 40,60 		"/>
@@ -14,4 +14,5 @@
 		<polygon opacity="0.85" fill="#DDDDDD" enable-background="new    " points="8,68 20,80 20,60 0,60 		"/>
 	</g>
 </g>
+<rect x="40" y="20" fill="#FFFFFF" width="25" height="40"/>
 </svg>

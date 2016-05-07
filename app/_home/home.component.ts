@@ -17,7 +17,6 @@ import {JSONReaderService} from '../services/jsonReader.service';
 })
 
 export class HomeComponent {
-  public isFirefox : Boolean;
   public aboutIS : String;
   @Input() fadingIn;
   @Input() panelCount;
@@ -25,34 +24,25 @@ export class HomeComponent {
   @Input() articles: articleObject.RootObject[];
 
   constructor(private _jsonReaderService: JSONReaderService){
-    this.aboutIS = "assets/images/partners_temp.jpg"
+    this.aboutIS = "assets/images/Team_Labels.jpg"
+    this.getTrends();
+    this.getArticles();
   }
 
   ngOnInit() {
-    this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
     this.calculatePanelCount();
-    this.getTrends();
-    this.getArticles();
     this.bindClicks();
   }
 
   ngAfterViewInit(){
     this.arrangeHomeLogo();
-    if(!this.isFirefox){
-      $(".back").removeClass("deleted");
-      setTimeout(_=> this.setupFlipArrows());
-      setTimeout(_=> this.setupFlipTrends());
-    } else {
-    }
-    setTimeout(_=> this.stackSections());
+    //setTimeout(_=> this.setupFlipArrows());
+    setTimeout(_=> this.setupFlipTrends());
+    setTimeout(_=> this.organizeDFDiagram());
     setTimeout(_=> this.fadeIn());
-    
-
-    if(this.isFirefox){
-      setTimeout(_=> $(".back").addClass("deleted"));
-    }
-
   }
+
+  // Constructor
 
   // On Init
 
@@ -83,6 +73,17 @@ export class HomeComponent {
     );
   }
 
+  organizeDFDiagram(){
+
+    $(".home-DF-trend-container").eq(1).addClass("pageBreak");
+    $(".home-DF-trend-container").eq(3).addClass("pageBreak");
+
+    $(".home-DF-trend-container:last").css("margin-bottom",0);
+    $(".home-DF-trend-container:last").css("padding-bottom",0);
+    $(".home-DF-trend-container:last").children(".home-DF-question").css("padding-bottom",15);
+
+  }
+
   fadeIn(){
     this.fadingIn = true;
   }
@@ -90,35 +91,24 @@ export class HomeComponent {
   // After View Init
 
   arrangeHomeLogo(){
-    let panelWidthCorrection1 = 0;
-    let panelWidthCorrection2 = 2;
-    if($(window).width() < 1000){
-      panelWidthCorrection1 = 2;
-      panelWidthCorrection2 = 0;
-    }
-
-    let containerWidth = $(".contentContainer").width() - panelWidthCorrection2;
-    let marginLength = (containerWidth / 2 * -1) - 1;
-
-    $(".homeLogo-bottom-container").width(containerWidth).css("margin-left",marginLength);
-    $(".homeLogo-bottomImage-container").width($(".homeLogo-bottom-container").width() - panelWidthCorrection1);
-  }
-
-  stackSections(){
-
     $(".homeLogo-outer-container").height($(window).height()); // No firefox
     $(".homeLogo-outer-container").height(window.innerHeight);
 
-    let totalTop = 0;
-  	$.each( $(".homeSection"), function( i, section ) {
-      $(this).css('top',totalTop);
-      totalTop = totalTop + $(this).outerHeight();
-  	});
-    $(".home-top-container").height(totalTop);
+    let screenHeight = window.innerHeight;
+    let screenWidth = window.innerWidth;
+    let bottomPanelHeight = $(".homeLogo-bottom-container").height();
+    let textHeight = $(".main-text-mobile").height();
+    if(screenWidth >= 650){
+      textHeight = $(".main-text-mobile").height() + 60;
+      if(screenWidth >= 750){
+        textHeight = $(".main-text").height() + 60;
+      }
+    }
+    let menuHeight = $(".homeLogo-bottomImage-container").height();
 
-    $("footer").css("position","absolute");
-    $("footer").css('top',totalTop);
-
+    $(".homeLogo-inner-wrapper").height(screenHeight - bottomPanelHeight);
+    $(".homeLogo-bottomImage-container").width( $(".homeLogo-bottomImage-container").width() - 2);
+    $(".homeLogo-bottomImage-container").css("margin-top",(bottomPanelHeight - textHeight - menuHeight + 1));
   }
 
   bindClicks(){

@@ -17,10 +17,7 @@
 		
 			<line opacity="0.75" fill="none" stroke="#33485D" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="30" y1="0" x2="30" y2="267.166"/>
 	</g>
-	<g>
-		<polygon fill="#FFFFFF" points="32,8 20,20 20,0 40,0 		"/>
-		<polygon fill="#FFFFFF" points="8,8 20,20 20,0 0,0 		"/>
-	</g>
+	<polygon fill="#FFFFFF" points="20,0 0,0 8,8 20,20 32,8 40,0 	"/>
 	<g>
 		<polygon opacity="0.85" fill="#33485D" enable-background="new    " points="32,275 20,287 20,267 40,267 		"/>
 		<polygon opacity="0.85" fill="#56799C" enable-background="new    " points="8,275 20,287 20,267 0,267 		"/>

@@ -43,7 +43,7 @@
 .deleted-from-desktop{
   display: block;
   @media screen and ($bp-larger-than-desktop) {
-    display:none;
+    display:none !important;
   }
 }
 
