@@ -1,11 +1,3 @@
-<div class="container">
-  <a [routerLink]="['Drive Framework']">
-    <p class="mB0">Drive Framework</p>
-  </a>
-  <hr/>
-  <a *ngFor="#route of routes" [routerLink]="[route.name]">
-    <p *ngIf="route.data !== 'parent-root'">
-      {{route.name}}
-    </p>
-  </a>
+<div class="container contentContainer">
+  <router-outlet></router-outlet>
 </div>

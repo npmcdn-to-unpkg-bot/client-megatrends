@@ -1,49 +1,112 @@
 ///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+///<reference path="../../typings/browser/ambient/jquery/jquery.d.ts"/>
 
 import {Component, Input} from 'angular2/core';
-import {BrowserDomAdapter} from 'angular2/platform/browser';
 
-import {RouteDefinition, RouterOutlet} from 'angular2/router';
-import {APP_ROUTES} from '../app.routes';
+import {RouteDefinition, RouterOutlet, Router} from 'angular2/router';
+
+import {CORE_DIRECTIVES} from 'angular2/common';
 
 import {NavbarComponent} from '../navbar/navbar.component';
+import {NavbarMobileMenuComponent} from '../navbar/mobileMenu/mobileMenu.component';
 import {FooterComponent} from '../footer/footer.component';
 
-import {HomeComponent} from '../_home/home.component';
-
 @Component({
-    selector: 'page',
-    templateUrl: 'app/page/page.html',
-    directives:[RouterOutlet, NavbarComponent, FooterComponent, HomeComponent]
+  selector: 'page',
+  templateUrl: 'app/page/page.html',
+  directives:[
+    RouterOutlet,
+    NavbarComponent,
+    NavbarMobileMenuComponent,
+    FooterComponent,
+    CORE_DIRECTIVES]
 })
-
 export class PageComponent {
 
-  public appRoutes: RouteDefinition[];
-  constructor() {
-    this.appRoutes = APP_ROUTES;
-    this.broserDOM = new BrowserDomAdapter();
-  }
+  public pathName : String;
+  public mobileMenuVisible : Boolean;
 
-  broserDOM: BrowserDomAdapter;
+  constructor(private router: Router) {
+    this.mobileMenuVisible = false;
+    router.subscribe((path) => {
+
+      $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
+
+      this.closeMobileMenu();
+      this.adjustFooterAndFadeIn();
+      window.scrollTo(0,0);
+
+      if(path == "home"){
+        $("navbar").removeClass().addClass("navbar deleted");
+      } else {
+        $("navbar").removeClass("deleted");
+        $("footer").css("position","relative");
+      }
+
+
+    });
+  }
 
   ngAfterViewInit(){
-    setTimeout(_=> this.expandHeight());
+    $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
+    this.adjustFooterAndFadeIn();
+    this.setupNavbarMobileMenu();
   }
 
-  expandHeight(){
-    let screenHeight = this.broserDOM.query('body').offsetHeight;
-    let navbarHeight = this.broserDOM.query('navbar').offsetHeight;
-    let footerHeight = this.broserDOM.query('footer').offsetHeight;
-    let pageHeight = this.broserDOM.query('page').offsetHeight;
+  setupNavbarMobileMenu(){
+    let screenHeight = $(window).outerHeight();
+    let navbarHeight = $("navbar").outerHeight();
+
+    let fillingHeight = screenHeight - navbarHeight;
+
+    $(".navbar-mobileMenu-container").height(fillingHeight + 1);
+    $(".navbar-mobileMenu-container").css('top',(navbarHeight - 1));
+  }
+
+  closeMobileMenu(){
+    $('.navbar-mobileMenu-button-icon').removeClass("fa-times").addClass("fa-bars");
+    $('.navbar-mobileMenu-container').removeClass("fadingInFast").addClass("fadingOutFast");
+    $(".pageContent").addClass('fadingInFast');
+    $("body").height("auto");
+    $("body").css("overflow","auto");
+
+    this.mobileMenuVisible = false;
+  }
+
+  handleMobileMenuToggle(){
+    if(this.mobileMenuVisible){
+      this.closeMobileMenu();
+    } else {
+      $('.navbar-mobileMenu-button-icon').removeClass("fa-bars").addClass("fa-times");
+      $('.navbar-mobileMenu-container').removeClass("fadingOutFast").addClass("fadingInFast");
+
+      $(".pageContent").removeClass('fadingInFast');
+      $("body").height("100%");
+      $("body").css("overflow","hidden");
+
+      this.mobileMenuVisible = true;
+    }
+  }
+
+  adjustFooterAndFadeIn(){
+
+    let screenHeight = $(window).outerHeight();
+    let navbarHeight = $("navbar").outerHeight();
+    let footerHeight = $("footer").outerHeight();
+    let pageHeight = $(".pageContent").outerHeight();
     let paddingTotal = 30;
 
-    let fillingHeight = screenHeight - navbarHeight - footerHeight - paddingTotal;
-    let heightString = 'height:' + fillingHeight + 'px';
+    let fillingHeight = navbarHeight + footerHeight + paddingTotal;
+    let topDistance = screenHeight - pageHeight;
 
-    if(screenHeight > (navbarHeight + pageHeight + footerHeight)){
-        this.broserDOM.setAttribute(this.broserDOM.query('.pageContent'),'style',heightString);
+    if(pageHeight <= (screenHeight - fillingHeight)){
+      $('footer').css("top",(topDistance + "px"));
+    } else {
+      $('footer').css("top","0px");
     }
 
+    $(".pageContent").addClass('fadingInFast');
+
   }
+
 }

@@ -1,15 +1,40 @@
 <div class="container center-div">
   <a [routerLink]="['Home']">
-    <img class="navbar-logo" src="assets/images/Radial_4.jpg">
+    <img class="navbar-logo" src="assets/images/Megatrends_Logo.png">
   </a>
-  <a *ngFor="#route of routes" [routerLink]="[route.name]">
-    <p class="navbar-link" *ngIf="route.name !== 'Home' && route.data == 'parent-root'">
-      {{route.name}}
-    </p>
+  <a [routerLink]="['Contact']">
+    <div class="navbar-link">
+      <h5 class="mB5">
+        Contact
+      </h5>
+    </div>
   </a>
-  <a class="navbar-mobileMenu-button">
-    <p>
-      Menu <i class="fa fa-bars"></i>
-    </p>
+  <a [routerLink]="['About']">
+    <div class="navbar-link">
+      <h5 class="mB5">
+        About
+      </h5>
+    </div>
+  </a>
+  <a [routerLink]="['Articles']">
+    <div class="navbar-link">
+      <h5 class="mB5">
+        Articles
+      </h5>
+    </div>
+  </a>
+  <div class="navbar-link">
+    <a [routerLink]="['Drive Framework']">
+      <h5 class="mB0 pB5">
+        Drive Framework
+      </h5>
+    </a>
+    <div class="navbar-hoverContainer deleted">
+    </div>
+  </div>
+  <a class="navbar-mobileMenu-button" (click)="toggleMobileMenu()">
+    <h5>
+      Menu <i class="fa fa-bars navbar-mobileMenu-button-icon"></i>
+    </h5>
   </a>
 </div>

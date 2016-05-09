@@ -17,64 +17,68 @@ gulp.task('build', function (done) {
 gulp.task('build-sjs', function (done) {
     runSequence('build-assets', 'tsc-app', buildSJS);
     function buildSJS () {
-        var builder = new Builder('.');
-        builder.config(config.systemjsBuild);
-        builder.loader.defaultJSExtensions = true;
-        builder
-            .bundle(config.app + 'boot',
-                    config.build.path + config.app + 'boot.js',
-            {
-                normalize: true,
-                minify: true,
-                // TODO: remove this when angular2 bug is solved
-                mangle: false,
-                // TODO
-                globalDefs: { DEBUG: false }
-            })
-            .then(function () {
-                console.log('Build complete');
-                done();
-            })
-            .catch(function (ex) {
-                console.log('error', ex);
-                done('Build failed.');
-            });
+      var builder = new Builder('.');
+      builder.config(config.systemjsBuild);
+      builder.loader.defaultJSExtensions = true;
+      builder.bundle(config.app + 'boot',
+      config.build.path + config.app + 'boot.js',
+      {
+        normalize: true,
+        minify: true,
+        // TODO: remove this when angular2 bug is solved
+        mangle: false,
+        // TODO
+        globalDefs: { DEBUG: false }
+      })
+      .then(function () {
+        console.log('Build complete');
+        done();
+      })
+      .catch(function (ex) {
+        console.log('error', ex);
+        done('Build failed.');
+      });
     }
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */
 gulp.task('build-assets', function (done) {
-    runSequence('clean-build', ['wiredep'], function () {
-        done();
+  runSequence('clean-build', ['wiredep'], function () {
+    done();
 
-        gulp.src(config.app + '**/*.html', {
-            base: config.app
-        })
-        .pipe(gulp.dest(config.build.app));
+    gulp.src(config.app + '**/*.html', {
+        base: config.app
+    })
+    .pipe(gulp.dest(config.build.app));
 
-        gulp.src(config.app + '**/*.css', {
-            base: config.app
-        })
-        .pipe(cssnano())
-        .pipe(gulp.dest(config.build.app));
+    gulp.src(config.app + '**/*.css', {
+        base: config.app
+    })
+    .pipe(cssnano())
+    .pipe(gulp.dest(config.build.app));
 
-        gulp.src(config.assetsPath.images + '**/*.*', {
-            base: config.assetsPath.images
-        })
-        .pipe(gulp.dest(config.build.assetPath + 'images'));
+    gulp.src(config.assetsPath.images + '**/*.*', {
+        base: config.assetsPath.images
+    })
+    .pipe(gulp.dest(config.build.assetPath + 'images'));
 
-        gulp.src(config.assetsPath.fonts + '**/*.*', {
-            base: config.assetsPath.fonts
-        })
-        .pipe(gulp.dest(config.build.fonts));
+    gulp.src(config.data + '**/*.*', {
+        base: config.data
+    })
+    .pipe(gulp.dest(config.build.data));
 
-        return gulp.src(config.index)
-            .pipe(useref())
-            .pipe(gulpif('*.js', uglify()))
-            .pipe(gulpif('*.css', cssnano()))
-            .pipe(gulp.dest(config.build.path));
+    gulp.src(config.assetsPath.fonts + '**/*.*', {
+        base: config.assetsPath.fonts
+    })
+    .pipe(gulp.dest(config.build.fonts));
 
-    });
+    return gulp.src(config.index)
+        .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', cssnano()))
+        .pipe(gulp.dest(config.build.path));
+
+  });
 });
 
 gulp.task('wiredep', ['sass'], function () {

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="eight columns">
+    <a class="bindedLink" *ngFor="#article of articles;  #i = index" [routerLink]="['Article Detail',{id:article.url}]">
+      <h5 class="mB0">{{article.title}}</h5>
+      <p class="mB5">by <strong>{{article.author}}</strong>, {{article.date}}</p>
+      <p class="mB0">{{article.summary}}</p>
+      <hr class="mT2R mB2R"/>
+    </a>
+  </div>
+  <div class="four columns">
+  </div>
+</div>

@@ -1,5 +1,6 @@
-<navbar [routes]="appRoutes"></navbar>
-  <div class="pageContent">
-      <router-outlet></router-outlet>
-  </div>
-<footer></footer>
+<navbar (mobileMenuTrigger)="handleMobileMenuToggle()"></navbar>
+<navbar-mobileMenu [routes]="appRoutes" ></navbar-mobileMenu>
+<div class="pageContent hidden" [ngClass]="{fadingIn:fadingIn}">
+  <router-outlet></router-outlet>
+  <footer class=""></footer>
+</div>

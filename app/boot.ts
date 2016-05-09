@@ -2,9 +2,17 @@
 
 import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS} from 'angular2/router';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {AppComponent} from './app.component';
-import {LoggerService} from './blocks/logger.service';
+import 'rxjs/add/operator/map';
+
+import {JSONReaderService} from './services/jsonReader.service'
+
+//import {enableProdMode} from 'angular2/core';
+// enableProdMode();
 
 bootstrap(AppComponent, [
-    LoggerService, ROUTER_PROVIDERS
+  ROUTER_PROVIDERS,
+  HTTP_PROVIDERS,
+  JSONReaderService
 ]);

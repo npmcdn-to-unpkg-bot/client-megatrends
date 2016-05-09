@@ -26,7 +26,6 @@ gulp.task('watch-ts-templates', function () {
   });
 });
 
-
 /* Compile typescripts */
 gulp.task('tsc', ['clean-ts'], function () {
     return compileTs(tsFiles);

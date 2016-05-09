@@ -2,28 +2,28 @@ import {Component,Input} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 
 import {RouteConfig} from 'angular2/router';
-import {APP_ROUTES} from './app.routes';
 import {SpinnerComponent} from './spinner/spinner.component';
 import {PageComponent} from './page/page.component';
+import {FramedImageComponent} from './blocks/framedImage/framedImage.component';
 
-import {LoggerService} from './blocks/logger.service';
+import {APP_ROUTES} from './app.routes';
+import {DRIVEFRAMEWORK_ROUTES} from './_driveFramework/driveFramework.routes';
+import {ARTICLE_ROUTES} from './_articles/article.routes';
 
 @Component({
     selector: 'main-app',
     templateUrl: 'app/app.html',
-    directives: [NgClass, PageComponent, SpinnerComponent]
+    directives: [NgClass, PageComponent, SpinnerComponent, FramedImageComponent]
 })
 
 @RouteConfig(APP_ROUTES)
 
 export class AppComponent {
-  private logger: LoggerService;
-
+  public aboutIS : String;
   @Input() fadingIn;
 
-  constructor(logger: LoggerService) {
-    this.logger = logger;
-    this.logger.log('Hello!');
+  constructor() {
+    this.aboutIS = "assets/images/partners_temp.jpg"
   }
 
   ngAfterViewInit(){
@@ -33,5 +33,4 @@ export class AppComponent {
   fadeIn(){
     this.fadingIn = true;
   }
-
 }

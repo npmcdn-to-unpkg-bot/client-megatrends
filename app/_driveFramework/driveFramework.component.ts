@@ -1,19 +1,18 @@
 ///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
 
 import {Component, Input} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common';
-import {RouterLink, RouteDefinition} from 'angular2/router';
-import {APP_ROUTES} from '../app.routes';
+import {RouteConfig, RouterOutlet} from 'angular2/router';
+
+import {DRIVEFRAMEWORK_ROUTES} from '../_driveFramework/driveFramework.routes';
 
 @Component({
   selector: 'about',
   templateUrl: 'app/_driveFramework/driveFramework.html',
-  directives:[RouterLink, CORE_DIRECTIVES]
+  directives:[RouterOutlet]
 })
 
+@RouteConfig(DRIVEFRAMEWORK_ROUTES)
+
 export class DriveFrameworkComponent {
-  @Input() routes: RouteDefinition[];
-  constructor() {
-    this.routes = APP_ROUTES;
-  }
+
 }

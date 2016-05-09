@@ -5,6 +5,7 @@ module.exports = function () {
     var testHelper = test + 'test-helpers/';
     var e2e = test + 'e2e/';
     var assets = root + 'assets/';
+    var data = app + 'data/';
     var assetsPath = {
         styles: assets + 'styles/',
         images: assets + 'images/',
@@ -26,6 +27,7 @@ module.exports = function () {
     var build = {
         path: 'build/',
         app: 'build/app/',
+        data: 'build/app/data',
         fonts: 'build/fonts',
         assetPath: 'build/assets/',
         assets: {
@@ -41,8 +43,8 @@ module.exports = function () {
     var liveServer = {
         dev: {
             port: 3000,
-            //host: "192.168.1.64",
-            host: "127.0.0.1",
+            host: "192.168.0.2",
+            //host: "127.0.0.1",
             open: '/',
             file: "index.html",
             wait: 1000,
@@ -78,6 +80,7 @@ module.exports = function () {
     var config = {
         root: root,
         app: app,
+        data: data,
         test: test,
         testHelper: testHelper,
         e2e: e2e,
