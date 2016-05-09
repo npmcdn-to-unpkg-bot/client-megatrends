@@ -75,8 +75,8 @@ export class HomeComponent {
 
   organizeDFDiagram(){
 
-    $(".home-DF-trend-container").eq(1).addClass("pageBreak");
-    $(".home-DF-trend-container").eq(3).addClass("pageBreak");
+    $("<hr class='printOnly-separator pageBreak'/>").insertBefore($(".home-DF-trend-container").eq(1));
+    $("<hr class='printOnly-separator pageBreak'/>").insertBefore($(".home-DF-trend-container").eq(3));
 
     $(".home-DF-trend-container:last").css("margin-bottom",0);
     $(".home-DF-trend-container:last").css("padding-bottom",0);

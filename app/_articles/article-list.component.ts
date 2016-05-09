@@ -32,7 +32,30 @@ export class ArticleListComponent {
   getArticles() {
     this._jsonReaderService.getFile("/app/data/articles.data.json").subscribe(
       data => this.articles = data,
-      err => console.log(err)
+      err => console.log(err),
+      () => setTimeout(_=>this.adjustFooterAndFadeIn())
+
     );
+  }
+
+  adjustFooterAndFadeIn(){
+
+    let screenHeight = $(window).outerHeight();
+    let navbarHeight = $("navbar").outerHeight();
+    let footerHeight = $("footer").outerHeight();
+    let pageHeight = $(".pageContent").outerHeight();
+    let paddingTotal = 30;
+
+    let fillingHeight = navbarHeight + footerHeight + paddingTotal;
+    let topDistance = screenHeight - pageHeight;
+
+    if(pageHeight <= (screenHeight - fillingHeight)){
+      $('footer').css("top",(topDistance + "px"));
+    } else {
+      $('footer').css("top","0px");
+    }
+
+    $(".pageContent").addClass('fadingInFast');
+
   }
 }

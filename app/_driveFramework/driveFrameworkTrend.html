@@ -1,16 +1,17 @@
 <div *ngFor="#trend of trends;  #i = index">
   <div *ngIf="currentPath == trend.url">
     <div class="row">
-      <div class="eight columns">
+      <div class="nine columns">
         <a [routerLink]="['Drive Framework Diagram']">
           <p class="mB0"><i class="fa fa-arrow-left mR5"></i> Drive Framework</p>
         </a>
         <hr class="mT15"/>
         <h4 class="mT2R">{{trend.name}}</h4>
-        <div class="multi-column-text" [innerHTML]="trend.bodyHTML"></div>
+        <div class="trend-main-text" [innerHTML]="trend.bodyHTML"></div>
       </div>
-      <div class="four columns">
-        <img class="u-max-full-width" src="assets/images/{{trend.letter}}_Icon_Head.svg">
+      <div class="three columns">
+        <hr class="deleted-from-tablet mT0 mB2R"/>
+        <img class="u-full-width" src="assets/images/{{trend.letter}}_Icon_Head.svg">
         <div class="trend-questionBox">
           <div *ngFor="#question of trend.questions;  #i = index">
             <h6 *ngIf="i < trend.questions.length - 1"><emx>{{question}}</emx></h6>
@@ -19,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row deleted">
       <hr class="mT2R mB2R"/>
       <div class="twelve columns">
         <div class="driveFrameworkTrend-graphContainer">
@@ -39,7 +40,8 @@
       </div>
       <div class="three columns">
         <hr class="mT2R mB15"/>
-        <p class="mB15 u-pull-left"><strong>Share this page</strong></p>
+        <p class="mB15 u-pull-left visible-from-desktop"><strong>Share this page</strong></p>
+        <p class="mB15 u-pull-left deleted-from-desktop"><strong>Share</strong></p>
         <a><i class="fa fa-twitter u-pull-right mT3"></i></a>
         <a><i class="fa fa-linkedin u-pull-right mT3 mR15"></i></a>
         <a><i class="fa fa-envelope u-pull-right mT3 mR15"></i></a>

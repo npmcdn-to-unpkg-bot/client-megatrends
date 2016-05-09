@@ -82,6 +82,10 @@ $color-purple:#884a9c;
   margin-top:15px;
 }
 
+.mT45{
+  margin-top:45px;
+}
+
 .mT1R{
   margin-top:1rem;
 }
@@ -156,6 +160,14 @@ $color-purple:#884a9c;
 
 .mL5{
   margin-left:5px;
+}
+
+.mL15{
+  margin-left:15px;
+}
+
+.mL30{
+  margin-left:30px;
 }
 
 .mR5{
@@ -287,6 +299,10 @@ main-app{
   text-align:justify;
 }
 
+.is-underline{
+  text-decoration:underline;
+}
+
 .invisible-seperator{
   border-top:0px;
   margin:0px;
@@ -311,6 +327,18 @@ page{
 
 .w20p{
   width:20%;
+}
+
+.w30p{
+  width:30%;
+}
+
+.w50p{
+  width:50%;
+}
+
+.w70p{
+  width:70%;
 }
 
 .w120{
@@ -447,11 +475,19 @@ navbar .container{
 /* Navigation Mobile Menu */
 
 .navbar-mobileMenu-container{
-  background:#eee;
+  background:#fdfdfd;
   z-index:99;
   width:100%;
   position:absolute;
   top:-1px;
+}
+
+.navbar-mobileMenu-footer{
+  background:#fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  border-top:1px solid #eee;
 }
 
 /* Image Frames */
@@ -547,6 +583,16 @@ navbar .container{
   page-break-before: always;
 }
 
+.printOnly-separator{
+  display:none;
+  margin-top:0px;
+  padding-bottom:1rem;
+  border-top:0px;
+  @media print {
+    display:block;
+  }
+}
+
 /* Custom Elements */
 
 .drive-navbar-label{
@@ -562,6 +608,17 @@ navbar .container{
   border-left:1px solid #eee;
   border-right:1px solid #eee;
   border-bottom:1px solid #eee;
+}
+
+.trend-main-text{
+  @media screen and ($bp-larger-than-tablet) {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
 }
 
 .multi-column-text {
@@ -751,8 +808,8 @@ navbar .container{
 
 .homeLogo-image-arrow-tip-print{
   position:absolute;
-  left:35px;
-  bottom:-101px;
+  left:34px;
+  bottom:-99px;
   z-index:999;
 }
 
@@ -870,7 +927,7 @@ navbar .container{
   height:120px;
   position: relative;
   float: right;
-  top: -71px;
+  top: -90px;
   right:1px;
   z-index:9;
   @media screen and ($bp-larger-than-tablet) {
@@ -888,6 +945,9 @@ navbar .container{
     position: absolute;
     right: 0px;
   }
+  @media print {
+    height:200px;
+  }
 }
 
 .home-DF-final-circleTop-container{
@@ -902,6 +962,9 @@ navbar .container{
   @media screen and ($bp-larger-than-tablet) {
     display:none;
   }
+  @media print{
+    right:-14px;
+  }
 }
 
 .home-DF-final-circleTopHorizontal-container{
@@ -909,7 +972,7 @@ navbar .container{
   @media screen and ($bp-larger-than-tablet) {
     display:block;
     background:url('../images/Home_Arrow_Background_11.svg') no-repeat;
-    width:160px;
+    width:185px;
     height:53px;
     position: relative;
     float: right;
@@ -918,9 +981,14 @@ navbar .container{
   }
 }
 
-.home-about-container{
-  width:50%;
-  margin:0px auto;
+.home-about-print-leftContainer{
+  width:20%;
+  float:left;
+}
+
+.home-about-print-rightContainer{
+  width:80%;
+  float:right;
 }
 
 .articles-backgroundRow{

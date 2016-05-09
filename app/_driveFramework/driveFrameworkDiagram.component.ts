@@ -27,8 +27,8 @@ export class DriveFrameworkDiagramComponent {
   }
 
   ngAfterViewInit(){
-    setTimeout(_=> this.listenFlipCards());
-    //setTimeout(_=> $("a").click(function(event) {$("footer").removeClass('fadingInFast');}));
+    setTimeout(_=> this.setupFlipTrends());
+    setTimeout(_=> this.organizeDFDiagram());
   }
 
   getTrends() {
@@ -38,30 +38,37 @@ export class DriveFrameworkDiagramComponent {
     )
   }
 
-  listenFlipCards(){
+  organizeDFDiagram(){
 
-    $(".driveFrameworkDiagram-trendConainer" ).mouseover(function(event) {
-      $(event.currentTarget).find(".trendCard-container").flip('toggle');
-      $(event.currentTarget).find(".trend-header").removeClass('color-navy-important');
-    });
-    $(".driveFrameworkDiagram-trendConainer").mouseout(function(event) {
-      $(event.currentTarget).find(".trendCard-container").flip('toggle');
-      $(event.currentTarget).find(".trend-header").addClass('color-navy-important');
-    });
+    $("<hr class='printOnly-separator pageBreak'/>").insertBefore($(".home-DF-trend-container").eq(1));
+    $("<hr class='printOnly-separator pageBreak'/>").insertBefore($(".home-DF-trend-container").eq(3));
 
-    this.flipCards();
+    $(".home-DF-trend-container:last").css("margin-bottom",0);
+    $(".home-DF-trend-container:last").css("padding-bottom",0);
+    $(".home-DF-trend-container:last").children(".home-DF-question").css("padding-bottom",15);
 
   }
 
-  flipCards(){
-    $(".trendCard-container").flip({},function(){
-      $(".driveFrameworkDiagram-icon-container").height($(".driveFrameworkDiagram-icon").height());
-      (<any>$("body")).customScrollbar("resize");
-      $(".overview").css('top',0);
-      $(".thumb").css('top',0);
+  setupFlipTrends(){
+
+    let topContainerWidth = $(".home-DF-trend-image-container").width();
+    $(".home-DF-trend-image-container").height(topContainerWidth);
+
+    $(".home-DF-trend-container").mouseover(function(event) {
+      $(event.currentTarget).find(".home-DF-trend-image-container").flip('toggle');
     });
-    if($(".trendCard-container").length <= 0){
-      setTimeout(_=> this.flipCards());
+    $(".home-DF-trend-container").mouseout(function(event) {
+      $(event.currentTarget).find(".home-DF-trend-image-container").flip('toggle');
+    });
+
+    this.flipTrends();
+
+  }
+
+  flipTrends(){
+    $(".home-DF-trend-image-container").flip({},function(){});
+    if($(".home-DF-trend-image-container").length <= 0){
+      setTimeout(_=> this.flipTrends());
     }
   }
 }

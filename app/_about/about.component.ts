@@ -12,6 +12,6 @@ import {FramedImageComponent} from '../blocks/framedImage/framedImage.component'
 export class AboutComponent {
   public aboutIS : String;
   constructor(){
-    this.aboutIS = "assets/images/partners_temp.jpg"
+    this.aboutIS = "assets/images/Team_Labels.jpg"
   }
 }

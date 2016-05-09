@@ -34,20 +34,15 @@ export class PageComponent {
 
       this.closeMobileMenu();
       this.adjustFooterAndFadeIn();
+      window.scrollTo(0,0);
 
       if(path == "home"){
         $("navbar").removeClass().addClass("navbar deleted");
-        //$("footer").removeClass().addClass("footer deleted");
       } else {
         $("navbar").removeClass("deleted");
         $("footer").css("position","relative");
       }
 
-      setTimeout(_=> {
-        (<any>$("body")).customScrollbar("resize");
-        $(".overview").css('top',0);
-        $(".thumb").css('top',0);
-      });
 
     });
   }
@@ -61,9 +56,8 @@ export class PageComponent {
   setupNavbarMobileMenu(){
     let screenHeight = $(window).outerHeight();
     let navbarHeight = $("navbar").outerHeight();
-    let footerHeight = $("footer").outerHeight();
 
-    let fillingHeight = screenHeight - navbarHeight - footerHeight;
+    let fillingHeight = screenHeight - navbarHeight;
 
     $(".navbar-mobileMenu-container").height(fillingHeight + 1);
     $(".navbar-mobileMenu-container").css('top',(navbarHeight - 1));
@@ -72,27 +66,23 @@ export class PageComponent {
   closeMobileMenu(){
     $('.navbar-mobileMenu-button-icon').removeClass("fa-times").addClass("fa-bars");
     $('.navbar-mobileMenu-container').removeClass("fadingInFast").addClass("fadingOutFast");
-    $(".pageContent").removeClass('fadingInFast');
+    $(".pageContent").addClass('fadingInFast');
+    $("body").height("auto");
+    $("body").css("overflow","auto");
+
     this.mobileMenuVisible = false;
   }
 
   handleMobileMenuToggle(){
     if(this.mobileMenuVisible){
-
       this.closeMobileMenu();
-
     } else {
       $('.navbar-mobileMenu-button-icon').removeClass("fa-bars").addClass("fa-times");
       $('.navbar-mobileMenu-container').removeClass("fadingOutFast").addClass("fadingInFast");
 
-      let topDistance = $(window).outerHeight()
-      - $('footer').outerHeight()
-      - $(".pageContent").outerHeight()
-      - $("navbar").outerHeight();
-
-      $('footer').css("top",topDistance + "px");
-
-      $(".pageContent").addClass('fadingInFast');
+      $(".pageContent").removeClass('fadingInFast');
+      $("body").height("100%");
+      $("body").css("overflow","hidden");
 
       this.mobileMenuVisible = true;
     }
@@ -103,7 +93,7 @@ export class PageComponent {
     let screenHeight = $(window).outerHeight();
     let navbarHeight = $("navbar").outerHeight();
     let footerHeight = $("footer").outerHeight();
-    let pageHeight = $("page").outerHeight();
+    let pageHeight = $(".pageContent").outerHeight();
     let paddingTotal = 30;
 
     let fillingHeight = navbarHeight + footerHeight + paddingTotal;
