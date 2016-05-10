@@ -46,10 +46,10 @@ export class ArticleListComponent {
     let pageHeight = $(".pageContent").outerHeight();
     let paddingTotal = 30;
 
-    let fillingHeight = navbarHeight + footerHeight + paddingTotal;
-    let topDistance = screenHeight - pageHeight;
+    let fillingHeight = navbarHeight + paddingTotal;
+    let topDistance = screenHeight - pageHeight - fillingHeight + 15;
 
-    if(pageHeight <= (screenHeight - fillingHeight)){
+    if(pageHeight < (screenHeight - fillingHeight)){
       $('footer').css("top",(topDistance + "px"));
     } else {
       $('footer').css("top","0px");

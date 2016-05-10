@@ -27,22 +27,26 @@ export class FramedImageComponent {
   fadeIn(){
     let imageToFrameRatio = 0.6;
 
-    let topContainerWidth = $(".conainer-image-frame").width();
-    let topContainerHeight = $(".conainer-image-frame").height();
+    $(".conainer-image-frame").each(function( image ) {
 
-    let topContainerLeft = $(".conainer-image-frame").position().left;
-    let topContainerTop = $(".conainer-image-frame").position().top;
+      let topContainerWidth = $(this).width();
+      let topContainerHeight = $(this).height();
 
-    if(topContainerHeight <= 0){
-      topContainerHeight = topContainerWidth;
-      $(".conainer-image-frame").height(topContainerWidth);
-    }
+      let topContainerLeft = $(this).position().left;
+      let topContainerTop = $(this).position().top;
 
-    $(".conainer-image-inner").width(topContainerWidth * imageToFrameRatio);
-    $(".conainer-image-inner").height(topContainerHeight * imageToFrameRatio);
-    $(".conainer-image-inner").css("border-radius",(topContainerWidth * imageToFrameRatio * 0.5));
-    $(".conainer-image-inner").css("left",(topContainerWidth * (1-imageToFrameRatio) * 0.5) + (topContainerLeft));
-    $(".conainer-image-inner").css("top",(topContainerHeight * (1-imageToFrameRatio) * 0.5) + topContainerTop);
+      if(topContainerHeight <= 0){
+        topContainerHeight = topContainerWidth;
+        $(this).height(topContainerWidth);
+      }
+
+      $(this).next().width(topContainerWidth * imageToFrameRatio);
+      $(this).next().height(topContainerHeight * imageToFrameRatio);
+      $(this).next().css("border-radius",(topContainerWidth * imageToFrameRatio * 0.5));
+      $(this).next().css("left",(topContainerWidth * (1-imageToFrameRatio) * 0.5) + (topContainerLeft));
+      $(this).next().css("top",(topContainerHeight * (1-imageToFrameRatio) * 0.5) + topContainerTop);
+
+    });
 
     //this.fadingIn = true;
   }

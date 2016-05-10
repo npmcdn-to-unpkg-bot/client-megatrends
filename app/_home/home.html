@@ -344,9 +344,13 @@
           <div *ngIf="i < panelCount" class="article-top-container">
             <img class="article-top-right-effect" src="assets/images/Article_TopRight_Effect.svg">
             <div class="article-inner-container">
-              <h6 class="mB0 is-semibold">{{article.title}}</h6>
+              <h6 class="mB0 is-semibold" [innerHTML]="article.title"></h6>
               <p class="article-author">by {{article.author}}, {{article.date}}</p>
-              <p class="mB0">{{article.summary}}</p>
+              <framedImage [imageSource]="article.imagePath"></framedImage>
+              <p class="mB0 article-summary">{{article.summary}}</p>
+              <p class="mB0"><em>...continue reading...</em>
+
+              </p>
             </div>
           </div>
         </a>
