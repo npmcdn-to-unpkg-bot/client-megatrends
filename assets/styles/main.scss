@@ -838,7 +838,7 @@ navbar .container{
 
 .homeArrowClipperImage{
   position: absolute;
-  right:0px;
+  right:-1px;
   z-index:99;
 }
 
@@ -878,6 +878,10 @@ navbar .container{
   border:1px solid #eee;
   background:#fffeee;
   color:#2C3E50;
+  margin-bottom:10px;
+  @media screen and ($bp-larger-than-phablet) {
+    margin-bottom:0px;
+  }
 }
 
 .home-DF-top-container{
@@ -893,19 +897,38 @@ navbar .container{
 }
 
 .home-DF-trend-left-container{
-  width:20%;
-  float:left;
+  position:absolute;
+  right:35px;
+  width:60px;
+  z-index: 19;
+  @media screen and ($bp-larger-than-mobile) {
+    right:15px;
+  }
+  @media screen and ($bp-larger-than-tablet) {
+    position:static;
+    width:20%;
+    float:left;
+  }
 }
 
 .home-DF-trend-right-container{
-  width:80%;
-  float:right;
+  clear:both;
+  @media screen and ($bp-larger-than-tablet) {
+    clear:none;
+    width:80%;
+    float:right;
+  }
 }
 
 .home-DF-trend-text-container{
-  padding-left:15px;
+  padding-left:0px;
+  //padding-top:15px;
   @media screen and ($bp-larger-than-phablet) {
-    padding-left:30px;
+    //padding-left:30px;
+  }
+  @media screen and ($bp-larger-than-tablet) {
+    padding-left:15px;
+    padding-top:0px;
   }
 }
 
@@ -917,37 +940,50 @@ navbar .container{
   width:100%;
 }
 
+.home-DF-question-container{
+  width:60%;
+  float:left;
+  @media screen and ($bp-larger-than-tablet) {
+    width:auto;
+    float:none;
+  }
+}
+
 .home-DF-question{
   padding-right:15px;
+  margin-bottom:10px !important;
   @media screen and ($bp-larger-than-tablet) {
     width:35%;
     padding-right:5%;
     float:left;
+    margin-bottom:0px !important;
   }
 }
 
 .home-DF-trend-circleTop-container{
   background:url('images/Home_Arrow_Background_8.svg') no-repeat;
-  width:80px;
+  width:90px;
   height:120px;
   position: relative;
   float: right;
-  top: -90px;
   right:1px;
   z-index:9;
+  top: -90px;
   @media screen and ($bp-larger-than-tablet) {
     right: 0px;
+    top: -90px;
   }
 }
 
 .home-DF-trend-circleBottom-container{
   background:url('images/DF-TrendCircleBottom.svg') no-repeat;
   width:80px;
-  height:120px;
+  height:200px;
   float:right;
   z-index:1;
   @media screen and ($bp-larger-than-tablet) {
     position: absolute;
+    height:120px;
     right: 0px;
   }
   @media print {
@@ -984,6 +1020,143 @@ navbar .container{
     z-index:999;
     right:-55px;
   }
+}
+
+.workshop-wrapper{
+  width:100%;
+  clear:both;
+  border:1px solid #eee;
+  @media screen and ($bp-larger-than-tablet) {
+    width:30%;
+    float:left;
+    clear:none;
+    border:0px;
+  }
+  @media screen and ($bp-larger-than-desktop) {
+
+  }
+  @media screen and ($bp-larger-than-desktophd) {
+
+  }
+}
+
+.workshop-inside-wrapper{
+  width:70%;
+  float:left;
+  @media screen and ($bp-larger-than-tablet) {
+    height:225px;
+    width:100%;
+    float:none;
+  }
+  @media screen and ($bp-larger-than-desktop) {
+    height:150px;
+  }
+  @media screen and ($bp-larger-than-desktophd) {
+    height:120px;
+  }
+}
+
+.workshop-icon{
+  width:30%;
+  float:left;
+  @media screen and ($bp-larger-than-tablet) {
+    border:1px solid #eee;
+    width:100%;
+    float:none;
+  }
+}
+
+.workshop-main{
+  background:#fdfdfd;
+  border-left:1px solid #eee;
+  @media screen and ($bp-larger-than-tablet) {
+    width:33%;
+    position:absolute;
+    background:auto;
+    border:0px;
+  }
+}
+
+.ww1{
+  margin-top:15px;
+  @media screen and ($bp-larger-than-tablet) {
+    margin-right:5%;
+    margin-top:0px;
+  }
+}
+
+.ww2{
+  position:relative;
+  top:-26px;
+  z-index:1;
+  @media screen and ($bp-larger-than-tablet) {
+    margin-right:5%;
+    position:static;
+    top:0px;
+    z-index: auto;
+  }
+}
+
+.ww3{
+  position:relative;
+  top:-52px;
+  z-index:1;
+  @media screen and ($bp-larger-than-tablet) {
+    position:static;
+    top:0px;
+    z-index: auto;
+  }
+}
+
+.workshop-left{
+  width:20px;
+  position:absolute;
+  z-index:999;
+}
+
+.workshop-center{
+  @media screen and ($bp-larger-than-tablet) {
+    background:#fdfdfd;
+    border-bottom:1px solid #eee;
+    border-left:1px solid #eee;
+    position:absolute;
+    height:225px;
+  }
+  @media screen and ($bp-larger-than-desktop) {
+    height:150px;
+  }
+  @media screen and ($bp-larger-than-desktophd) {
+    height:120px;
+  }
+}
+
+.workshop-right{
+  width:20px;
+  float:left;
+  position:absolute;
+  right:-21px;
+  z-index:999;
+  top:0px;
+}
+
+.workshop-bottom{
+  height:50px;
+  float:right;
+  position:relative;
+  top:-1px;
+  z-index:99;
+}
+
+.workshop-padding{
+  padding-top:35px;
+  @media screen and ($bp-larger-than-tablet) {
+    padding-left:35px;
+    padding-top:15px;
+  }
+}
+
+.wb2{
+  top:-27px;
 }
 
 .home-about-print-leftContainer{
@@ -1025,16 +1198,35 @@ navbar .container{
   z-index:99;
 }
 
+.article-title{
+  @media screen and ($bp-larger-than-tablet) {
+    height:72px;
+  }
+  @media screen and ($bp-larger-than-desktop) {
+
+  }
+  @media screen and ($bp-larger-than-desktophd) {
+
+  }
+}
+
 .article-author{
   border-bottom:1px solid #ccc;
   padding-bottom:10px;
-  margin-bottom:0px;
+  margin-bottom:15px;
   height:51px;
+  @media screen and ($bp-larger-than-phablet) {
+    margin-bottom:0px;
+  }
 }
 
 .article-summary{
   height:120px;
   overflow:hidden;
+  margin-top:15px;
+  @media screen and ($bp-larger-than-phablet) {
+    margin-top:0px;
+  }
 }
 
 .article-top-effect{
@@ -1077,6 +1269,12 @@ navbar .container{
   background:url('images/Arrow_Bottom_Arrow.svg') no-repeat;
   background-position: left top;
   background-size: 100%;
+}
+
+.home-socialmediaLinksContainer{
+  display:block;
+  width:65px;
+  margin:0px auto;
 }
 
 .socialmediaLinksContainer{

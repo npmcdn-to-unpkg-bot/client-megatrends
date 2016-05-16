@@ -171,15 +171,17 @@
             </div>
             <div class="home-DF-trend-right-container">
               <div class="home-DF-trend-text-container">
-                <div class="home-DF-trend-circleTop-container"></div>
+                <div class="home-DF-trend-circleTop-container" ></div>
                 <h6 class="home-DF-trend-title mB0"><strong>{{i + 1}}. {{trend.name}}</strong></h6>
                 <hr class="home-DF-seperator"/>
                 <p class="home-DF-trend-text mB0">{{trend.intro}}</p>
                 <hr class="home-DF-seperator"/>
-                <div *ngFor="#question of trend.questions; #j = index">
-                  <p class="mB0 home-DF-question">
-                    <i class="fa fa-question-circle mR5"></i>{{question}}
-                  </p>
+                <div class="home-DF-question-container">
+                  <div  *ngFor="#question of trend.questions; #j = index">
+                    <p class="mB0 home-DF-question">
+                      <i class="fa fa-question-circle mR5"></i>{{question}}
+                    </p>
+                  </div>
                 </div>
                 <div class="home-DF-trend-circleBottom-container"></div>
               </div>
@@ -232,7 +234,84 @@
           </h6>
         </div>
       </div>
-      <hr class="mT2R mB2R noPrint"/>
+      <hr class="mT2R mB2R noPrint visible-from-tablet"/>
+    </div>
+  </section>
+  <section id="hs-workshop" class="homeSection">
+    <div class="container">
+
+      <div class="workshop-wrapper ww1">
+        <div class="workshop-icon">
+          <img class="u-full-width" src="assets/images/Blackboard.svg">
+        </div>
+        <div class="workshop-inside-wrapper">
+          <div class="workshop-main">
+            <div class="workshop-center">
+              <h6 class="mB0 p15">
+                In our workshops, participants of different companies look at the five megatrends of the DRIVE framework...
+              </h6>
+            </div>
+            <div class="workshop-right visible-from-tablet">
+              <img class="visible-from-desktophd" src="assets/images/Final_Right_Arrow.svg">
+              <img class="visible-from-desktop deleted-from-desktophd" src="assets/images/Final_Right_Arrow_150.svg">
+              <img class="visible-from-tablet deleted-from-desktop" src="assets/images/Final_Right_Arrow_225.svg">
+            </div>
+          </div>
+        </div>
+        <hr class="invisible-seperator deleted-from-tablet"/>
+      </div>
+      <div class="workshop-bottom wb1 deleted-from-tablet"><img class="u-full-width" src="assets/images/Final_Together_Arrow.svg"></div>
+
+      <div class="workshop-wrapper ww2">
+        <div class="workshop-icon">
+          <img class="u-full-width" src="assets/images/Company.svg">
+        </div>
+        <div class="workshop-inside-wrapper">
+          <div class="workshop-main">
+          <div class="workshop-left visible-from-tablet">
+            <img class="visible-from-desktophd" src="assets/images/Final_Left_Arrow.svg">
+            <img class="visible-from-desktop deleted-from-desktophd" src="assets/images/Final_Left_Arrow_150.svg">
+            <img class="visible-from-tablet deleted-from-desktop" src="assets/images/Final_Left_Arrow_225.svg">
+          </div>
+          <div class="workshop-center">
+            <h6 class="mB0 p15 workshop-padding">
+              ... they then combine the insights gained with an assessment of their company’s resources and capabilities...
+            </h6>
+            <div class="workshop-right visible-from-tablet">
+              <img class="visible-from-desktophd" src="assets/images/Final_Right_Arrow.svg">
+              <img class="visible-from-desktop deleted-from-desktophd" src="assets/images/Final_Right_Arrow_150.svg">
+              <img class="visible-from-tablet deleted-from-desktop" src="assets/images/Final_Right_Arrow_225.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="invisible-seperator deleted-from-tablet"/>
+    </div>
+    <div class="workshop-bottom wb2 deleted-from-tablet"><img class="u-full-width" src="assets/images/Final_Together_Arrow.svg"></div>
+
+    <div class="workshop-wrapper ww3">
+      <div class="workshop-icon">
+        <img class="u-full-width" src="assets/images/Magnifying.svg">
+      </div>
+      <div class="workshop-inside-wrapper">
+        <div class="workshop-main">
+          <div class="workshop-left visible-from-tablet">
+            <img class="visible-from-desktophd" src="assets/images/Final_Left_Arrow.svg">
+            <img class="visible-from-desktop deleted-from-desktophd" src="assets/images/Final_Left_Arrow_150.svg">
+            <img class="visible-from-tablet deleted-from-desktop" src="assets/images/Final_Left_Arrow_225.svg">
+          </div>
+          <div class="workshop-center">
+            <h6 class="mB0 p15 workshop-padding">
+              ... to produce a set of potential new business opportunities that are discussed and refined at the end of the workshops.
+            </h6>
+          </div>
+        </div>
+      </div>
+      <hr class="invisible-seperator deleted-from-tablet"/>
+    </div>
+
+    <hr class="invisible-seperator"/>
+    <hr class="mT2R mB0 noPrint visible-from-tablet"/>
     </div>
   </section>
 
@@ -344,12 +423,11 @@
           <div *ngIf="i < panelCount" class="article-top-container">
             <img class="article-top-right-effect" src="assets/images/Article_TopRight_Effect.svg">
             <div class="article-inner-container">
-              <h6 class="mB0 is-semibold" [innerHTML]="article.title"></h6>
+              <h6 class="article-title mB0 is-semibold" [innerHTML]="article.title"></h6>
               <p class="article-author">by {{article.author}}, {{article.date}}</p>
               <framedImage [imageSource]="article.imagePath"></framedImage>
               <p class="mB0 article-summary">{{article.summary}}</p>
               <p class="mB0"><em>...continue reading...</em>
-
               </p>
             </div>
           </div>
@@ -379,6 +457,12 @@
           </p>
           <hr class="mB mT1R"/>
           <h5 class="color-navy-important is-text-center is-semibold mB0">info@megatrends.com</h5>
+          <hr class="mB mT1R"/>
+          <div class="home-socialmediaLinksContainer">
+            <a href="https://twitter.com/Exp_Mark"><i class="fa fa-twitter u-pull-left mR15"></i></a>
+            <a href="https://www.linkedin.com/in/markesposito"><i class="fa fa-linkedin u-pull-left mR15"></i></a>
+            <a href="https://www.facebook.com/Megatrends-723544677785600/"><i class="fa fa-facebook-official u-pull-left"></i></a>
+          </div>
         </div>
       </div>
     </div>

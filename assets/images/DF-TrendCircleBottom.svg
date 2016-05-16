@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="90px" height="180px" viewBox="0 0 90 180" enable-background="new 0 0 90 180" xml:space="preserve">
+	 width="90px" height="200px" viewBox="0 0 90 200" enable-background="new 0 0 90 200" xml:space="preserve">
 <rect x="50" y="4" fill="#FFFFFF" width="20.5" height="49.75"/>
 <rect x="3" y="4" fill="#FFFFFF" width="20.5" height="49.75"/>
 <g>
@@ -16,9 +16,9 @@
 <circle fill="none" stroke="#EEEEEE" stroke-miterlimit="10" cx="35" cy="30" r="30"/>
 <g>
 	
-		<line opacity="0.75" fill="none" stroke="#DDDDDD" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="25" y1="30" x2="25" y2="182"/>
+		<line opacity="0.75" fill="none" stroke="#DDDDDD" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="25" y1="30" x2="25" y2="204.5"/>
 	
-		<line opacity="0.75" fill="none" stroke="#CCCCCC" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="45" y1="30" x2="45" y2="182"/>
+		<line opacity="0.75" fill="none" stroke="#CCCCCC" stroke-width="20" stroke-miterlimit="10" enable-background="new    " x1="45" y1="30" x2="45" y2="204.5"/>
 </g>
 <g>
 	<g>

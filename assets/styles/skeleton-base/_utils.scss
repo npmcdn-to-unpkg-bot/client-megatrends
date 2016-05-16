@@ -22,21 +22,21 @@
 .deleted-from-mobile{
   display: block;
   @media screen and ($bp-larger-than-mobile) {
-    display:none;
+    display:none !important;
   }
 }
 
 .deleted-from-phablet{
   display: block;
   @media screen and ($bp-larger-than-phablet) {
-    display:none;
+    display:none !important;
   }
 }
 
 .deleted-from-tablet{
   display: block;
   @media screen and ($bp-larger-than-tablet) {
-    display:none;
+    display:none !important;
   }
 }
 
@@ -50,7 +50,7 @@
 .deleted-from-desktophd{
   display: block;
   @media screen and ($bp-larger-than-desktophd) {
-    display:none;
+    display:none !important;
   }
 }
 

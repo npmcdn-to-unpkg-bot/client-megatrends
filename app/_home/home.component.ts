@@ -48,11 +48,11 @@ export class HomeComponent {
 
   calculatePanelCount(){
     let screenWidth = $(window).width();
-    if(screenWidth > 1200){
+    if(screenWidth > 1180){
       this.panelCount = 4;
-    } else if (screenWidth > 1000){
+    } else if (screenWidth > 980){
       this.panelCount = 3;
-    } else if (screenWidth > 750){
+    } else if (screenWidth > 730){
       this.panelCount = 2;
     } else {
       this.panelCount = 1;
@@ -80,7 +80,22 @@ export class HomeComponent {
 
     $(".home-DF-trend-container:last").css("margin-bottom",0);
     $(".home-DF-trend-container:last").css("padding-bottom",0);
-    $(".home-DF-trend-container:last").children(".home-DF-question").css("padding-bottom",15);
+    $(".home-DF-trend-container:last").find($(".home-DF-question")).css("padding-bottom",15);
+
+    let screenWidth = $(window).width();
+    if(screenWidth < 750){
+      if($(".workshop-icon").height() > $(".workshop-main").height()){
+        $(".workshop-main").height($(".workshop-icon").height());
+      } else {
+
+      }
+
+    } else {
+      $(".workshop-main").height($(".workshop-inside-wrapper").outerHeight());
+      $(".workshop-main").width($(".workshop-inside-wrapper").outerWidth());
+      $(".workshop-main").eq(2).css("border-right","1px solid #eee");
+      $(".workshop-main").eq(2).width($(".workshop-main").eq(2).width() + 1);
+    }
 
   }
 
@@ -102,6 +117,9 @@ export class HomeComponent {
       textHeight = $(".main-text-mobile").height() + 60;
       if(screenWidth >= 750){
         textHeight = $(".main-text").height() + 60;
+        if(screenWidth <= 1135 && screenWidth >= 1100){
+          textHeight = $(".main-text").height() + 63;
+        }
       }
     }
     let menuHeight = $(".homeLogo-bottomImage-container").height();
