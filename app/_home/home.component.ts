@@ -75,8 +75,17 @@ export class HomeComponent {
 
   organizeDFDiagram(){
 
-    $("<hr class='printOnly-separator pageBreak'/>").insertBefore($(".home-DF-trend-container").eq(1));
-    $("<hr class='printOnly-separator pageBreak'/>").insertBefore($(".home-DF-trend-container").eq(3));
+    $("<hr class='printOnly-separator pageBreak pos1'/>").insertBefore($(".home-DF-trend-container").eq(1));
+    $("<hr class='printOnly-separator pageBreak pos2'/>").insertBefore($(".home-DF-trend-container").eq(3));
+    $("<div class='pos-printFix pf1'></div>").insertAfter($(".home-DF-trend-circleBottom-container").eq(0));
+    $("<div class='pos-printFix pf2'></div>").insertAfter($(".home-DF-trend-circleBottom-container").eq(2));
+
+    $(".workshop-inside-wrapper").width($(".workshop-icon").width());
+
+    $(".workshop-main").height($(".workshop-inside-wrapper").outerHeight());
+    $(".workshop-main").width($(".workshop-inside-wrapper").outerWidth());
+    $(".workshop-main").eq(2).css("border-right","1px solid #eee");
+    $(".workshop-main").eq(2).width($(".workshop-main").eq(2).width() + 1);
 
     $(".home-DF-trend-container:last").css("margin-bottom",0);
     $(".home-DF-trend-container:last").css("padding-bottom",0);
@@ -86,17 +95,25 @@ export class HomeComponent {
     if(screenWidth < 750){
       if($(".workshop-icon").height() > $(".workshop-main").height()){
         $(".workshop-main").height($(".workshop-icon").height());
-      } else {
-
       }
-
     } else {
+      /*
       $(".workshop-main").height($(".workshop-inside-wrapper").outerHeight());
       $(".workshop-main").width($(".workshop-inside-wrapper").outerWidth());
       $(".workshop-main").eq(2).css("border-right","1px solid #eee");
       $(".workshop-main").eq(2).width($(".workshop-main").eq(2).width() + 1);
+      */
     }
 
+    let marginTop = $(".pf1").position().top + 122;
+    $(".pf1").css("top",marginTop);
+    let difference = $(".home-DF-trend-circleTop-container").eq(1).position().top - $(".pf1").position().top;
+    $(".pf1").height(difference + 91);
+
+    marginTop = $(".pf2").position().top + 122;
+    $(".pf2").css("top",marginTop);
+    difference = $(".home-DF-trend-circleTop-container").eq(3).position().top - $(".pf2").position().top;
+    $(".pf2").height(difference + 91);
   }
 
   fadeIn(){
@@ -117,7 +134,7 @@ export class HomeComponent {
       textHeight = $(".main-text-mobile").height() + 60;
       if(screenWidth >= 750){
         textHeight = $(".main-text").height() + 60;
-        if(screenWidth <= 1135 && screenWidth >= 1100){
+        if(screenWidth <= 1128 && screenWidth > 1100){
           textHeight = $(".main-text").height() + 63;
         }
       }

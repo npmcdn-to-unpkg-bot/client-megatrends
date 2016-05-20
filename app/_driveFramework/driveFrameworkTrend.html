@@ -2,21 +2,31 @@
   <div *ngIf="currentPath == trend.url">
     <div class="row">
       <div class="nine columns">
-        <a [routerLink]="['Drive Framework Diagram']">
+        <a [routerLink]="['Drive Framework Diagram']" class="noPrint">
           <p class="mB0"><i class="fa fa-arrow-left mR5"></i> Drive Framework</p>
         </a>
-        <hr class="mT15"/>
-        <h4 class="mT2R">{{trend.name}}</h4>
+        <hr class="mT15 mB2R noPrint"/>
+        <h4 class="mT0">{{trend.name}}</h4>
         <div class="trend-main-text" [innerHTML]="trend.bodyHTML"></div>
       </div>
       <div class="three columns">
-        <hr class="deleted-from-tablet mT0 mB2R"/>
+        <hr class="deleted-from-tablet mT0 mB2R noPrint"/>
         <img class="u-full-width" src="assets/images/{{trend.letter}}_Icon_Head.svg">
         <div class="trend-questionBox">
           <div *ngFor="#question of trend.questions;  #i = index">
             <h6 *ngIf="i < trend.questions.length - 1"><emx>{{question}}</emx></h6>
             <h6 *ngIf="i >= trend.questions.length - 1" class="mT2R mB0"><emx>{{question}}</emx></h6>
           </div>
+        </div>
+        <div class="noPrint">
+          <hr class="mT2R mB15"/>
+          <p class="mB15 u-pull-left visible-from-desktop"><strong>Share this page</strong></p>
+          <p class="mB15 u-pull-left deleted-from-desktop"><strong>Share</strong></p>
+          <a><i class="fa fa-twitter u-pull-right mT3"></i></a>
+          <a><i class="fa fa-linkedin u-pull-right mT3 mR15"></i></a>
+          <a><i class="fa fa-envelope u-pull-right mT3 mR15"></i></a>
+          <hr class="invisible-seperator"/>
+          <hr class="mT0 mB15"/>
         </div>
       </div>
     </div>
@@ -28,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row deleted">
       <div class="nine columns">
         <hr class="mT2R mB15"/>
         <p class="mB15"><strong>Related Articles &amp; Sources</strong></p>
@@ -39,14 +49,6 @@
         </div>
       </div>
       <div class="three columns">
-        <hr class="mT2R mB15"/>
-        <p class="mB15 u-pull-left visible-from-desktop"><strong>Share this page</strong></p>
-        <p class="mB15 u-pull-left deleted-from-desktop"><strong>Share</strong></p>
-        <a><i class="fa fa-twitter u-pull-right mT3"></i></a>
-        <a><i class="fa fa-linkedin u-pull-right mT3 mR15"></i></a>
-        <a><i class="fa fa-envelope u-pull-right mT3 mR15"></i></a>
-        <hr class="invisible-seperator"/>
-        <hr class="mT0 mB15"/>
       </div>
     </div>
   </div>

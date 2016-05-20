@@ -37,6 +37,8 @@
 /* Custom Scrollbar */
 @import "modules/customScrollbar";
 
+@media print{@page {size: landscape}}
+
 $color-background-gray:#f5f5f5;
 $color-border-gray:#e7e7e7;
 $color-dark-gray:#ddd;
@@ -106,8 +108,20 @@ $color-purple:#884a9c;
   margin-top:5rem;
 }
 
+.mT6R{
+  margin-top:6rem;
+}
+
+.mT7R{
+  margin-top:7rem;
+}
+
 .mT8R{
   margin-top:8rem;
+}
+
+.mT9R{
+  margin-top:9rem;
 }
 
 .mT10R{
@@ -284,12 +298,29 @@ main-app{
   color:#333;
 }
 
+.smaller{
+  font-size: smaller;
+}
+
 .is-absolute{
   position:absolute;
 }
 
+.z999{
+  z-index:999;
+}
+
 .is-static{
   position:static !important;
+}
+
+.is-gradient-bg{
+  background:repeating-linear-gradient(90deg, #27ae60, #2ecc71);
+  border-radius:5px;
+}
+
+.is-white{
+  color:#fff;
 }
 
 .is-semibold{
@@ -591,10 +622,22 @@ navbar .container{
 .printOnly-separator{
   display:none;
   margin-top:0px;
-  padding-bottom:1rem;
+  padding-bottom:4rem;
   border-top:0px;
   @media print {
     display:block;
+  }
+}
+
+.pos-printFix{
+  opacity:0;
+  @media print {
+    width:70px;
+    opacity:1;
+    height:200px;
+    background:url('../images/Home_Arrow_Background_13.svg');
+    position:absolute;
+    right:0px;
   }
 }
 
@@ -684,6 +727,14 @@ navbar .container{
   }
 }
 
+.homeLogo-outer-container{
+  @media print {
+    height:100% !important;
+    overflow:hidden;
+  }
+}
+
+
 .homeLogo-inner-container{
   position:absolute;
   top:30%;
@@ -700,7 +751,7 @@ navbar .container{
     top:32%;
   }
   @media print {
-     top:32%;
+     top:35% !important;
      width:240px;
      height:240px;
      margin-top:-120px;
@@ -709,7 +760,9 @@ navbar .container{
 }
 
 .homeLogo-inner-wrapper{
-
+  @media print {
+    height:70% !important;
+  }
 }
 
 
@@ -814,7 +867,7 @@ navbar .container{
 .homeLogo-image-arrow-tip-print{
   position:absolute;
   left:34px;
-  bottom:-99px;
+  bottom:-139px;
   z-index:999;
 }
 
@@ -843,28 +896,33 @@ navbar .container{
 }
 
 .arrow-bg-1{
-  background:url('images/Home_Arrow_Background_1.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_1.svg') no-repeat;
   background-position: bottom left;
 }
 
 .arrow-bg-3{
-  background:url('images/Home_Arrow_Background_3.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_3.svg') no-repeat;
   background-position: top left;
 }
 
 .arrow-bg-4{
-  background:url('images/Home_Arrow_Background_4.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_4.svg') no-repeat;
   background-position: top left;
 }
 
 .arrow-bg-5{
-  background:url('images/Home_Arrow_Background_6.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_6.svg') no-repeat;
   background-position: top right;
 }
 
 .arrow-bg-6{
-  background:url('images/Home_Arrow_Background_9.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_9.svg') no-repeat;
   background-position: top right;
+}
+
+.arrow-bg-7{
+  background:url('../images/Home_Arrow_Background_12.svg') no-repeat;
+  background-position: top left;
 }
 
 .homeDiagram-bottomText-container{
@@ -909,11 +967,21 @@ navbar .container{
     width:20%;
     float:left;
   }
+  @media print {
+    position:static;
+    width:20%;
+    float:left;
+  }
 }
 
 .home-DF-trend-right-container{
   clear:both;
   @media screen and ($bp-larger-than-tablet) {
+    clear:none;
+    width:80%;
+    float:right;
+  }
+  @media print {
     clear:none;
     width:80%;
     float:right;
@@ -927,6 +995,10 @@ navbar .container{
     //padding-left:30px;
   }
   @media screen and ($bp-larger-than-tablet) {
+    padding-left:15px;
+    padding-top:0px;
+  }
+  @media print {
     padding-left:15px;
     padding-top:0px;
   }
@@ -961,7 +1033,7 @@ navbar .container{
 }
 
 .home-DF-trend-circleTop-container{
-  background:url('images/Home_Arrow_Background_8.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_8.svg') no-repeat;
   width:90px;
   height:120px;
   position: relative;
@@ -976,7 +1048,7 @@ navbar .container{
 }
 
 .home-DF-trend-circleBottom-container{
-  background:url('images/DF-TrendCircleBottom.svg') no-repeat;
+  background:url('../images/DF-TrendCircleBottom.svg') no-repeat;
   width:80px;
   height:200px;
   float:right;
@@ -987,12 +1059,12 @@ navbar .container{
     right: 0px;
   }
   @media print {
-    height:200px;
+    height:120px;
   }
 }
 
 .home-DF-final-circleTop-container{
-  background:url('images/Home_Arrow_Background_10.svg') no-repeat;
+  background:url('../images/Home_Arrow_Background_10.svg') no-repeat;
   width:80px;
   height:120px;
   position: relative;
@@ -1012,7 +1084,7 @@ navbar .container{
   display:none;
   @media screen and ($bp-larger-than-tablet) {
     display:block;
-    background:url('images/Home_Arrow_Background_11.svg') no-repeat;
+    background:url('../images/Home_Arrow_Background_11.svg') no-repeat;
     width:185px;
     height:53px;
     position: relative;
@@ -1020,46 +1092,55 @@ navbar .container{
     z-index:999;
     right:-55px;
   }
+  @media print{
+    display:block;
+    background:url('../images/Home_Arrow_Background_11.svg') no-repeat;
+    width:185px;
+    height:53px;
+    position: relative;
+    float: right;
+    z-index:999;
+    right:-55px;
+    top:-9px;
+  }
 }
 
 .workshop-wrapper{
   width:100%;
   clear:both;
   border:1px solid #eee;
-  @media screen and ($bp-larger-than-tablet) {
+  @media ($bp-larger-than-tablet) {
     width:30%;
     float:left;
     clear:none;
     border:0px;
   }
-  @media screen and ($bp-larger-than-desktop) {
 
-  }
-  @media screen and ($bp-larger-than-desktophd) {
-
-  }
 }
 
 .workshop-inside-wrapper{
   width:70%;
   float:left;
-  @media screen and ($bp-larger-than-tablet) {
+  @media ($bp-larger-than-tablet) {
     height:225px;
     width:100%;
     float:none;
   }
-  @media screen and ($bp-larger-than-desktop) {
+  @media ($bp-larger-than-desktop) {
     height:150px;
   }
-  @media screen and ($bp-larger-than-desktophd) {
+  @media ($bp-larger-than-desktophd) {
     height:120px;
+  }
+  @media print {
+    height:150px;
   }
 }
 
 .workshop-icon{
   width:30%;
   float:left;
-  @media screen and ($bp-larger-than-tablet) {
+  @media ($bp-larger-than-tablet) {
     border:1px solid #eee;
     width:100%;
     float:none;
@@ -1069,7 +1150,7 @@ navbar .container{
 .workshop-main{
   background:#fdfdfd;
   border-left:1px solid #eee;
-  @media screen and ($bp-larger-than-tablet) {
+  @media ($bp-larger-than-tablet) {
     width:33%;
     position:absolute;
     background:auto;
@@ -1079,7 +1160,7 @@ navbar .container{
 
 .ww1{
   margin-top:15px;
-  @media screen and ($bp-larger-than-tablet) {
+  @media ($bp-larger-than-tablet) {
     margin-right:5%;
     margin-top:0px;
   }
@@ -1089,7 +1170,7 @@ navbar .container{
   position:relative;
   top:-26px;
   z-index:1;
-  @media screen and ($bp-larger-than-tablet) {
+  @media  ($bp-larger-than-tablet) {
     margin-right:5%;
     position:static;
     top:0px;
@@ -1101,7 +1182,7 @@ navbar .container{
   position:relative;
   top:-52px;
   z-index:1;
-  @media screen and ($bp-larger-than-tablet) {
+  @media  ($bp-larger-than-tablet) {
     position:static;
     top:0px;
     z-index: auto;
@@ -1112,10 +1193,13 @@ navbar .container{
   width:20px;
   position:absolute;
   z-index:999;
+  @media print {
+    display:block !important;
+  }
 }
 
 .workshop-center{
-  @media screen and ($bp-larger-than-tablet) {
+  @media ($bp-larger-than-tablet) {
     background:#fdfdfd;
     border-bottom:1px solid #eee;
     border-left:1px solid #eee;
@@ -1128,15 +1212,27 @@ navbar .container{
   @media screen and ($bp-larger-than-desktophd) {
     height:120px;
   }
+  @media print {
+    height:150px;
+  }
 }
 
 .workshop-right{
-  width:20px;
-  float:left;
-  position:absolute;
-  right:-21px;
-  z-index:999;
-  top:0px;
+  display: none;
+  @media ($bp-larger-than-tablet) {
+    width:20px;
+    float:left;
+    position:absolute;
+    right:-21px;
+    z-index:999;
+    top:0px;
+    display:block !important;
+  }
+  /*
+  @media print {
+    right:-42px;
+  }
+  */
 }
 
 .workshop-bottom{
@@ -1145,11 +1241,14 @@ navbar .container{
   position:relative;
   top:-1px;
   z-index:99;
+  @media print {
+    display:none;
+  }
 }
 
 .workshop-padding{
   padding-top:35px;
-  @media screen and ($bp-larger-than-tablet) {
+  @media ($bp-larger-than-tablet) {
     padding-left:35px;
     padding-top:15px;
   }
@@ -1254,21 +1353,27 @@ navbar .container{
 /* Backgrounds */
 
 .bg-TopArrow{
-  background:url('images/Arrow_Top_Arrow.svg') no-repeat;
+  background:url('../images/Arrow_Top_Arrow.svg') no-repeat;
   background-position: left bottom;
   background-size: 100% auto;
 }
 
 .bg-LeftArrow{
-  background:url('images/Arrow_Left_Bar_Long.svg');
+  background:url('../images/Arrow_Left_Bar_Long.svg');
   background-position: top left;
   background-size: 100%;
 }
 
 .bg-BottomArrow{
-  background:url('images/Arrow_Bottom_Arrow.svg') no-repeat;
+  background:url('../images/Arrow_Bottom_Arrow.svg') no-repeat;
   background-position: left top;
   background-size: 100%;
+}
+
+.print-contact-box{
+  @media print{
+    margin-top:240px;
+  }
 }
 
 .home-socialmediaLinksContainer{

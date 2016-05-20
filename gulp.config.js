@@ -43,8 +43,9 @@ module.exports = function () {
     var liveServer = {
         dev: {
             port: 3000,
-            host: "192.168.0.2",
-            //host: "127.0.0.1",
+            //host:"10.11.62.98",
+            //host: "192.168.0.2",
+            host: "127.0.0.1",
             open: '/',
             file: "index.html",
             wait: 1000,

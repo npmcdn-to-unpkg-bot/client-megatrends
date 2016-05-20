@@ -45,7 +45,22 @@ export class DriveFrameworkDiagramComponent {
 
     $(".home-DF-trend-container:last").css("margin-bottom",0);
     $(".home-DF-trend-container:last").css("padding-bottom",0);
-    $(".home-DF-trend-container:last").children(".home-DF-question").css("padding-bottom",15);
+    $(".home-DF-trend-container:last").find($(".home-DF-question")).css("padding-bottom",15);
+
+    let screenWidth = $(window).width();
+    if(screenWidth < 750){
+      if($(".workshop-icon").height() > $(".workshop-main").height()){
+        $(".workshop-main").height($(".workshop-icon").height());
+      } else {
+
+      }
+
+    } else {
+      $(".workshop-main").height($(".workshop-inside-wrapper").outerHeight());
+      $(".workshop-main").width($(".workshop-inside-wrapper").outerWidth());
+      $(".workshop-main").eq(2).css("border-right","1px solid #eee");
+      $(".workshop-main").eq(2).width($(".workshop-main").eq(2).width() + 1);
+    }
 
   }
 

@@ -1,5 +1,5 @@
 <section id="hs-driveFramework" class="homeSection">
-  <div class="row visible-from-tablet deleted-from-desktop">
+  <div class="row visible-from-phablet deleted-from-desktop">
     <h6 class="arrow-bg-1 mB0 pT5R pB5R">
       While it may appear that our world is changing randomly and more unforeseeable events are emerging often,
       the truth is that certain large-scale processes determine how businesses,
@@ -15,7 +15,7 @@
       governments, and societies behave and how decisions are made.
     </p>
   </div>
-  <div class="row deleted-from-desktop arrow-bg-4 h60">
+  <div class="row deleted-from-desktop arrow-bg-4 h60 deleted">
     <img class="u-pull-right deleted-from-desktop" src="assets/images/Home_Arrow_Background_5.svg">
   </div>
   <hr class="mT4R mB2R printOnly"/>
@@ -90,15 +90,17 @@
         </div>
         <div class="home-DF-trend-right-container">
           <div class="home-DF-trend-text-container">
-            <div class="home-DF-trend-circleTop-container"></div>
+            <div class="home-DF-trend-circleTop-container" ></div>
             <h6 class="home-DF-trend-title mB0"><strong>{{i + 1}}. {{trend.name}}</strong></h6>
             <hr class="home-DF-seperator"/>
             <p class="home-DF-trend-text mB0">{{trend.intro}}</p>
             <hr class="home-DF-seperator"/>
-            <div *ngFor="#question of trend.questions; #j = index">
-              <p class="mB0 home-DF-question">
-                <i class="fa fa-question-circle mR5"></i>{{question}}
-              </p>
+            <div class="home-DF-question-container">
+              <div  *ngFor="#question of trend.questions; #j = index">
+                <p class="mB0 home-DF-question">
+                  <i class="fa fa-question-circle mR5"></i>{{question}}
+                </p>
+              </div>
             </div>
             <div class="home-DF-trend-circleBottom-container"></div>
           </div>
@@ -108,6 +110,7 @@
     </a>
     <hr class="invisible-seperator"/>
   </div>
+
   <div class="row deleted-from-tablet">
     <div class="arrow-bg-6">
       <h6 class="pT5R pB5R mB0 noPrint">

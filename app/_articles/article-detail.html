@@ -1,29 +1,33 @@
 <div class="row" *ngFor="#article of articles;  #i = index">
   <div *ngIf="currentPath == article.url">
-    <div class="eight columns" *ngIf="currentPath == article.url">
-      <a [routerLink]="['Article List']">
+    <div class="nine columns" *ngIf="currentPath == article.url">
+      <a [routerLink]="['Article List']" class="noPrint">
         <p class="mB0"><i class="fa fa-arrow-left mR5"></i> Articles</p>
       </a>
-      <hr class="mT15"/>
+      <hr class="mT15 noPrint"/>
       <h4 class="mB15" [innerHTML]="article.title"></h4>
       <p class="mB15">by <strong>{{article.author}}</strong>, {{article.date}}</p>
       <p class="mB0 is-justify" [innerHTML]="article.html"></p>
     </div>
-    <div class="four columns">
+    <div class="three columns">
       <framedImage [imageSource]="article.imagePath"></framedImage>
+      <hr class="mT2R mB1R deleted-from-tablet"/>
       <p class="mB0"><em>
         This article was published by {{article.linkName}} on {{article.date}}.
-        You can see the original article <a class="is-underline" href="{{article.linkURL}}">here</a>
+        <span class="noPrint">You can see the original article <a class="is-underline" href="{{article.linkURL}}">here</a></span>
       </em></p>
-      <hr class="mT1R mB1R"/>
-      <p class="mB1R u-pull-left visible-from-desktop"><strong>Share this page</strong></p>
-      <p class="mB1R u-pull-left deleted-from-desktop"><strong>Share</strong></p>
-      <a><i class="fa fa-twitter u-pull-right mT3"></i></a>
-      <a><i class="fa fa-linkedin u-pull-right mT3 mR15"></i></a>
-      <a><i class="fa fa-envelope u-pull-right mT3 mR15"></i></a>
-      <hr class="invisible-seperator"/>
+      <div class="noPrint">
+        <hr class="mT1R mB1R"/>
+        <p class="mB1R u-pull-left visible-from-desktop"><strong>Share this page</strong></p>
+        <p class="mB1R u-pull-left deleted-from-desktop"><strong>Share</strong></p>
+        <a><i class="fa fa-twitter u-pull-right mT3"></i></a>
+        <a><i class="fa fa-linkedin u-pull-right mT3 mR15"></i></a>
+        <a><i class="fa fa-envelope u-pull-right mT3 mR15"></i></a>
+        <hr class="invisible-seperator"/>
+      </div>
       <div *ngIf="article.citations">
-        <hr class="mT0 mB15"/>
+        <hr class="mT0 mB15 noPrint"/>
+        <hr class="mT15 mB15 printOnly"/>
         <p class="mB1R"><strong>Works cited</strong></p>
         <hr class="mT0 mB15"/>
         <div  [innerHTML]="article.citations"></div>

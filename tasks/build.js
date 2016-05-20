@@ -62,6 +62,11 @@ gulp.task('build-assets', function (done) {
     })
     .pipe(gulp.dest(config.build.assetPath + 'images'));
 
+    gulp.src(config.root + 'favicon.png', {
+      base: config.root
+    })
+    .pipe(gulp.dest(config.build.path));
+
     gulp.src(config.data + '**/*.*', {
         base: config.data
     })
