@@ -165,7 +165,7 @@ $color-purple:#884a9c;
 }
 
 .mB2R{
-  margin-bottom:2rem;
+  margin-bottom:2rem !important;
 }
 
 .mB5R{
@@ -629,17 +629,19 @@ navbar .container{
   }
 }
 
+/*
 .pos-printFix{
   opacity:0;
   @media print {
     width:70px;
     opacity:1;
     height:200px;
-    background:url('../images/Home_Arrow_Background_13.svg');
+    background:url('images/Home_Arrow_Background_13.svg');
     position:absolute;
     right:0px;
   }
 }
+*/
 
 /* Custom Elements */
 
@@ -896,32 +898,32 @@ navbar .container{
 }
 
 .arrow-bg-1{
-  background:url('../images/Home_Arrow_Background_1.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_1.svg') no-repeat;
   background-position: bottom left;
 }
 
 .arrow-bg-3{
-  background:url('../images/Home_Arrow_Background_3.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_3.svg') no-repeat;
   background-position: top left;
 }
 
 .arrow-bg-4{
-  background:url('../images/Home_Arrow_Background_4.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_4.svg') no-repeat;
   background-position: top left;
 }
 
 .arrow-bg-5{
-  background:url('../images/Home_Arrow_Background_6.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_6.svg') no-repeat;
   background-position: top right;
 }
 
 .arrow-bg-6{
-  background:url('../images/Home_Arrow_Background_9.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_9.svg') no-repeat;
   background-position: top right;
 }
 
 .arrow-bg-7{
-  background:url('../images/Home_Arrow_Background_12.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_12.svg') no-repeat;
   background-position: top left;
 }
 
@@ -1033,7 +1035,7 @@ navbar .container{
 }
 
 .home-DF-trend-circleTop-container{
-  background:url('../images/Home_Arrow_Background_8.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_8.svg') no-repeat;
   width:90px;
   height:120px;
   position: relative;
@@ -1048,7 +1050,7 @@ navbar .container{
 }
 
 .home-DF-trend-circleBottom-container{
-  background:url('../images/DF-TrendCircleBottom.svg') no-repeat;
+  background:url('images/DF-TrendCircleBottom.svg') no-repeat;
   width:80px;
   height:200px;
   float:right;
@@ -1064,7 +1066,7 @@ navbar .container{
 }
 
 .home-DF-final-circleTop-container{
-  background:url('../images/Home_Arrow_Background_10.svg') no-repeat;
+  background:url('images/Home_Arrow_Background_10.svg') no-repeat;
   width:80px;
   height:120px;
   position: relative;
@@ -1084,7 +1086,7 @@ navbar .container{
   display:none;
   @media screen and ($bp-larger-than-tablet) {
     display:block;
-    background:url('../images/Home_Arrow_Background_11.svg') no-repeat;
+    background:url('images/Home_Arrow_Background_11.svg') no-repeat;
     width:185px;
     height:53px;
     position: relative;
@@ -1094,7 +1096,7 @@ navbar .container{
   }
   @media print{
     display:block;
-    background:url('../images/Home_Arrow_Background_11.svg') no-repeat;
+    background:url('images/Home_Arrow_Background_11.svg') no-repeat;
     width:185px;
     height:53px;
     position: relative;
@@ -1353,19 +1355,19 @@ navbar .container{
 /* Backgrounds */
 
 .bg-TopArrow{
-  background:url('../images/Arrow_Top_Arrow.svg') no-repeat;
+  background:url('images/Arrow_Top_Arrow.svg') no-repeat;
   background-position: left bottom;
   background-size: 100% auto;
 }
 
 .bg-LeftArrow{
-  background:url('../images/Arrow_Left_Bar_Long.svg');
+  background:url('images/Arrow_Left_Bar_Long.svg');
   background-position: top left;
   background-size: 100%;
 }
 
 .bg-BottomArrow{
-  background:url('../images/Arrow_Bottom_Arrow.svg') no-repeat;
+  background:url('images/Arrow_Bottom_Arrow.svg') no-repeat;
   background-position: left top;
   background-size: 100%;
 }
@@ -1378,7 +1380,8 @@ navbar .container{
 
 .home-socialmediaLinksContainer{
   display:block;
-  width:65px;
+  //width:65px;
+  width:40px;
   margin:0px auto;
 }
 

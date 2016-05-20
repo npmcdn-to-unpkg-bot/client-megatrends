@@ -77,10 +77,13 @@ export class HomeComponent {
 
     $("<hr class='printOnly-separator pageBreak pos1'/>").insertBefore($(".home-DF-trend-container").eq(1));
     $("<hr class='printOnly-separator pageBreak pos2'/>").insertBefore($(".home-DF-trend-container").eq(3));
+    /*
     $("<div class='pos-printFix pf1'></div>").insertAfter($(".home-DF-trend-circleBottom-container").eq(0));
     $("<div class='pos-printFix pf2'></div>").insertAfter($(".home-DF-trend-circleBottom-container").eq(2));
+    */
 
     $(".workshop-inside-wrapper").width($(".workshop-icon").width());
+    $(".workshop-main").width($(".workshop-inside-wrapper").outerWidth());
 
     $(".workshop-main").height($(".workshop-inside-wrapper").outerHeight());
     $(".workshop-main").width($(".workshop-inside-wrapper").outerWidth());
@@ -105,6 +108,7 @@ export class HomeComponent {
       */
     }
 
+    /*
     let marginTop = $(".pf1").position().top + 122;
     $(".pf1").css("top",marginTop);
     let difference = $(".home-DF-trend-circleTop-container").eq(1).position().top - $(".pf1").position().top;
@@ -114,6 +118,7 @@ export class HomeComponent {
     $(".pf2").css("top",marginTop);
     difference = $(".home-DF-trend-circleTop-container").eq(3).position().top - $(".pf2").position().top;
     $(".pf2").height(difference + 91);
+    */
   }
 
   fadeIn(){

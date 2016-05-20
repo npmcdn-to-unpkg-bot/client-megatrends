@@ -30,7 +30,7 @@ export class PageComponent {
     this.mobileMenuVisible = false;
     router.subscribe((path) => {
 
-      $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
+      $("a:not(.external-link)").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
 
       this.closeMobileMenu();
       this.adjustFooterAndFadeIn();
@@ -48,7 +48,7 @@ export class PageComponent {
   }
 
   ngAfterViewInit(){
-    $("a").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
+    $("a:not(.external-link)").click(function(event) {$(".pageContent").removeClass('fadingInFast');});
     this.adjustFooterAndFadeIn();
     this.setupNavbarMobileMenu();
   }
